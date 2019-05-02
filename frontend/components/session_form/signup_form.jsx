@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
                         <br />
                         <label>Location (Optional):
                                 <input type="text"
-                                value={this.state.email}
+                                value={this.state.location}
                                 onChange={this.update('location')}
                                 className="login-input"
                                 />

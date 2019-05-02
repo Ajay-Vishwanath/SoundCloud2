@@ -1,8 +1,10 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
+import Modal from './modal/modal';
 
 const App = () => (
     <div>
+        <Modal />
         <header>
             <GreetingContainer />
         </header>
