@@ -97,11 +97,14 @@
 
 .splash-background-text{
   position: absolute;
-  font-family: "comic sans"
+  font-family: "Lucida-Grande";
+  font-weight: lighter;
+
 }
 
 .splash-background-text *{
-  font-family: "Lucida Grande"
+  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+  color: rgb(255, 255, 255)
 }
 
 
@@ -117,7 +120,7 @@
    font-family: "Lucida Grande";
    font-size: 14px;
    background-color: #FF5000;
-   padding: 3px;
+   padding: 10px 15px;
    position: relative;
    border: solid 1px #FF5000;
    margin: 0 auto;
