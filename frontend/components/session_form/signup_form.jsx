@@ -13,6 +13,12 @@ class SignupForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        if (this.props.errors) {
+            this.props.clearErrors();
+        };
+    }
+    
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -41,46 +47,61 @@ class SignupForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
-                    {this.renderErrors()}
-                    <div className="login-form">
+                    <div className="signupform">
+                        <h2 className="form-header">Create an Account</h2>
                         <br />
-                        <label>Email:
+                        <br />
+                        <label>
                                 <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"
+                                placeholder="Email *"
                             />
                         </label>
                         <br />
                         <br />
-                        <label>Username:
+                        <label>
                             <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="login-input"
+                                placeholder="Username *"
                             />
                         </label>
                         <br />
-                        <label>Password:
+                        <br />
+                        <label>
                             <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
+                                placeholder="Password *"
                             />
                         </label>
                         <br />
                         <br />
-                        <label>Location (Optional):
+                        <label>
                                 <input type="text"
                                 value={this.state.location}
                                 onChange={this.update('location')}
                                 className="login-input"
+                                placeholder="Location (Optional):"
                                 />
                         </label>
                         <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <br />
+                        <div className="formerrors">
+                            {this.renderErrors()}
+                        </div>
+                        <input className="session-submit" type="submit" value="Continue" />
+                        <p className="formmsg">We will not use your email nor devices for updates/tips on SoundCloud2's
+                      products and services, nor will you receive any activities notifications. SoundCloud2 is a
+                       non-monetized service; we will not use any of your personal information.</p>
+                        <p className="formmsg">We have no targeted advertisements, nor any advertisements at all, so don't worry
+                         about that.</p>
                     </div>
+                  
                 </form>
             </div>
         );

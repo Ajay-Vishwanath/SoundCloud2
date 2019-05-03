@@ -1,0 +1,119 @@
+.container-splash {
+  width:100%;
+  margin: 0 auto; 
+  position: relative;
+  background-color: lightgray;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.splash-background {
+  width: 95%;
+  margin: 0 auto;
+  border-top:5px solid #FF5000;
+  position: relative; 
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Background Content for Splash Page */
+
+.splash-background-text{
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+}
+
+.demo-login {
+    margin: 0 auto;
+    font-family: "Lucida Grande";
+    font-size: 16px;
+    font-weight: lighter;
+    color: white;
+    background-color: #FF5500 ;
+    padding: 8px;
+    border-radius:4px;
+}
+
+#splash-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* Header for Splash Page */
+
+.splash-normal-header {
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    height: 50px;
+    z-index: 2;
+}
+
+.splash-soundcloud2logo {
+    /* display: flex; */
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    left: 50px;
+}
+
+.splash-soundcloud2logo span {
+    font-family: "Lucida Grande";
+    font-size: 14px;
+    margin: 0px;
+    bottom: 0px;
+    padding: 1px; 
+    position:relative;   
+}
+
+#splash-soundcloud2logo {
+    width: 40px;
+    height: 40px;
+    position:relative;
+}
+
+.splash-rightnavbar {
+   top: 0px;
+   position: relative;
+}
+
+.splash-loginbuttons {
+    position: relative;
+    bottom: 0px;
+    position: relative;
+}
+
+.splash-loginbutton {
+   white-space: nowrap;
+   margin: 0 5px;
+   border-radius: 5px;
+   font-weight: 100;
+   cursor: pointer;
+   font-family: "Lucida Grande";
+   font-size: 14px;
+   padding: 8px 20px;
+   position: relative;
+   background-color: transparent;
+}
+
+.splash-createaccountbutton {
+   white-space: nowrap;
+   margin: 0 5px;
+   border-radius: 5px;
+   font-weight: 100;
+   cursor: pointer;
+   font-family: "Lucida Grande";
+   font-size: 14px;
+   background-color: #FF5000;
+   padding: 8px 25px;
+   position: relative;
+   border: solid 1px #FF5000;
+}
+

@@ -9,6 +9,13 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoUserLogin = this.demoUserLogin.bind(this);
+    }
+
+    componentDidMount() {
+        if (this.props.errors){
+            this.props.clearErrors();
+        };        
     }
 
     update(field) {
@@ -23,6 +30,13 @@ class LoginForm extends React.Component {
         this.props.processForm(user).then(this.props.closeModal);
     }
 
+    demoUserLogin() {
+        this.setState({username: "DemoLogin", password: "musiclover59"}, () => {
+            const user = Object.assign({}, this.state);
+            this.props.processForm(user).then(this.props.closeModal);
+            this.props.history.push("/");
+        }); 
+    }
     renderErrors() {
         return (
             <ul>
@@ -39,27 +53,33 @@ class LoginForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <div onClick={this.props.closeModal} className="close-x">X</div>
-                    {this.renderErrors()}
-                    <div className="login-form">
+                    <div className="loginform">
+                        <h2 className="form-header">Sign In</h2>
                         <br />
-                        <label>Usernamee:
                                 <input type="text"
                                 value={this.state.username}
                                 onChange={this.update('username')}
-                                className="login-input"
+                                className="login-input" placeholder="Your Username"
                             />
-                        </label>
                         <br />
-                        <label>Password:
+                        <br /> 
                                 <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
-                                className="login-input"
+                                className="login-input" placeholder="Your Password"
                             />
-                        </label>
                         <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <div className="formerrors">
+                            {this.renderErrors()}
+                        </div>
+                        <input className="session-submit" type="submit" value="Continue" />
+                        <p className="formmsg">We will not use your email nor devices for updates/tips on SoundCloud2's
+                      products and services, nor will you receive any activities notifications. SoundCloud2 is a
+                       non-monetized service; we will not use any of your personal information.</p>
+                        <p className="formmsg">We have no targeted advertisements, nor any advertisements at all, so don't worry
+                         about that.</p>
+
+                         <button className="demo-button" onClick={this.demoUserLogin}>Demo Login</button>
                     </div>
                 </form>
             </div>

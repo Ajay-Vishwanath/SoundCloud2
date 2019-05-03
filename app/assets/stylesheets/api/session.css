@@ -1,0 +1,88 @@
+.form-header {
+    font-size: 28px;
+    font-family: 'Lucida Grande';
+    font-weight: lighterx;
+    text-align: center;
+    margin-top: 10px;
+    position: relative;
+    top: 16px;
+}
+
+.signupform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 570px;
+    width: 400px;
+    background: white;
+    padding: 50px;
+    display: block;
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    height: 570px;
+    width: 400px;
+    background: white;
+    padding: 50px;
+    display: block;
+    position: relative;
+}
+
+.demo-button {
+    width: 50%; 
+    margin: 0 auto;
+    font-family: "Lucida Grande";
+    font-size: 16px;
+    font-weight: lighter;
+    color: white;
+    background-color: #FF5500 ;
+    padding: 8px;
+    border-radius:4px;
+}
+
+.loginform input{
+    box-sizing: border-box;
+    font-family: 'Lucida Grande';
+    font-size: 18px;
+    padding: 7px 8px;
+    width: 100%; 
+    border-radius: 4px;
+    border: 1px solid lightgray;
+}
+
+
+.signupform input{
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Lucida Grande';
+    padding: 7px 8px;
+    border-radius: 4px;
+    width: 100%; 
+    border: 1px solid lightgray;
+}
+
+.session-submit{
+    font-size: 16px;
+    font-weight: lighter;
+    color: white;
+    background-color: #FF5500 ;
+    padding: 10px 15px;
+    border-radius:4px;
+    width: 100%;   
+}
+
+.formerrors { 
+    font-family: "Lucida Grande";
+    list-style: none;
+    font-size: 12px;
+    color: red;
+}
+
+.formmsg{
+    font-family: "Lucida Grande";
+    color: #999999;
+    font-size: 12px;
+}

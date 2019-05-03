@@ -24,13 +24,17 @@ class Greeting extends React.Component {
         const loggedOut = () => {
             return (
                 //className={this.props.isSplash? 'transparent-header' : 'normal-header'}
-                <header> 
+                <header className='normal-header'> 
                     <div className='soundcloud2logo'>
-                        {/* enter a link to the splash page here  */}
+                        <img src={window.logourl} id="soundcloud2logo"/>
+                        <span>SOUNDCLOUD2  </span>
+                            {/* enter a link to the splash page here  */}
                     </div>
-                    <div className='right-navbar'>
-                        <button onClick={() => this.props.openModal('login')}>Sign In</button>
-                        <button onClick={() => this.props.openModal('signup')}>Create Account</button>
+                    <div className='rightnavbar'>
+                        <div className="loginbuttons"> 
+                            <button onClick={() => this.props.openModal('login')} className="loginbutton">Sign In</button>
+                            <button onClick={() => this.props.openModal('signup')} className="createaccountbutton">Create Account</button>
+                        </div>
                     </div>
                 </header>
             );
@@ -40,12 +44,14 @@ class Greeting extends React.Component {
             return (
                 <header className='normal-header'>
                     <div className='soundcloud2logo'>
+                        <img src={window.logourl} id="soundcloud2logo"/>
                         {/* enter a link to the splash page here  */}
                     </div>
-                    <div className='right-navbar'>
-                        <div className={this.state.dropDownMenuOne ? 
+                    <div className='rightnavbar'>
+                        <button className={this.state.dropDownMenuOne ? 
                         'dropdown-one-show':
-                        'dropdown-one-hidden'}>
+                        'dropdown-one-hidden'} onClick={this.toggle("dropDownMenuOne")}></button>
+                        <div className='dropdowncontent'>
                             <button onClick={this.props.logout}>Sign Out</button>
                         </div>
                     </div>
