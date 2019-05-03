@@ -1,93 +1,69 @@
 .container-splash {
   width:100%;
-  margin: 0 auto; 
-  position: relative;
   background-color: lightgray;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .splash-background {
-  width: 95%;
+  width: 75%;
+  min-height: 100vh;
   margin: 0 auto;
+}
+.splash-banner {
   border-top:5px solid #FF5000;
-  position: relative; 
-  vertical-align: middle;
-  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-image: url('../../images/idk.jpg') */
 }
 
-/* Background Content for Splash Page */
 
-.splash-background-text{
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-}
-
-.demo-login {
-    margin: 0 auto;
-    font-family: "Lucida Grande";
-    font-size: 16px;
-    font-weight: lighter;
-    color: white;
-    background-color: #FF5500 ;
-    padding: 8px;
-    border-radius:4px;
-}
-
-#splash-image {
-  width: 100%;
-  height: 100%;
-}
 
 /* Header for Splash Page */
 
-.splash-normal-header {
-    width: 98%;
+.splash-header {
+    width: 100%;
     display: flex;
+    align-self: flex-start;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: absolute;
     height: 50px;
     z-index: 2;
+    margin-top: 15px;
 }
 
-.splash-soundcloud2logo {
+.splash-soundcloud2logo-box {
     /* display: flex; */
-    flex-direction: row;
+    /* align-items: center;
+    vertical-align: center; */
     display: flex;
+    flex-direction: row;
     align-items: center;
-    height: 100%;
-    left: 50px;
+    margin-left: 35px;
 }
 
-.splash-soundcloud2logo span {
+#logotext {
     font-family: "Lucida Grande";
     font-size: 14px;
+    font-weight: bold;
+    flex-direction: row;
+    align-items: center; 
     margin: 0px;
-    bottom: 0px;
     padding: 1px; 
-    position:relative;   
+    vertical-align: center;
+      
 }
 
 #splash-soundcloud2logo {
     width: 40px;
     height: 40px;
-    position:relative;
-}
-
-.splash-rightnavbar {
-   top: 0px;
-   position: relative;
+    /* position:relative; */
 }
 
 .splash-loginbuttons {
-    position: relative;
-    bottom: 0px;
-    position: relative;
+   margin-right: 35px;
 }
 
 .splash-loginbutton {
@@ -117,3 +93,44 @@
    border: solid 1px #FF5000;
 }
 
+/* Background Content for Splash Page */
+
+.splash-background-text{
+  position: absolute;
+  font-family: "comic sans"
+}
+
+.splash-background-text *{
+  font-family: "Lucida Grande"
+}
+
+
+.demobutton {
+  display: flex;
+  justify-content: center;
+}
+
+#demo-login {
+  white-space: nowrap;
+   border-radius: 5px;
+   cursor: pointer;
+   font-family: "Lucida Grande";
+   font-size: 14px;
+   background-color: #FF5000;
+   padding: 3px;
+   position: relative;
+   border: solid 1px #FF5000;
+   margin: 0 auto;
+}
+
+#splash-image {
+  width: 100%;
+  height: 100%;
+  /* align-self: flex-start; */
+}
+
+#test {
+  padding-top: 2000px;
+  margin-top: 2000px;
+  background-color: pink;
+}

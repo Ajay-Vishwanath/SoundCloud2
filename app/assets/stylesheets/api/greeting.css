@@ -1,64 +1,60 @@
-.normal-header {
-    margin:0 auto;
+/* .greeting-container {
+    background: lightgray;
+} */
+.full-header {
+  height: 50px;
+  background-color: #333333;
+  color: #CBCCCB;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+} 
+
+.functional-header {
     display: flex;
     flex-direction: row;
+    width: 75%;
+    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    position:relative;
-    height: 50px;
-}
-
-.soundcloud2logo {
-    /* display: flex; */
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.soundcloud2logo span {
-    font-family: "Lucida Grande";
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
-    margin: 0px;
-    bottom: 0px;
-    padding: 1px;    
+}
+
+.newsoundcloud2logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    left: 50px;
+    background-color: #ffffff;   
+    height: 49px;
+     border-bottom: solid 1px #333333; 
 }
 
 #soundcloud2logo {
-    width: 40px;
-    height: 40px;
+    object-fit: cover;
+    width: 69px;
+    height: 69px;
+    /* background-position-y: 50%; */
+    /* background-color: white;
+    border-bottom: solid 1px #333333; */
 }
 
-.rightnavbar {
-   top: 0px;
+.rightnavbar{
+    display: flex;
+    /* margin-right: 20px; */
 }
 
-.loginbuttons {
-    position: relative;
-    bottom: 0px;
+.dropdowncontent{
+    display: flex;
 }
 
-.loginbutton {
-   white-space: nowrap;
-   margin: 0 5px;
-   border-radius: 5px;
-   font-weight: 100;
-   cursor: pointer;
-   font-family: "Lucida Grande";
-   font-size: 14px;
-   padding: 8px 20px;
-}
-
-.createaccountbutton {
-   white-space: nowrap;
-   margin: 0 5px;
-   border-radius: 5px;
-   font-weight: 100;
-   cursor: pointer;
-   font-family: "Lucida Grande";
-   font-size: 14px;
-   background-color: #FF5000;
-   padding: 8px 25px;
+.logout-button{
+    display: flex;
 }
 
 #dropdowncontent {

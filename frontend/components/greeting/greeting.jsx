@@ -42,17 +42,24 @@ class Greeting extends React.Component {
 
         const loggedIn = () => {
             return (
-                <header className='normal-header'>
-                    <div className='soundcloud2logo'>
-                        <img src={window.logourl} id="soundcloud2logo"/>
-                        {/* enter a link to the splash page here  */}
-                    </div>
-                    <div className='rightnavbar'>
-                        <button className={this.state.dropDownMenuOne ? 
-                        'dropdown-one-show':
-                        'dropdown-one-hidden'} onClick={this.toggle("dropDownMenuOne")}></button>
-                        <div className='dropdowncontent'>
-                            <button onClick={this.props.logout}>Sign Out</button>
+                <header className='full-header'>
+                    <div className='functional-header'>
+                        <div className='newsoundcloud2logo'>
+                            <img src={window.logo2url} id="soundcloud2logo"/>
+                            {/* enter a link to the splash page here  */}
+                        </div>
+                        
+                        <div className='rightnavbar'>
+                            <button className={this.state.dropDownMenuOne ? 
+                            'dropdown-one-show':
+                            'dropdown-one-hidden'} onClick={this.toggle("dropDownMenuOne")}></button>
+                            <div className='dropdowncontent'>
+                                <button 
+                                onClick={this.props.logout}
+                                className="logout-button">
+                                Sign Out
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </header>

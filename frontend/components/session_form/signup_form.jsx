@@ -96,10 +96,10 @@ class SignupForm extends React.Component {
                         </div>
                         <input className="session-submit" type="submit" value="Continue" />
                         <p className="formmsg">We will not use your email nor devices for updates/tips on SoundCloud2's
-                      products and services, nor will you receive any activities notifications. SoundCloud2 is a
+                      products and services, nor will you receive any notifications. SoundCloud2 is a
                        non-monetized service; we will not use any of your personal information.</p>
-                        <p className="formmsg">We have no targeted advertisements, nor any advertisements at all, so don't worry
-                         about that.</p>
+                        <p className="formmsg">We have no targeted advertisements, nor any advertisements for that matter, 
+                        so don't worry about that.</p>
                     </div>
                   
                 </form>
