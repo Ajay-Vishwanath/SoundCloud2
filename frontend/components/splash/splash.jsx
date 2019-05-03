@@ -50,7 +50,7 @@ class Splash extends React.Component {
                             </div>
                         </div>
 
-                        <img src={window.idkurl} id="splash-image" />
+                        <img src={window.idkurl} id="splash-image" /> 
                     </div>
                 </div>
             </div>

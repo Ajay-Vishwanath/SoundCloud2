@@ -4,7 +4,7 @@
 }
 
 .splash-background {
-  width: 75%;
+  width: 70%;
   min-height: 100vh;
   margin: 0 auto;
 }
@@ -79,6 +79,10 @@
    background-color: transparent;
 }
 
+.splash-loginbutton:hover {
+  border: 1px solid white;
+}
+
 .splash-createaccountbutton {
    white-space: nowrap;
    margin: 0 5px;
@@ -103,7 +107,8 @@
 }
 
 .splash-background-text *{
-  font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+  font-family: "Lucida Grande";
+  font-weight: lighter;
   color: rgb(255, 255, 255)
 }
 

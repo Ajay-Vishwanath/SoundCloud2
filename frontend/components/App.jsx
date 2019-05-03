@@ -18,6 +18,7 @@ const App = () => (
     <main>
         <Switch> 
             <AuthRoute exact path='/' component={SplashContainer}/>
+            <Redirect to="/"/> 
         </Switch>
     </main>
     </div>
