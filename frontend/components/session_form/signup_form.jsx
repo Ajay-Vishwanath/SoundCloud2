@@ -95,11 +95,11 @@ class SignupForm extends React.Component {
                             {this.renderErrors()}
                         </div>
                         <input className="session-submit" type="submit" value="Continue" />
-                        <p className="formmsg">We will not use your email nor devices for updates/tips on SoundCloud2's
-                      products and services, nor will you receive any notifications. SoundCloud2 is a
-                       non-monetized service; we will not use any of your personal information.</p>
-                        <p className="formmsg">We have no targeted advertisements, nor any advertisements for that matter, 
-                        so don't worry about that.</p>
+                        <p className="formmsg">We will not use your email nor devices to improve SoundCloud2's
+                  products and services. You will not receive any notifications, and we will not use your personal
+                   information. SoundCloud2 is a clone app.</p>
+                        <p className="formmsg">We have no targeted advertisements, nor advertisements at all for that matter,
+                        so no need to worry about that.</p>
                     </div>
                   
                 </form>
