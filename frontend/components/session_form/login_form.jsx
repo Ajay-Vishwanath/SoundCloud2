@@ -76,9 +76,9 @@ class LoginForm extends React.Component {
                         <input className="session-submit" type="submit" value="Continue" />
         
                         <p className="formmsg">We will not use your email nor devices to improve SoundCloud2's
-                   products and services. You will not receive any notifications, and we will not use your personal
+                   products and services, you will not receive any notifications, and we will not use your personal
                    information. SoundCloud2 is a clone app.</p>
-                        <p className="formmsg">We have no targeted advertisements, nor advertisements at all for that matter,
+                        <p className="formmsg">We have no targeted advertisements - nor advertisements at all for that matter -
                         so no need to worry about that.</p>
                     
                          <button className="demo-button" onClick={this.demoUserLogin}>Demo Login</button>

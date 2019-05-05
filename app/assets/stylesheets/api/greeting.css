@@ -16,7 +16,7 @@
 .functional-header {
     display: flex;
     flex-direction: row;
-    width: 75%;
+    width: 85%;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
@@ -44,19 +44,15 @@
     border-bottom: solid 1px #333333; */
 }
 
-.rightnavbar{
-    display: flex;
+#DropDownTwo{
     /* margin-right: 20px; */
-}
-
-.dropdowncontent{
     display: flex;
-}
-
-.logout-button{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* 
 #dropdowncontent {
   display: block;
   position: absolute;
@@ -64,4 +60,56 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+} */
+
+
+.dropDownShow ul li {
+  display: flex;
+  padding: 0;
+  width: 120px;
 }
+
+#DropDownTwo{
+  height: 50px;
+  width: 50px;
+  z-index: 3;
+}
+
+.dropDownShow{
+  background: #111;
+}
+
+.dropDownShow ul li:hover {
+  background-color: #333;
+}
+
+.dropDownShow ul li button {
+  text-align: left;
+  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  align-self: left;
+  display: block;
+  width: 100%;
+  background-color: #111;
+  border: none;
+  color: #ccc;
+}
+
+.dropDownShow ul {
+  /* right: 106px; */
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  top: 36px;
+  flex-direction: column;
+  background-color: #111;
+}
+
+
+.dropDownShow-hidden:hover{
+  cursor: pointer;
+}
+
+.dropDownShow-hidden ul {
+  display: none;
+}
+

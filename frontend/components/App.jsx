@@ -10,6 +10,12 @@ import GreetingContainer from './greeting/greeting_container';
 import Modal from './modal/modal'; 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEllipsisH} from '@fortawesome/free-solid-svg-icons'
+import {UploadSongContainer} from './song/upload_song_container'
+
+library.add(faEllipsisH)
 
 const App = () => (
     <div>
@@ -18,7 +24,8 @@ const App = () => (
     <main>
         <Switch> 
             <AuthRoute exact path='/' component={SplashContainer}/>
-            <Redirect to="/"/> 
+            <ProtectedRoute exact path='/upload' component={UploadSongContainer} />
+            {/* <Redirect to="/"/>  */}
         </Switch>
     </main>
     </div>

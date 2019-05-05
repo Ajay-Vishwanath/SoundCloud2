@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { login, logout, signup} from '../../actions/session_actions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class Greeting extends React.Component {
 
@@ -10,13 +12,22 @@ class Greeting extends React.Component {
             dropDownMenuOne: false,
             dropDownMenuTwo: false 
         }
+
+        window.addEventListener('click', (e) => {
+            const dropdown = document.getElementById("DropDownTwo")
+            if (dropdown.className === ("dropDownShow") && (!(e.target.matches("DropDownTwo") || !(e.target.matches("svg-inline--fa fa-ellipsis-h fa-w-16 fa-lg "))))){
+                dropdown.className =  "dropDownShow-hidden"
+            }
+        });
     }
 
-    toggle(field) {
-        return e=> {
-            this.setState(
-                {[field]: !this.state.field}
-            )
+    togglemenu() {
+        let x = document.getElementById("DropDownTwo");
+        if (x.className.indexOf("dropDownShow") !== -1) {
+            x.className = "dropDownShow";
+        }
+        else { 
+            x.className="dropDownShow-hidden"
         }
     }
 
@@ -49,16 +60,12 @@ class Greeting extends React.Component {
                             {/* enter a link to the splash page here  */}
                         </div>
                         
+
                         <div className='rightnavbar'>
-                            <button className={this.state.dropDownMenuOne ? 
-                            'dropdown-one-show':
-                            'dropdown-one-hidden'} onClick={this.toggle("dropDownMenuOne")}></button>
-                            <div className='dropdowncontent'>
-                                <button 
-                                onClick={this.props.logout}
-                                className="logout-button">
-                                Sign Out
-                                </button>
+                            <div id="DropDownTwo" className="dropDownShow-hidden" onClick={this.togglemenu}><FontAwesomeIcon icon="ellipsis-h" size="lg" />
+                                <ul>
+                                    <li className="dropdownitem"> <button onClick={this.props.logout} className="logout-button"> Sign Out</button> </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

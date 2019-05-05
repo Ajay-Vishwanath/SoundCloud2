@@ -38,19 +38,19 @@ class Splash extends React.Component {
                             </div>
                             <div className="splash-loginbuttons">
                                 <button onClick={() => this.props.openModal('login')} className="splash-loginbutton">Sign In</button>
-                                <button onClick={() => this.props.openModal('signup')} className="splash-createaccountbutton">Create Account</button>
+                                <button onClick={() => this.props.openModal('signup')} className="splash-createaccountbutton">Create account</button>
                             </div>
                         </header>
 
                         <div className="splash-background-text">
                             <h1>Discover more music with SoundCloud2</h1>
-                            <p>SoundCloud2 lets you discover and listen to new music in a nice, clean interface.</p>
+                            <p>SoundCloud2 lets you discover and listen to new music with a nice, simple, and easy-to-use interface.</p>
                             <div className="demobutton">
                                 <button id="demo-login" onClick={() => this.props.openModal('login')}>Demo Login</button>
                             </div>
                         </div>
 
-                        <img src={window.idkurl} id="splash-image" /> 
+                        <img src={window.idk2url} id="splash-image" /> 
                     </div>
                 </div>
             </div>

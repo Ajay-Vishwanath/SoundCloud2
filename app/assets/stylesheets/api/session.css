@@ -17,6 +17,7 @@
     background: white;
     padding: 50px;
     display: block;
+    z-index: 2;
 }
 
 .loginform {
@@ -30,6 +31,7 @@
     padding: 50px;
     display: block;
     position: relative;
+    z-index: 2;
 }
 
 .formmsg{
