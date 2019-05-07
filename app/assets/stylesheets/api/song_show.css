@@ -1,0 +1,15 @@
+.song-show-container{
+    width: 85%;
+    background: white;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+}
+
+.song-show-container-2{
+    width: 88%;
+    margin: 0 auto;
+    display: flex;
+}

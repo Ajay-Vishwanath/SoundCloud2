@@ -9,6 +9,5 @@ class CreateSongs < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-     add_index :songs, :artist_id, unique: true
   end
 end

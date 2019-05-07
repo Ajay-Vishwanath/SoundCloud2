@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2019_05_04_012408) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_songs_on_artist_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

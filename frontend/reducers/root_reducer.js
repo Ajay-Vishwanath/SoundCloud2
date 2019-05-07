@@ -10,7 +10,6 @@ const RootReducer = combineReducers({
     entities: entitiesReducer,
     errors: errorsReducer,
     ui: uiReducer,
-    songs: songsReducer
 })
 
 export default RootReducer;

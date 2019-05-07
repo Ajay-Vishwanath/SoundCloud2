@@ -1,7 +1,7 @@
 import {
     RECEIVE_SONG,
     RECEIVE_SONGS,
-    DELETE_SONGS,
+    DELETE_SONG,
 } from '../actions/song_actions';
 
 import merge from 'lodash/merge'
@@ -12,12 +12,10 @@ const songsReducer = (state={}, action) => {
     let newState;
     switch (action.type) {
         case RECEIVE_SONG:
-            newState = merge(state, {}, action.song)
-            return newState;
+            return Object.assign({}, state, {[action.song.id]: action.song });
         case RECEIVE_SONGS:
-            newState = merge(state, {}, action.songs)
-            return newState;
-        case DELETE_SONGS:
+            return action.songs
+        case DELETE_SONG:
             newState = merge(state, {})
             delete newState[action.id]
             return newState;

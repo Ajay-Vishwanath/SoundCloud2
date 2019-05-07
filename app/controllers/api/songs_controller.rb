@@ -9,7 +9,8 @@ class Api::SongsController < ApplicationController
     end 
 
     def create 
-        @song = current_user.songs.new(song_params) 
+        @song =  Song.new(song_params) 
+        @song.artist_id = current_user.id
         if @song.save 
             render '/api/songs/show'
         else 
@@ -39,7 +40,9 @@ class Api::SongsController < ApplicationController
             :title,
             :length,
             :genre,
-            :description
+            :description,
+            :audio_file,
+            :photo
         )
     end 
 

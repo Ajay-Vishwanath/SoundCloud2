@@ -23,7 +23,7 @@ class Splash extends React.Component {
 
         const splashLoggedOut = () => {
             return(
-            <div className="container-splash">
+            <div>
                 <div className="splash-background">
                     <div className="splash-banner">
                         <header className='splash-header'>

@@ -34,7 +34,7 @@ class LoginForm extends React.Component {
         this.setState({username: "DemoLogin", password: "musiclover59"}, () => {
             const user = Object.assign({}, this.state);
             this.props.processForm(user).then(this.props.closeModal);
-            this.props.history.push("/");
+            // this.props.history.push("/");
         }); 
     }
     renderErrors() {

@@ -7,7 +7,8 @@ import Greeting from '../greeting/greeting';
 
 const mapStateToProps = (state) => {
     return {
-        currentUser: state.entities.users[state.session.id]
+        currentUser: state.entities.users[state.session.id],
+        // songs: Object.keys(state.entities.songs).map(id => state.entities.songs[id])
     };
 };
 

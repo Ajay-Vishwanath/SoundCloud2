@@ -14,7 +14,7 @@ class Greeting extends React.Component {
         }
 
         window.addEventListener('click', (e) => {
-            const dropdown = document.getElementById("DropDownTwo")
+            const dropdown = document.getElementById("DropDownTwo");
             if (dropdown.className === ("dropDownShow") && (!(e.target.matches("DropDownTwo") || !(e.target.matches("svg-inline--fa fa-ellipsis-h fa-w-16 fa-lg "))))){
                 dropdown.className =  "dropDownShow-hidden"
             }
@@ -34,17 +34,19 @@ class Greeting extends React.Component {
     render() {
         const loggedOut = () => {
             return (
-                //className={this.props.isSplash? 'transparent-header' : 'normal-header'}
-                <header className='normal-header'> 
-                    <div className='soundcloud2logo'>
-                        <img src={window.logourl} id="soundcloud2logo"/>
-                        <span>SOUNDCLOUD2  </span>
+                <header className='full-header'>
+                    <div className='functional-header'>
+                        <div className='newsoundcloud2logo'>
+                            <img src={window.logo2url} id="soundcloud2logo" />
                             {/* enter a link to the splash page here  */}
-                    </div>
-                    <div className='rightnavbar'>
-                        <div className="loginbuttons"> 
-                            <button onClick={() => this.props.openModal('login')} className="loginbutton">Sign In</button>
-                            <button onClick={() => this.props.openModal('signup')} className="createaccountbutton">Create Account</button>
+                        </div>
+
+
+                        <div className='rightnavbar'>
+                            <div className="splash-loginbuttons">
+                                <button onClick={() => this.props.openModal('login')} className="splash-loginbutton">Sign In</button>
+                                <button onClick={() => this.props.openModal('signup')} className="splash-createaccountbutton">Create account</button>
+                            </div>
                         </div>
                     </div>
                 </header>
@@ -55,17 +57,29 @@ class Greeting extends React.Component {
             return (
                 <header className='full-header'>
                     <div className='functional-header'>
-                        <div className='newsoundcloud2logo'>
-                            <img src={window.logo2url} id="soundcloud2logo"/>
-                            {/* enter a link to the splash page here  */}
+                        <div className="greeting-left">
+                            <div className='newsoundcloud2logo'>
+                                <img src={window.logo2url} id="soundcloud2logo"/>
+                                {/* enter a link to the splash page here  */}
+                            </div>
+
+                            <div className="home-button-div">
+                                <a href="/#/discover" className="home-button">Home</a>
+                            </div>
                         </div>
                         
 
                         <div className='rightnavbar'>
-                            <div id="DropDownTwo" className="dropDownShow-hidden" onClick={this.togglemenu}><FontAwesomeIcon icon="ellipsis-h" size="lg" />
-                                <ul>
-                                    <li className="dropdownitem"> <button onClick={this.props.logout} className="logout-button"> Sign Out</button> </li>
-                                </ul>
+                            <div className="upload-button-div">
+                                <a href="/#/upload" className="upload-button">Upload</a>
+                            </div>
+
+                            <div className="dropdown-container">
+                                <div id="DropDownTwo" className="dropDownShow-hidden" onClick={this.togglemenu}><FontAwesomeIcon icon="ellipsis-h" size="lg" />
+                                    <ul>
+                                        <li className="dropdownitem"> <button onClick={this.props.logout} className="logout-button"> Sign Out</button> </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
