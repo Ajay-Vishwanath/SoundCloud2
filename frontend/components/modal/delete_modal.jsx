@@ -1,29 +1,25 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
-import {withRouter} from 'react-router-dom'
+import deleteContainer from '../song/delete_song_container'
+import { withRouter } from 'react-router-dom'
 
-function Modal({ modal, closeModal }) {
+function deleteModal({ modal, closeModal }) {
     if (!modal) {
         return null;
     }
     let component;
     switch (modal) {
-        case 'login':
-            component = <LoginFormContainer />;
-            break;
-        case 'signup':
-            component = <SignupFormContainer />;
+        case 'deletepost':
+            component = <deleteContainer />;
             break;
         default:
             return null;
     }
     return (
-        <div className="modal-background" onClick={closeModal}>
+        <div className="modal-background-delete" onClick={closeModal}>
             <div onClick={closeModal} className="close-x">X</div>
-            <div className="modal-child" onClick={e => e.stopPropagation()}>
+            <div className="modal-child-delete" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
         </div>
@@ -42,4 +38,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(deleteModal));

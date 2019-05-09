@@ -23,7 +23,7 @@ export const deleteSong = id => ({
 
 export const receiveErrors = errors => ({
     type: RECEIVE_SONG_ERRORS,
-    errors
+    errors: errors
 })
 
 export const clearSongErrors = () => ({
@@ -48,7 +48,7 @@ export const fetchSongs = () => dispatch => (
     )
 ) 
 
-export const updateSong = song => dispatch => (
+export const updateSong = (song) => dispatch => (
     SongAPIUtil.updateSong(song).then((song) => dispatch(receiveSong(song)),
         err => (dispatch(receiveErrors(err.responseJSON)))
     )

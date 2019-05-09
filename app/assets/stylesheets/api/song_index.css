@@ -1,5 +1,6 @@
 .song-index-container{
-    width: 85%;
+    width: 80%;
+    max-width: 1280px;
     background: white;
     display: flex;
     margin: 0 auto;
@@ -9,7 +10,7 @@
 }
 
 .song-index-container-2{
-    width: 91%;
+    width: 87%;
     margin: 0 auto;
     display: flex;
 }
@@ -56,7 +57,7 @@
 }
 
 .song-item{
-    padding: 40px;
+    padding: 30px;
 }
 
 .song-idx-images{

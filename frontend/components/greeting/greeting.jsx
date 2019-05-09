@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { login, logout, signup} from '../../actions/session_actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {withRouter} from 'react-router';
 
 
 class Greeting extends React.Component {
@@ -19,6 +20,8 @@ class Greeting extends React.Component {
                 dropdown.className =  "dropDownShow-hidden"
             }
         });
+
+        this.goHome=this.goHome.bind(this);
     }
 
     togglemenu() {
@@ -29,6 +32,11 @@ class Greeting extends React.Component {
         else { 
             x.className="dropDownShow-hidden"
         }
+    }
+
+    goHome() {
+        this.props.logout()
+        this.props.history.push("/")
     }
 
     render() {
@@ -43,7 +51,7 @@ class Greeting extends React.Component {
 
 
                         <div className='rightnavbar'>
-                            <div className="splash-loginbuttons">
+                            <div className="greeting-loginbuttons">
                                 <button onClick={() => this.props.openModal('login')} className="splash-loginbutton">Sign In</button>
                                 <button onClick={() => this.props.openModal('signup')} className="splash-createaccountbutton">Create account</button>
                             </div>
@@ -77,7 +85,7 @@ class Greeting extends React.Component {
                             <div className="dropdown-container">
                                 <div id="DropDownTwo" className="dropDownShow-hidden" onClick={this.togglemenu}><FontAwesomeIcon icon="ellipsis-h" size="lg" />
                                     <ul>
-                                        <li className="dropdownitem"> <button onClick={this.props.logout} className="logout-button"> Sign Out</button> </li>
+                                        <li className="dropdownitem"> <button onClick={this.goHome} className="logout-button"> Sign Out</button> </li>
                                     </ul>
                                 </div>
                             </div>
@@ -93,4 +101,4 @@ class Greeting extends React.Component {
     };
 };
 
-export default Greeting;
+export default withRouter(Greeting);

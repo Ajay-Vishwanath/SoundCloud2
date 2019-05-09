@@ -22,7 +22,7 @@ export const createSong = song => (
     })
 );
 
-export const updateSong = song => (
+export const updateSong = (song) => (
     $.ajax({
         method: 'patch',
         url: `/api/songs/${song.id}`,

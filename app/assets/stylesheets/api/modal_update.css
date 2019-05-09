@@ -1,0 +1,148 @@
+.modal-background-edit {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background-color: rgba(242, 242, 242, 0.8);
+   z-index: 200;
+   -webkit-animation: fadeIn 0.4s;
+   animation: fadeIn 0.5s
+ }
+
+ .modal-child-edit{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 40%;
+    max-width: 1280px;
+    height: 55%;
+   transform: translate(-50%, -50%);
+   -webkit-animation: scrollDown 0.4s;
+   animation: scrollDown 0.5s;
+ }
+
+ .close-x {
+   font-family: 'Lucida Grande';
+   font-size: 22px;
+   position: absolute;
+   top: 20px;
+   right: 25px;
+   cursor: pointer;
+   z-index: 200;
+ }
+
+ .container-edit-main-upload{
+    background: white;
+    display: flex;
+    width: 100%;
+    height: 95%;
+    max-width: 1280px;
+    /* height: 767px; */
+    margin: 0 auto; 
+    justify-content: center;
+}
+
+.upload-form-box-edit {
+    width: 100%;
+    height: 100%;
+    display: inline;  
+    padding: 20px 20px 0px 20px;
+    border: 1px solid #f2f2f2;
+    justify-content: space-between;
+
+}
+
+.edit-container{
+  height: 100%;
+}
+
+.formuploadbox-edit{
+} 
+
+.form-elements-edit{
+    height: 100%;
+    border-top: 1px solid #ff5500;
+    display: flex;
+}
+
+.form-elements-edit{
+    height: 100%;
+    border-top: 1px solid #ff5500;
+}
+
+.left-upload-edit{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    display: block;
+    padding: 25px;  
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+.right-upload-edit{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    padding: 25px 25px 25px 40px;
+    /* justify-content: center; */
+}
+
+.right-upload-edit *{
+    font-size: 12px;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+#genre-container-edit{
+    padding: 30px 10px 20px 0px;
+}
+
+#genre-edit{
+    width: 50%;
+    margin: 4px auto;
+    padding: 4px;
+    font-size: 14px;
+}
+
+ @keyframes scrollDown {
+  from {
+    margin-top: -200%
+  }
+
+  to {
+    margin-top: 0%
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@-webkit-keyframes scrollDown {
+  from {
+    margin-top: -200%
+  }
+
+  to {
+    margin-top: 5%
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 2
+  }
+}

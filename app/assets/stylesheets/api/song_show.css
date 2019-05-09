@@ -1,15 +1,123 @@
 .song-show-container{
-    width: 85%;
+    width: 80%;
+    max-width: 1280px;
     background: white;
     display: flex;
     margin: 0 auto;
     padding-top: 50px;
-    padding-bottom: 50px;
     flex-direction: column;
 }
 
-.song-show-container-2{
-    width: 88%;
-    margin: 0 auto;
-    display: flex;
+.song-banner{
+       height: 342px;
+       position: relative;
+       display: flex;
 }
+
+.song-banner-contents{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    overflow: hidden;
+    z-index: 100;
+}
+.song-banner-left{
+    align-self: left;
+    width: 50%;
+    overflow: hidden;
+}
+
+.show-play-button{
+    height: 60px;
+    width: 60px;
+}
+
+.song-banner-info{
+    display: flex;
+    padding-left: 50px;
+    padding-top: 25px;
+}
+
+.showsonginfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.songshowgenre{
+    margin-top: 25px;
+    align-self: right;
+    width: max-content;
+    padding: 0 7px;
+    text-align: right;
+    display: inline-block;
+    height: 20px;
+    background: #999;
+    border: 1px solid #999;
+    color: #fff;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    border-radius: 14px;
+}
+
+.songbannermiddle{
+    width: 22%;
+    text-align: right;
+    align-items: right;
+}
+
+.song-photo-container{
+    display: flex;
+    flex-direction: column;
+    align-self: right;
+    width: 28%;
+    justify-content: center;
+    
+}
+#song-show-image{
+    /* position: absolute; */
+    margin: 0 auto;
+    right: 20px;
+    z-index: 1;
+    height: 90%;
+    width: 90%;
+}
+
+.show-artist-link{
+    font-size: 16px/1.4;
+    font-family: "Interstate", "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    text-decoration: none;
+    color: #ccc;
+    background-color: rgba(0,0,0,.8);
+    padding: 2px 7px 3px;
+    margin: 0 0 7px;
+    width: max-content;
+}
+
+#show-song-name{
+    font-size: 24px;
+    font-family: "Interstate", "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #ffffff;
+    background-color: rgba(0,0,0,.8);
+    padding: 4px 7px;
+    width: max-content;
+
+}
+
+#banner-show-image {
+object-fit: none; 
+object-position: 100% 0;
+  /* width: 100%; */
+  /* height: 100%; */
+  overflow: hidden;
+  filter: brightness(120%);
+  z-index: 0;
+  text-indent: 0%;
+
+  /* align-self: flex-start; */
+}
+

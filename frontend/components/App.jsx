@@ -8,20 +8,24 @@ import {
 } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import Modal from './modal/modal'; 
+import UpdateModal from './modal/update_modal';
+import DeleteModal from './modal/delete_modal'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisH} from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisH, faCircleNotch} from '@fortawesome/free-solid-svg-icons'
 import UploadSongContainer from './song/upload_song_container'
 import SongIndexContainer from './song/index_song_container';
 import SongShowContainer from './song/song_show_container';
 
-library.add(faEllipsisH)
+library.add(faEllipsisH, faCircleNotch)
 
 const App = () => (
     <div className="full-page">
         <Modal />
+        <UpdateModal />
+        <DeleteModal />
     <main>
         <Switch> 
             <ProtectedRoute exact path='/upload' component={UploadSongContainer} />

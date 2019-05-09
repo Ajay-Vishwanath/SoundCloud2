@@ -12,13 +12,14 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 199;
 } 
 
 .functional-header {
     display: flex;
     flex-direction: row;
-    width: 85%;
+    width: 80%;
+    max-width: 1280px;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
@@ -96,14 +97,6 @@
   justify-content: center;
   box-sizing: border-box;
 }
-
-/* #DropDownTwo{
-    /* margin-right: 20px; */
-    display: flex;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 /* 
 #dropdowncontent {

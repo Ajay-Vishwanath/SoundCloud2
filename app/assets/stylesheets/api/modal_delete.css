@@ -1,4 +1,4 @@
- .modal-background {
+.modal-background-delete {
    position: fixed;
    top: 0;
    bottom: 0;
@@ -10,7 +10,7 @@
    animation: fadeIn 0.5s
  }
 
- .modal-child {
+ .modal-child-delete{
    position: absolute;
    top: 50%;
    left: 50%;
@@ -68,4 +68,3 @@
     opacity: 2
   }
 }
-
