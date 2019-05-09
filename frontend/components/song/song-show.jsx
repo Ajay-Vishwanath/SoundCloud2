@@ -6,6 +6,7 @@ class SongShow extends React.Component {
     constructor(props){
         super(props);
         
+        this.handlePlayPause = this.handlePlayPause.bind(this);
     }
 
 componentDidMount() {
@@ -32,6 +33,11 @@ userActions() {
         )}
     }
 
+handlePlayPause(e) {
+        e.preventDefault();
+        this.props.receivePlayerSong(this.props.song)
+    }
+
     render() {
         const {song, artist} = this.props;
         if (!song || !artist ) {
@@ -47,7 +53,9 @@ userActions() {
                             <div className="song-banner-contents">
                                     <div className="song-banner-left">
                                         <div className="song-banner-info">
-                                            <div className="show-play-button"></div>
+                                            <div className="show-play-button">
+                                                <button onClick={this.handlePlayPause}></button>
+                                            </div>
                                             <div className="showsonginfo">
                                             <a href="/#/upload" className="show-artist-link">{artist.username}</a>
                                             <span id="show-song-name">{song.title}</span>
