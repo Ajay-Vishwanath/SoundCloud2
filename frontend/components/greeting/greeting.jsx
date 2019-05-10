@@ -64,8 +64,7 @@ class Greeting extends React.Component {
                 <header className='full-header'>
                     <div className='functional-header'>
                         <div className='newsoundcloud2logo'>
-                            <img src={window.logo2url} id="soundcloud2logo" />
-                            {/* enter a link to the splash page here  */}
+                            <a href="/#/"><img src={window.logo2url} id="soundcloud2logo" /></a>
                         </div>
 
 
@@ -86,8 +85,7 @@ class Greeting extends React.Component {
                     <div className='functional-header'>
                         <div className="greeting-left">
                             <div className='newsoundcloud2logo'>
-                                <img src={window.logo2url} id="soundcloud2logo"/>
-                                {/* enter a link to the splash page here  */}
+                                <a href="/#/discover" className="home-button"><img src={window.logo2url} id="soundcloud2logo" /></a>
                             </div>
 
                             <div className="home-button-div">

@@ -31,7 +31,13 @@ userActions() {
                 <button onClick={() => this.props.openModal('editpost')}><FontAwesomeIcon icon="pencil-alt"/> Edit</button>
                 <button onClick={() => this.props.openModal('deletepost')}><FontAwesomeIcon icon="trash" /> Delete track</button>
             </div>
-        )}
+        )
+        } else {
+            return (
+                <div className="userOptions">
+                </div>
+            )
+        }
     }
 
 handlePlayPause(e) {
@@ -44,7 +50,7 @@ handlePlayPause(e) {
         if (!song || !artist ) {
             return null;
         }
-    
+
         return(
         <div className="full-show-page">
             <GreetingContainer/>

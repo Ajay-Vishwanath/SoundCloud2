@@ -15,7 +15,7 @@ class Splash extends React.Component {
     }
 
     render() {
-        const selects = [8, 10, 11, 15, 16, 19, 21, 22]
+        const selects = [8, 10, 11, 12, 15, 20, 21, 22]
         const select_array = this.props.songs.filter(song => {
             return (selects.includes(song.id))
         });
