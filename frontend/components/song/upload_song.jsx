@@ -37,7 +37,7 @@ class UploadSong extends React.Component {
             formData.append('song[photo]', this.state.photoFile);
         }
         if (this.state.audioFile) {
-            formData.append('song[audio_file]', this.state.audioFil gite);
+            formData.append('song[audio_file]', this.state.audioFile);
         }
         this.setState({
             loading: true

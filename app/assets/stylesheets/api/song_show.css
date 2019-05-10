@@ -57,6 +57,20 @@
  
 }
 
+.pause-button-show{
+    border-color: transparent;
+    background-color: transparent;
+    border-style: none;
+    border-width: 0;
+    padding: 0;
+    cursor: pointer;     
+    outline: none;   
+}
+
+.pause-button-show:hover{
+    filter: brightness(95%); 
+}
+
 .song-banner-info{
     display: flex;
     padding-left: 30px;

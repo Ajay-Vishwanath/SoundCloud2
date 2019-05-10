@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react';  
 import GreetingContainer from '../greeting/greeting_container'
 import withRouter from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -51,6 +51,12 @@ handlePlayPause(e) {
             return null;
         }
 
+        const button = (this.props.player === "playing" && this.props.song.id === this.props.currentSong.id) ?
+            (<button onClick={this.handlePlayPause} className="pause-button-show">  <img src={window.pausebuttonurl} className="play-button-show-image" /> </button>) 
+            : (<button onClick={this.handlePlayPause} className="play-button-show">  <img src={window.playbuttonurl} className="play-button-show-image" /> </button>
+        )
+
+
         return(
         <div className="full-show-page">
             <GreetingContainer/>
@@ -61,8 +67,7 @@ handlePlayPause(e) {
                                     <div className="song-banner-left">
                                         <div className="song-banner-info">
                                             <div className="show-play-button">
-                                            <button onClick={this.handlePlayPause} className="play-button-show">  <img src={window.playbuttonurl} className="play-button-show-image"/>
-                                            </button>
+                                            {button}
                                             </div>
                                             <div className="showsonginfo">
                                             <a href="/#/upload" className="show-artist-link">{artist.username}</a>

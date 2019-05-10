@@ -37,7 +37,6 @@ import merge from 'lodash/merge';
                         );
                         return newState;
                     } else {
-                        debugger 
                         audio.play();
                          newState = merge(
                             {},
@@ -48,7 +47,9 @@ import merge from 'lodash/merge';
                     }
                 }
             case TOGGLE_PLAY_PAUSE: {
+                const audio = document.getElementById("playbar-audio-player")
                 if (state.player === "playing") {
+                    audio.pause();
                     newState = merge(
                         {},
                     state, 
@@ -56,9 +57,10 @@ import merge from 'lodash/merge';
                     )
                     return newState;
                 } else {
-                    newState = (
+                    audio.play();
+                    newState = merge(
+                        {},
                     state,
-                    {},
                     {player: "playing"}
                     )
                     return newState; 

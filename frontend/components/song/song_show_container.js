@@ -18,7 +18,9 @@ const mapStateToProps = (state, ownProps) => {
     users: state.entities.users, 
     song: song,
     artist: artist,
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    currentSong: state.ui.playbar.currentSong,
+    player: state.ui.playbar.player 
     }
 }
 
@@ -29,6 +31,7 @@ const mapDispatchToProps = (dispatch) => ({
     updateSong: (song) => dispatch(updateSong(song)),
     openModal: modal => dispatch(openModal(modal)),
     receivePlayerSong: (song) => dispatch(receivePlayerSong(song))
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongShow);

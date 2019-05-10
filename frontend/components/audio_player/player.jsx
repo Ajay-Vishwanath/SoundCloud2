@@ -7,13 +7,6 @@ class Playbar extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            currentSong: this.props.currentSong,
-            player: this.props.player,
-            currentTime: this.props.currentTime,
-            duration: this.props.duration 
-        }
-
         this.getTime = this.getTime.bind(this);
         this.toggleplay = this.toggleplay.bind(this);
     }
@@ -39,9 +32,9 @@ class Playbar extends React.Component {
     }
 
     toggleplay() {
-        if (!this.state.currentSong) {
+        if (!this.props.currentSong) {
             return null;
-        } else if (this.state.player === "playing") {
+        } else if (this.props.player === "playing") {
             this.audio.pause();
             this.props.togglePlayPause();
         } else {
@@ -52,13 +45,14 @@ class Playbar extends React.Component {
 
     render () {
         
-        const currentTime = this.getTime(this.state.currentTime)
-        const duration = this.getTime(this.state.duration)
+        const currentTime = this.getTime(this.props.currentTime)
+        const duration = this.getTime(this.props.duration)
 
-        // if (!this.props.currentSong) {
-        //     return null
-        // };
-
+       const playPause = (this.props.player === "playing") ? 
+            (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="pause" color="black"/></button>) :
+            (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="play" color="black" /></button>
+            );
+        
         return(
             <div className="playbar-full">
                 <div className='playbar-contents'>
@@ -68,8 +62,7 @@ class Playbar extends React.Component {
                     <div className="playbar-left">
                         <div className="playbar-buttons">
                             <div className="rewindButton"></div>
-                            <button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="play" color="black" >
-                            </FontAwesomeIcon></button>
+                                {playPause}
                             <div className="fastforwardButton"></div>
                             {/* <p className="playbar-current-time">{currentTime}</p> */}
                         </div>

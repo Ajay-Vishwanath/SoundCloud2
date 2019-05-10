@@ -42,7 +42,7 @@ class EditSong extends React.Component {
         this.setState({
             loading: true
         });
-        this.props.updateSong(this.state).then(this.props.closeModal), err => (this.setState({
+        this.props.updateSong(this.state).then(this.props.history.push(`/songs/${this.props.song.id}`)), err => (this.setState({
             loading: false
         }));
     }
