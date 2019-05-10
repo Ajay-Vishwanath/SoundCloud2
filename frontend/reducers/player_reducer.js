@@ -14,36 +14,35 @@ import merge from 'lodash/merge';
         Object.freeze(state)
         let newState;
         switch (action.type) {
-            case RECEIVE_PLAYER_SONG:
+                case RECEIVE_PLAYER_SONG:
                 const audio = document.getElementById("playbar-audio-player")
-                if (!state.currentSong || (state.currentSong && state.currentSong !== action.song)) {
+                if (!state.currentSong || (state.currentSong && state.currentSong.id !== action.song.id)) {
                     audio.src=action.song.audioFileUrl;
                     audio.play();
-                    newState = merge( 
-                        state,
-                        {},
+                    return (
                         {currentSong: action.song,
                         player: "playing",
                         currentTime: 0,
                         duration: 0,
                         }
                     );
-                    return newState;
-                } else if (state.currentSong && state.currentSong === action.song) {
+                    
+                } else if ((state.currentSong) && (state.currentSong.id === action.song.id)) {
                     if (state.player === "playing") {
                         audio.pause();
                         newState = merge(
+                            {},
                         state,
-                        {},
-                        {[player]:"stopped"}
+                        {player:"stopped"}
                         );
                         return newState;
                     } else {
+                        debugger 
                         audio.play();
-                        newState = merge(
+                         newState = merge(
+                            {},
                         state, 
-                        {},
-                        {[player]: "playing"}
+                        {player: "playing"}
                         )
                         return newState;
                     }
@@ -51,16 +50,16 @@ import merge from 'lodash/merge';
             case TOGGLE_PLAY_PAUSE: {
                 if (state.player === "playing") {
                     newState = merge(
+                        {},
                     state, 
-                    {},
-                    {[player]: "stopped"}
+                    {player: "stopped"}
                     )
                     return newState;
                 } else {
                     newState = (
                     state,
                     {},
-                    {[player]: "playing"}
+                    {player: "playing"}
                     )
                     return newState; 
                 }

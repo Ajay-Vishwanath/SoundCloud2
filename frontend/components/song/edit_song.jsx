@@ -22,6 +22,7 @@ class EditSong extends React.Component {
 
     componentDidMount() {
         this.props.clearSongErrors();
+        // this.props.fetchSong(this.props.match.params.songId)
     }
 
     update(field) {
@@ -121,7 +122,6 @@ class EditSong extends React.Component {
 
                                 </div>
                             </div>
-
                             {loading}
                         </form>
                     </div>

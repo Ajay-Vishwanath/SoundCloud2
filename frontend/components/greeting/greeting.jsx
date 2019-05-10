@@ -9,29 +9,48 @@ class Greeting extends React.Component {
 
     constructor(props) {
         super(props)
-        this.state = {
-            dropDownMenuOne: false,
-            dropDownMenuTwo: false 
-        }
 
-        window.addEventListener('click', (e) => {
-            const dropdown = document.getElementById("DropDownTwo");
-            if (dropdown.className === ("dropDownShow") && (!(e.target.matches("DropDownTwo") || !(e.target.matches("svg-inline--fa fa-ellipsis-h fa-w-16 fa-lg "))))){
-                dropdown.className =  "dropDownShow-hidden"
-            }
-        });
+        this.dropDownMenuOne = false
+        this.dropDownMenuTwo = false 
 
         this.goHome=this.goHome.bind(this);
+        this.togglemenutwo=this.togglemenutwo.bind(this);
+        this.closeMenu=this.closeMenu.bind(this);
     }
 
-    togglemenu() {
-        let x = document.getElementById("DropDownTwo");
-        if (x.className.indexOf("dropDownShow") !== -1) {
-            x.className = "dropDownShow";
+    // componentDidMount() {
+    //     document.addEventListener("click", this.closeMenu)
+    // }
+
+    componentWillUnmount() {
+        document.removeEventListener("click", this.closeMenu)
+    }
+
+    closeMenu(e) {
+        if (this.dropDownMenuTwo === true) {
+            this.togglemenutwo(e)
         }
-        else { 
-            x.className="dropDownShow-hidden"
+    }
+
+    togglemenutwo(e) {
+
+        let dropdownmenuTwocontainer = document.getElementById("dropdown-container-two")
+        let dropdownmenuTwobutton = document.getElementById("DropDownTwo")
+        let dropdownmenuTwodropdown = document.getElementById("dropdowntwo-content")
+
+        
+        if (dropdownmenuTwobutton.classList.contains("clicked")) {
+            dropdownmenuTwocontainer.classList.remove("clicked");
+            dropdownmenuTwobutton.classList.remove("clicked");
+            dropdownmenuTwodropdown.classList.remove("show");
         }
+        else {
+            dropdownmenuTwocontainer.classList.add("clicked");
+            dropdownmenuTwobutton.classList.add("clicked");
+            dropdownmenuTwodropdown.classList.add("show");
+        } 
+
+        this.dropDownMenuTwo = (!this.dropDownMenuTwo)
     }
 
     goHome() {
@@ -82,11 +101,11 @@ class Greeting extends React.Component {
                                 <a href="/#/upload" className="upload-button">Upload</a>
                             </div>
 
-                            <div className="dropdown-container">
-                                <div id="DropDownTwo" className="dropDownShow-hidden" onClick={this.togglemenu}><FontAwesomeIcon icon="ellipsis-h" size="lg" />
-                                    <ul>
-                                        <li className="dropdownitem"> <button onClick={this.goHome} className="logout-button"> Sign Out</button> </li>
-                                    </ul>
+                            <div className="dropdown-container-two" id="dropdown-container-two">
+                                <button id="DropDownTwo" className="dropDownTwoContent" onClick={this.togglemenutwo}>
+                                <FontAwesomeIcon icon="ellipsis-h" size="lg" className="fontawesomemenuicon"/></button> 
+                                <div className="dropdowntwo-content" id="dropdowntwo-content">
+                                    <button onClick={this.goHome} className="logout-button" id="buttontwo"> Sign Out</button> 
                                 </div>
                             </div>
                         </div>

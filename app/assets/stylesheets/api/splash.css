@@ -6,7 +6,9 @@
 .splash-background {
   width: 80%;
   max-width: 1280px;
+  padding-bottom: 50px;
   margin: 0 auto;
+  background: white;
 }
 .splash-banner {
   border-top:5px solid #FF5000;
@@ -16,6 +18,17 @@
   justify-content: center;
   height: 450px;
   /* background-image: url('../../images/idk.jpg') */
+}
+
+.frontIndex-Header{
+    margin: 0 auto;
+    font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+    font-weight: 100;
+    -webkit-font-smoothing: antialiased;
+    padding-top: 60px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #333;
 }
 
 
@@ -163,3 +176,26 @@
   background-color: pink;
 }
 
+.frontContent {
+  text-align: center;
+}
+
+.full-song-index-splash{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    padding: 30px 0 0 0;
+    justify-content: center;
+}
+
+.full-song-list-splash{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+.full-song-list-splash img {
+  height: 180px;
+  width: 180px;
+}

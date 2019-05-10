@@ -67,9 +67,11 @@ class Playbar extends React.Component {
                     </audio>
                     <div className="playbar-left">
                         <div className="playbar-buttons">
+                            <div className="rewindButton"></div>
                             <button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="play" color="black" >
                             </FontAwesomeIcon></button>
-                            <p className="playbar-current-time">{currentTime}</p>
+                            <div className="fastforwardButton"></div>
+                            {/* <p className="playbar-current-time">{currentTime}</p> */}
                         </div>
                     </div>
                     <div className="playbar-middle">
@@ -80,7 +82,7 @@ class Playbar extends React.Component {
             
 
 
-            <p className="playbar-song-duration">{duration}w</p>
+            {/* <p className="playbar-song-duration">{duration}w</p> */}
             </div>
         )
     }

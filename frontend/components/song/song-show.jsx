@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container'
 import withRouter from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class SongShow extends React.Component {
     constructor(props){
@@ -27,8 +28,8 @@ userActions() {
     else if (this.props.song.artist_id === this.props.currentUser.id){
         return (
             <div className="userOptions">
-                <button onClick={() => this.props.openModal('editpost')}></button>
-                <button onClick={() => this.props.openModal('deletepost')}></button>
+                <button onClick={() => this.props.openModal('editpost')}><FontAwesomeIcon icon="pencil-alt"/> Edit</button>
+                <button onClick={() => this.props.openModal('deletepost')}><FontAwesomeIcon icon="trash" /> Delete track</button>
             </div>
         )}
     }
@@ -54,7 +55,8 @@ handlePlayPause(e) {
                                     <div className="song-banner-left">
                                         <div className="song-banner-info">
                                             <div className="show-play-button">
-                                                <button onClick={this.handlePlayPause}></button>
+                                            <button onClick={this.handlePlayPause} className="play-button-show">  <img src={window.playbuttonurl} className="play-button-show-image"/>
+                                            </button>
                                             </div>
                                             <div className="showsonginfo">
                                             <a href="/#/upload" className="show-artist-link">{artist.username}</a>

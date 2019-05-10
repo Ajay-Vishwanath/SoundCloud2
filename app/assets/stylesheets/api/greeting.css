@@ -88,14 +88,66 @@
   display: flex;
 }
 
-
-.dropdown-container{
-  width: 46px;
-  text-align: center;
+.dropdown-container-two{
+  width: 45px;
+  height: 50px;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
+}
+
+.dropdown-container-two.clicked{
+    background-color: #111;
+}
+
+.dropdown-container-two > .dropDownTwoContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border: none;
+  color: #ccc;
+  background: transparent;
+}
+
+.dropdown-container-two > .dropDownTwoContent.clicked{
+  /* background-color: #111; */
+} 
+
+
+#DropDownTwo{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.dropdown-container-two .dropdowntwo-content{
+  display: none;
+  height: auto;
+  position: absolute;
+  z-index: 1  ;
+  right: 0;
+  top: 50px;
+}
+
+.dropdown-container-two .dropdowntwo-content.show{
+  display: block;
+}
+
+.logout-button {
+  width: 140px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  align-self: left; 
+  background-color: #111;
+  border: none;
+  color: #ccc;
+}
+
+
+.logout-button:hover {
+
 }
 
 /* 
@@ -109,56 +161,6 @@
 } */
 
 
-.dropDownShow ul li {
-  display: flex;
-  padding: 0;
-  width: 120px;
-}
-
-
-/* #DropDownTwo{
-  height: 50px;
-  width: 50px;
-  z-index: 3;
-} */
-
-.dropDownShow{
-  background: #111;
-}
-
-.dropDownShow ul li:hover {
-  background-color: #333;
-}
-
-.dropDownShow ul li button {
-  text-align: left;
-  font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
-  align-self: left;
-  display: block;
-  width: 100%;
-  background-color: #111;
-  border: none;
-  color: #ccc;
-}
-
-.dropDownShow ul {
-  /* right: 106px; */
-  list-style: none;
-  padding: 0;
-  /* position: absolute; */
-  top: 36px;
-  flex-direction: column;
-  background-color: #111;
-}
-
-
-.dropDownShow-hidden:hover{
-  cursor: pointer;
-}
-
-.dropDownShow-hidden ul {
-  display: none;
-}
 
 
 

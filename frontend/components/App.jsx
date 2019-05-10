@@ -14,13 +14,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisH, faCircleNotch, faPlay} from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisH, faCircleNotch, faPlay, faPencilAlt, faTrash} from '@fortawesome/free-solid-svg-icons'
 import UploadSongContainer from './song/upload_song_container'
 import SongIndexContainer from './song/index_song_container';
 import SongShowContainer from './song/song_show_container';
 import Playbar from './audio_player/player_container';
 
-library.add(faEllipsisH, faCircleNotch, faPlay)
+library.add(faEllipsisH, faCircleNotch, faPlay, faPencilAlt, faTrash)
 
 const App = () => (
     <div className="full-page">

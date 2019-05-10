@@ -3,12 +3,21 @@ import EditSong from './edit_song';
 import {fetchSong, updateSong } from '../../actions/song_actions';
 import { clearSongErrors} from '../../actions/song_actions'
 import { closeModal } from '../../actions/modal_actions';
-import {withRouter} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import {matchPath} from 'react-router';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => { 
+        const match = matchPath(ownProps.history.location.pathname, {
+            path: '/songs/:songId',
+            exact: true,
+            strict: false
+        })
     return{
     errors: state.errors.song,
-    song: Object.values(state.entities.songs)[0]
+    // songs: state.entities.songs
+    song: state.entities.songs[match.params.songId]
+    // song: state.entities.songs[ownProps.match.params.songId]
+
 }};
 
 const mapDispatchToProps = dispatch => ({
@@ -18,7 +27,7 @@ const mapDispatchToProps = dispatch => ({
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(EditSong)
+)(EditSong))

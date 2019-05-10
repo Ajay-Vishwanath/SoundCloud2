@@ -14,9 +14,8 @@
    position: absolute;
    top: 50%;
    left: 50%;
-   width: 40%;
+   width: 50%;
     max-width: 1280px;
-    height: 55%;
    transform: translate(-50%, -50%);
    -webkit-animation: scrollDown 0.4s;
    animation: scrollDown 0.5s;
@@ -47,7 +46,7 @@
     width: 100%;
     height: 100%;
     display: inline;  
-    padding: 20px 20px 0px 20px;
+    padding: 20px;
     border: 1px solid #f2f2f2;
     justify-content: space-between;
 
@@ -55,6 +54,7 @@
 
 .edit-container{
   height: 100%;
+  width: 100%
 }
 
 .formuploadbox-edit{
@@ -66,15 +66,10 @@
     display: flex;
 }
 
-.form-elements-edit{
-    height: 100%;
-    border-top: 1px solid #ff5500;
-}
-
 .left-upload-edit{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 35%;
     display: block;
     padding: 25px;  
     font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
@@ -83,7 +78,7 @@
 }
 
 .right-upload-edit{
-    width: 70%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     /* justify-content: space-around; */

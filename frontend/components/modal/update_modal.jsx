@@ -11,7 +11,7 @@ function updateModal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'editpost':
-            component = <EditPostContainer />;
+            component = <EditPostContainer/>;
             break;
         default:
             return null;

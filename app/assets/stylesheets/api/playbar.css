@@ -1,0 +1,49 @@
+.playbar-full{
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #f2f2f2;
+    border-top: 1px solid #cecece;
+    position: fixed;    
+}
+
+.playbar-contents{
+    height: 100%;
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto; 
+    display: flex;
+    vertical-align: center;       
+}
+
+.playbar-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 10%;
+}
+.playbar-buttons{
+    height: 100%;
+    display: flex;
+}
+
+.rewindButton{
+    width: 33%;
+}
+
+.play-button{
+    width: 34%;
+    border: 0;      
+    text-shadow: none;
+    color: transparent;
+    padding: none;
+    background: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.fastforwardButton{
+    width: 33%
+}

@@ -74,6 +74,8 @@
 
 .index-song-title{
     font-family: "Interstate", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+    max-width: 200px;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     font-size: 14px;
     margin: 0;

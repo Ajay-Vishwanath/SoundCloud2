@@ -1,15 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import SongIndexItem from '../../components/song/index_song_item';
 
 class Splash extends React.Component {
 
     constructor(props) {
         super(props)
+
+    }
+
+    componentDidMount() {
+        this.props.fetchSongs();
     }
 
     render() {
-    
+        const selects = [8, 10, 11, 15, 16, 19, 21, 22]
+        const select_array = this.props.songs.filter(song => {
+            return (selects.includes(song.id))
+        });
+
+        const songs = select_array.map(song => {
+            return <SongIndexItem key={song.id} song={song} />
+        });
+
         const splashLoggedIn = () => {
             return(
             <>
@@ -22,6 +36,7 @@ class Splash extends React.Component {
         };
 
         const splashLoggedOut = () => {
+
             return(
             <div>
                 <div className="splash-background">
@@ -52,6 +67,16 @@ class Splash extends React.Component {
                         </div>
 
                         <img src={window.idk2url} id="splash-image" /> 
+                    </div>
+                    <div>
+                        <div className="frontContent">
+                            <h2 className="frontIndex-Header">Hear what's trending for free in the SoundCloud2 community</h2>
+                            <div className="full-song-inde-splash">
+                                <ul className="full-song-list-splash">
+                                    {songs}
+                                </ul>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>
