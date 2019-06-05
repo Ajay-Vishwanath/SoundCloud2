@@ -12,7 +12,7 @@ const SongIndexItem = props => {
     const handlePlayPause = (e) => {
         e.preventDefault();
 
-        {receivePlayerSong({song})} 
+        {receivePlayerSong({song}.song)} 
     }
 
     const button = (player === "playing" && song.id === currentSong.id) ?

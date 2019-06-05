@@ -79,8 +79,8 @@
 
 .index-song-image-container:hover .index-play-button{
     display: block; 
-    -webkit-animation: fadeIn 0.5s;
-    animation: fadeIn 0.5s;
+    -webkit-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s;
 }
 
 @-webkit-keyframes fadeIn {
