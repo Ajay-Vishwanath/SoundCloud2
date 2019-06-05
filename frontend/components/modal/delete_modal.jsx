@@ -1,8 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import deleteContainer from '../song/delete_song_container'
-import { withRouter } from 'react-router-dom'
+import DeleteContainer from '../song/delete_song_container';
+import { withRouter } from 'react-router-dom';
 
 function deleteModal({ modal, closeModal }) {
     if (!modal) {
@@ -11,7 +11,7 @@ function deleteModal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'deletepost':
-            component = <deleteContainer />;
+            component = <DeleteContainer />;
             break;
         default:
             return null;

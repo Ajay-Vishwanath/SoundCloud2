@@ -14,20 +14,73 @@
    position: absolute;
    top: 50%;
    left: 50%;
+   width: 50%;
+    max-width: 550px;
    transform: translate(-50%, -50%);
    -webkit-animation: scrollDown 0.4s;
-   animation: scrollDown 0.5s
+   animation: scrollDown 0.5s;
  }
 
  .close-x {
    font-family: 'Lucida Grande';
    font-size: 22px;
    position: absolute;
-   top: 20px;
+   top: 10px;
    right: 25px;
    cursor: pointer;
    z-index: 200;
  }
+
+.delete-container{
+  height: 100%;
+  width: 100%
+}
+
+.container-delete-song{
+    background: white;
+    display: flex;
+    width: 100%;
+    height: 95%;
+    max-width: 1280px;
+    /* height: 767px; */
+    margin: 0 auto; 
+    justify-content: center;
+}
+
+.delete-song-box {
+    width: 100%;
+    height: 100%;
+    display: inline;  
+    padding: 10px 20px 10px 20px;
+    border: 1px solid #f2f2f2;
+    justify-content: space-between;
+
+}
+
+.lower-delete-box{
+    padding: 0px 6px 0px 6px;
+    border: 1px solid #f2f2f2;
+}
+
+#delete-song {
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: bold; 
+  font-size: 16px; 
+}
+
+#delete-song-text{
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: lighter; 
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+#delete-buttons{
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+  font-weight: lighter; 
+  font-size: 12px;
+  padding: 0x; 
+}
 
  @keyframes scrollDown {
   from {

@@ -8,6 +8,12 @@ class SongIndex extends React.Component {
         this.props.fetchSongs();
     }
 
+    componentDidUpdate(prevProps) {
+        if (this.props.location !== prevProps.location) {
+            this.props.fetchSongs(); 
+        }
+    }
+
     render() {
         const songs = this.props.songs.reverse().map(song => {
             // // const users = this.props.users 

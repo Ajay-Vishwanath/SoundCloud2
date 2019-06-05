@@ -1,8 +1,12 @@
 import { connect } from 'react-redux';
 import DeleteSong from './delete_song';
 import { fetchSong, removeSong } from '../../actions/song_actions';
+import { clearSongErrors } from '../../actions/song_actions'
+import { closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
+import { matchPath } from 'react-router';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     const match = matchPath(ownProps.history.location.pathname, {
         path: '/songs/:songId',
         exact: true,
@@ -18,11 +22,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => ({
     fetchSong: (id) => dispatch(fetchSong(id)),
     clearSongErrors: () => dispatch(clearSongErrors()),
-    deleteSong: (id) => dispatch(removeSong(id)),
+    removeSong: (id) => dispatch(removeSong(id)),
     closeModal: () => dispatch(closeModal())
 });
 
-export default connect(
+export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(DeleteSong);
+)(DeleteSong));

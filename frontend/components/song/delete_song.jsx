@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class DeleteSong extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class DeleteSong extends React.Component {
         }
 
         this.handleDelete = this.handleDelete.bind(this);
+        this.goHome = this.goHome.bind(this); 
     }
 
     componentDidMount() {
@@ -17,11 +19,14 @@ class DeleteSong extends React.Component {
 
 
     handleDelete() {
-        this.props.deleteSong(this.props.songId)
-        this.setState({
-            deleted: 'true'
-        })
+        this.props.removeSong(this.props.songId)
+        this.goHome(); 
     }
+
+    goHome() {
+        this.props.history.push("/discover");
+    }
+
 
     renderErrors() {
         return (
@@ -42,15 +47,30 @@ class DeleteSong extends React.Component {
                 <FontAwesomeIcon icon="circle-notch" size="lg" color="black" className="spinner" />
             </div>) :
             (<div className="form-buttons">
-                <button id="cancel">Cancel</button>
-                <button type="submit" id="save" onSubmit={this.handleSubmit}>Save</button>
+                <button id="cancel" onClick={this.props.closeModal}>Cancel</button>
+                <button id="save" onClick={this.handleDelete}>Delete Forever</button>
             </div>);
 
         return (
             <div className="delete-container">
                 <div className="container-delete-song">
                     <div className="delete-song-box">
-                            {loading}
+                        <div className="upper-delete-box">
+
+                        </div>
+                        <div className="lower-delete-box">
+                            <p id="delete-song"> Permanently Delete This Track?</p>
+                            <p id="delete-song-text"> 
+                                Removing this track is irreversible. You will lose all data associated with this track and no way to get it back.
+                            </p>
+                            <div id="delete-buttons">
+                                {loading}
+                            </div>
+                            <div className="formerrors">
+                                {this.renderErrors()}
+                            </div>
+                        </div>
+                            
                     </div>
                 </div>
             </div>
@@ -58,4 +78,4 @@ class DeleteSong extends React.Component {
     }
 }
 
-export default DeleteSong;
+export default withRouter(DeleteSong);
