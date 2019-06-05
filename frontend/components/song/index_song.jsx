@@ -18,7 +18,8 @@ class SongIndex extends React.Component {
         const songs = this.props.songs.reverse().map(song => {
             // // const users = this.props.users 
             // user = users[song.artistId]
-            return <SongIndexItem key={song.id} song={song}/>
+            return <SongIndexItem key={song.id} song={song} player={this.props.player} 
+            receivePlayerSong={this.props.receivePlayerSong} currentSong={this.props.currentSong}/>
         });
 
         return(
