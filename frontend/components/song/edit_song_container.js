@@ -7,7 +7,6 @@ import {withRouter} from 'react-router-dom';
 import {matchPath} from 'react-router';
 
 const mapStateToProps = (state, ownProps) => { 
-    debugger 
         const match = matchPath(ownProps.history.location.pathname, {
             path: '/songs/:songId',
             exact: true,
