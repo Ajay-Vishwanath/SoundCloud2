@@ -6,6 +6,7 @@ import SongShow from './song-show';
 import {receivePlayerSong} from '../../actions/player_action';
 
 const mapStateToProps = (state, ownProps) => {
+    debugger 
     const song = state.entities.songs[ownProps.match.params.songId]
     let artist
     if (!song) {
