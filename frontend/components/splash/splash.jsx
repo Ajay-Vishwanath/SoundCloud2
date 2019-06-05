@@ -21,7 +21,8 @@ class Splash extends React.Component {
         });
 
         const songs = select_array.map(song => {
-            return <SongIndexItem key={song.id} song={song} />
+            return <SongIndexItem key={song.id} song={song} player={this.props.player}
+                receivePlayerSong={this.props.receivePlayerSong} currentSong={this.props.currentSong}/>
         });
 
         const splashLoggedIn = () => {
