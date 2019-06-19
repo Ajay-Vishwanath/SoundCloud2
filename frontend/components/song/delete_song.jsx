@@ -10,7 +10,6 @@ class DeleteSong extends React.Component {
         }
 
         this.handleDelete = this.handleDelete.bind(this);
-        this.goHome = this.goHome.bind(this); 
     }
 
     componentDidMount() {
@@ -20,10 +19,6 @@ class DeleteSong extends React.Component {
 
     handleDelete() {
         this.props.removeSong(this.props.songId)
-        this.goHome(); 
-    }
-
-    goHome() {
         this.props.history.push("/discover");
     }
 

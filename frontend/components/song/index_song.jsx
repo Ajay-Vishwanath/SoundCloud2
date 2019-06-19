@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import SongIndexItem from './index_song_item';
+import { withRouter } from 'react-router-dom';
 
 class SongIndex extends React.Component {
 
@@ -9,7 +10,8 @@ class SongIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.location !== prevProps.location) {
+        debugger 
+        if (this.props.history.location.pathname !== prevProps.location.pathname) {
             this.props.fetchSongs(); 
         }
     }
@@ -49,4 +51,4 @@ class SongIndex extends React.Component {
     }
 }
 
-export default SongIndex; 
+export default withRouter(SongIndex); 
