@@ -61,11 +61,15 @@ class Playbar extends React.Component {
                     </audio>
                     <div className="playbar-left">
                         <div className="playbar-buttons">
-                            <div className="rewindButton"></div>
+                            <div className="rewindButton">
+                                <FontAwesomeIcon icon="step-backward" color="black" opacity=".2" className="rewind-button"/>
+                            </div>
                                 {playPause}
-                            <div className="fastforwardButton"></div>
-                            {/* <p className="playbar-current-time">{currentTime}</p> */}
+                            <div className="fastforwardButton">
+                                <FontAwesomeIcon icon="step-forward" color="black" opacity=".2" className="fastforward-button"/>
+                            </div>
                         </div>
+                        {/* <p className="playbar-current-time">{currentTime}</p> */}
                     </div>
                     <div className="playbar-middle">
                     </div>

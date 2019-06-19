@@ -10,7 +10,7 @@
 
 .playbar-contents{
     height: 100%;
-    width: 80%;
+    width: 85%;
     max-width: 1280px;
     margin: 0 auto; 
     display: flex;
@@ -26,14 +26,20 @@
 .playbar-buttons{
     height: 100%;
     display: flex;
+    align-items: center; 
 }
 
 .rewindButton{
-    width: 33%;
+    width: 24px;
+    margin: 0 0 0 12px;
+}
+
+.rewind-button{
+    float: left; 
 }
 
 .play-button{
-    width: 34%;
+    width: 24px;
     border: 0;      
     text-shadow: none;
     color: transparent;
@@ -42,8 +48,14 @@
     text-decoration: none;
     outline: none;
     cursor: pointer;
+    margin: 0 0 0 12px;
 }
 
 .fastforwardButton{
-    width: 33%
+    width: 24px;
+    margin: 0 0 0 12px;
+}
+
+.fastforward-button{
+    float: right;
 }
