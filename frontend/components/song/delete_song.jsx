@@ -16,10 +16,15 @@ class DeleteSong extends React.Component {
         this.props.clearSongErrors();
     }
 
+    componentDidUpdate() {
+        debugger 
+    }
+
 
     handleDelete() {
         this.props.removeSong(this.props.songId)
         this.props.history.push("/discover");
+        location.reload(); 
     }
 
 

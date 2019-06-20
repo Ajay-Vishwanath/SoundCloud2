@@ -68,8 +68,8 @@ class Playbar extends React.Component {
                             <div className="fastforwardButton">
                                 <FontAwesomeIcon icon="step-forward" color="black" opacity=".2" className="fastforward-button"/>
                             </div>
+                            <p className="playbar-current-time">{currentTime}</p>
                         </div>
-                        {/* <p className="playbar-current-time">{currentTime}</p> */}
                     </div>
                     <div className="playbar-middle">
                     </div>

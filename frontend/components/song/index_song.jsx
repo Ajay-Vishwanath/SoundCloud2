@@ -10,7 +10,6 @@ class SongIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger 
         if (this.props.history.location.pathname !== prevProps.location.pathname) {
             this.props.fetchSongs(); 
         }
