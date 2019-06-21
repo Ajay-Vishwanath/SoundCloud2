@@ -9,11 +9,13 @@ class Playbar extends React.Component {
 
         this.state = {
             currentTime: 0,
-            duration: 500
+            duration: 500,
+            ended: false 
         }
 
         this.getTime = this.getTime.bind(this);
         this.toggleplay = this.toggleplay.bind(this);
+        this.handleClick = this.handleClick.bind(this); 
     }
 
     componentDidMount() {
@@ -21,25 +23,39 @@ class Playbar extends React.Component {
         this.playbarAudio.addEventListener("timeupdate", e => {
              this.setState({
                  currentTime: e.target.currentTime,
-                 duration: e.target.duration
+                 duration: e.target.duration,
+                 ended: false 
              });
          });
     }
 
     componentDidUpdate() {
-        if ((this.props.currentSong) && this.state.currentTime === this.state.duration) {
-            debugger 
-            this.props.togglePlayPause();
+        var that = this 
+        if ((this.props.currentSong) && this.state.currentTime === this.state.duration && this.state.ended === false) {
             this.setState({
-                currentTime: 0,
-                duration: 500
+                ended: true 
             })
+            setTimeout(function(){
+                that.props.togglePlayPause() 
+                that.setState({
+                    currentTime: 0,
+                })}, 1000)
         }
     }
 
      componentWillUnmount() {
          this.player.removeEventListener("timeupdate", () => { });
      }
+
+     handleClick(e){
+         debugger 
+         e.preventDefault() 
+         const percent = e.nativeEvent.offsetX/ e.currentTarget.offsetWidth
+         this.playbarAudio.currentTime = percent * this.playbarAudio.duration;
+         this.progressBar.value = percent / 100 
+     }
+
+     
 
     getTime(time) {
     if (!isNaN(time)) {
@@ -66,6 +82,14 @@ class Playbar extends React.Component {
 
         const duration = (this.props.currentSong) ?
             (this.getTime(this.state.duration)) : null  
+        
+        const progressBar = (this.props.currentSong) ?
+            (   
+                <div id="progress-bar" value="0"
+                ref={ref => (this.progressBar = ref)} onClick={this.handleClick}> 
+                </div>
+
+            ) : null
 
        const playPause = (this.props.player === "playing") ? 
             (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="pause" color="black"/></button>) :
@@ -91,13 +115,12 @@ class Playbar extends React.Component {
                         </div>
                     </div>
                     <div className="playbar-middle">
+                        {progressBar}
                         <p className="playbar-song-duration">{duration}</p>
                     </div>
                     <div className="playbar-right">
                     </div>
                 </div>
-            
-
 
             </div>
         )

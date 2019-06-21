@@ -64,3 +64,22 @@
     width: 50%;
     text-align: right; 
 }
+
+#progress-bar[value]{
+    -webkit-appearance: none;
+  appearance: none;
+  background-color: lightgray;
+  color: #FF5500;
+  height: 3px;
+  width: 100%;
+  cursor: pointer;
+}
+
+progress-bar[value]::-webkit-progress-bar {
+  background-color: lightgray;
+  color: #FF5500;
+}
+
+progress-bar::-webkit-progress-value {
+  background-color: #FF5500;
+}
