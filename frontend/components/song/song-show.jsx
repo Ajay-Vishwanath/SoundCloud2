@@ -72,7 +72,7 @@ handlePlayPause(e) {
                                             </div>
                                             <div className="showsonginfo">
                                             <a href="/#/upload" className="show-artist-link">{artist.username}</a>
-                                            <span id="show-song-name">{song.title}</span>
+                                            <div className="song-name-container"><span id="show-song-name">{song.title}</span></div>
                                             </div>
                                         </div>
                                     </div>

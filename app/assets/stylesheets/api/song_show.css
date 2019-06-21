@@ -27,7 +27,7 @@
 .song-banner-left{
     align-self: left;
     width: 50%;
-    overflow: hidden;
+    overflow-wrap: normal; 
 }
 
 .show-play-button{
@@ -74,7 +74,7 @@
 .song-banner-info{
     display: flex;
     padding-left: 30px;
-    padding-top: 19px;
+    padding-top: 25px;
 }
 
 .showsonginfo{
@@ -111,7 +111,9 @@
     display: flex;
     flex-direction: column;
     align-self: right;
+    align-items: center; 
     width: 28%;
+    height: 100%; 
     justify-content: center;
     
 }
@@ -120,8 +122,8 @@
     margin: 0 auto;
     right: 20px;
     z-index: 1;
-    height: 90%;
-    width: 90%;
+    height: 290px;
+    width: 290px;
 }
 
 .show-artist-link{
@@ -135,14 +137,18 @@
     width: max-content;
 }
 
+.song-name-container{
+    margin-top: 1px; 
+}
+
 #show-song-name{
+    display: inline; 
     font-size: 24px;
     font-family: "Interstate", "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     color: #ffffff;
     background-color: rgba(0,0,0,.8);
-    padding: 4px 7px;
-    width: max-content;
-
+    padding: 4px 7px 4px 7px;
+    /* width: max-content; */
 }
 
 #banner-show-image {

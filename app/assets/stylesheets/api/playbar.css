@@ -59,3 +59,8 @@
 .fastforward-button{
     float: right;
 }
+
+.playbar-middle{
+    width: 50%;
+    text-align: right; 
+}

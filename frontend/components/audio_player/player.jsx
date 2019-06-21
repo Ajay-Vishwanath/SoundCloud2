@@ -7,23 +7,39 @@ class Playbar extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            currentTime: 0,
+            duration: 500
+        }
+
         this.getTime = this.getTime.bind(this);
         this.toggleplay = this.toggleplay.bind(this);
     }
 
     componentDidMount() {
         this.audio = document.getElementById("playbar-audio-player")
-        // this.playbarAudio.addEventListener("timeupdate", e => {
-        //     this.setState({
-        //         currentTime: e.target.currentTime,
-        //         duration: e.target.duration
-        //     });
-        // });
+        this.playbarAudio.addEventListener("timeupdate", e => {
+             this.setState({
+                 currentTime: e.target.currentTime,
+                 duration: e.target.duration
+             });
+         });
     }
 
-    // componentWillUnmount() {
-    //     this.player.removeEventListener("timeupdate", () => { });
-    // }
+    componentDidUpdate() {
+        if ((this.props.currentSong) && this.state.currentTime === this.state.duration) {
+            debugger 
+            this.props.togglePlayPause();
+            this.setState({
+                currentTime: 0,
+                duration: 500
+            })
+        }
+    }
+
+     componentWillUnmount() {
+         this.player.removeEventListener("timeupdate", () => { });
+     }
 
     getTime(time) {
     if (!isNaN(time)) {
@@ -45,8 +61,11 @@ class Playbar extends React.Component {
 
     render () {
         
-        const currentTime = this.getTime(this.props.currentTime)
-        const duration = this.getTime(this.props.duration)
+        const currentTime = (this.props.currentSong) ?
+            (this.getTime(this.state.currentTime)) : null 
+
+        const duration = (this.props.currentSong) ?
+            (this.getTime(this.state.duration)) : null  
 
        const playPause = (this.props.player === "playing") ? 
             (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="pause" color="black"/></button>) :
@@ -72,6 +91,7 @@ class Playbar extends React.Component {
                         </div>
                     </div>
                     <div className="playbar-middle">
+                        <p className="playbar-song-duration">{duration}</p>
                     </div>
                     <div className="playbar-right">
                     </div>
@@ -79,7 +99,6 @@ class Playbar extends React.Component {
             
 
 
-            {/* <p className="playbar-song-duration">{duration}w</p> */}
             </div>
         )
     }
