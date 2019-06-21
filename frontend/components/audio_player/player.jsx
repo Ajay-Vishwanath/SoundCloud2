@@ -85,9 +85,8 @@ class Playbar extends React.Component {
         
         const progressBar = (this.props.currentSong) ?
             (   
-                <div id="progress-bar" value="0"
-                ref={ref => (this.progressBar = ref)} onClick={this.handleClick}> 
-                </div>
+                <progress id="progress-bar" value={this.state.currentTime/this.state.duration}
+                ref={ref => (this.progressBar = ref)} onClick={this.handleClick} />
 
             ) : null
 
@@ -111,10 +110,10 @@ class Playbar extends React.Component {
                             <div className="fastforwardButton">
                                 <FontAwesomeIcon icon="step-forward" color="black" opacity=".2" className="fastforward-button"/>
                             </div>
-                            <p className="playbar-current-time">{currentTime}</p>
                         </div>
                     </div>
                     <div className="playbar-middle">
+                        <p className="playbar-current-time">{currentTime}</p>
                         {progressBar}
                         <p className="playbar-song-duration">{duration}</p>
                     </div>

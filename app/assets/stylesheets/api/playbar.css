@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 10%;
+    min-width: 7%;
 }
 .playbar-buttons{
     height: 100%;
@@ -48,12 +48,13 @@
     text-decoration: none;
     outline: none;
     cursor: pointer;
-    margin: 0 0 0 12px;
+    margin: 0 0 0 8px;
+    font-size: 12px; 
 }
 
 .fastforwardButton{
     width: 24px;
-    margin: 0 0 0 12px;
+    margin: 0 0 0 8px;
 }
 
 .fastforward-button{
@@ -61,25 +62,44 @@
 }
 
 .playbar-middle{
-    width: 50%;
-    text-align: right; 
+    width: 73%;
+    font-size: 11px;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    /* text-align: right;  */
+    display: flex; 
+    justify-content: center; 
+    vertical-align: center; 
+    align-items: center; 
 }
 
-#progress-bar[value]{
+.playbar-current-time{
+    color: #FF5500; 
+    margin-right: 10px; 
+}
+
+.playbar-song-duration{
+    margin-left: 10px; 
+}
+
+progress[value]{
     -webkit-appearance: none;
   appearance: none;
   background-color: lightgray;
   color: #FF5500;
   height: 3px;
-  width: 100%;
+  width: 58%;
   cursor: pointer;
 }
 
-progress-bar[value]::-webkit-progress-bar {
+progress[value]::-webkit-progress-bar {
   background-color: lightgray;
   color: #FF5500;
 }
 
-progress-bar::-webkit-progress-value {
+progress::-webkit-progress-value {
   background-color: #FF5500;
+}
+
+.playbar-right{
+    min-width: 20%;
 }
