@@ -20,6 +20,7 @@ class Playbar extends React.Component {
 
     componentDidMount() {
         this.audio = document.getElementById("playbar-audio-player")
+        debugger 
         this.playbarAudio.addEventListener("timeupdate", e => {
              this.setState({
                  currentTime: e.target.currentTime,
@@ -95,6 +96,9 @@ class Playbar extends React.Component {
             (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="play" color="black" /></button>
             );
         
+        const volumeIcon =(this.props.currentSong) ? 
+                (<button className="volume-icon"><FontAwesomeIcon icon="volume-up" color="black" /></button>) : null 
+
         return(
             <div className="playbar-full">
                 <div className='playbar-contents'>
@@ -116,6 +120,7 @@ class Playbar extends React.Component {
                         <p className="playbar-current-time">{currentTime}</p>
                         {progressBar}
                         <p className="playbar-song-duration">{duration}</p>
+                        {volumeIcon}
                     </div>
                     <div className="playbar-right">
                     </div>

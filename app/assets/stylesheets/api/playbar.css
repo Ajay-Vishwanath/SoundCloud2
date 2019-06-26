@@ -67,7 +67,7 @@
     font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     /* text-align: right;  */
     display: flex; 
-    justify-content: center; 
+    /* justify-content: center;  */
     vertical-align: center; 
     align-items: center; 
 }
@@ -75,10 +75,13 @@
 .playbar-current-time{
     color: #FF5500; 
     margin-right: 10px; 
+    width: 100px;  
+    text-align: right; 
 }
 
 .playbar-song-duration{
     margin-left: 10px; 
+    width: 50px; 
 }
 
 progress[value]{
@@ -87,7 +90,7 @@ progress[value]{
   background-color: lightgray;
   color: #FF5500;
   height: 3px;
-  width: 58%;
+  min-width: 67%;
   cursor: pointer;
 }
 
@@ -98,6 +101,20 @@ progress[value]::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
   background-color: #FF5500;
+}
+
+.volume-icon{
+    width: 24px;
+    border: 0;      
+    text-shadow: none;
+    color: transparent;
+    padding: none;
+    background: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 0 0 8px;
+    font-size: 16px; 
 }
 
 .playbar-right{

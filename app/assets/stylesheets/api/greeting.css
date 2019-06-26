@@ -95,10 +95,16 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  outline: none; 
+}
+
+button{
+  outline: none; 
 }
 
 .dropdown-container-two.clicked{
     background-color: #111;
+    outline: none; 
 }
 
 .dropdown-container-two > .dropDownTwoContent {

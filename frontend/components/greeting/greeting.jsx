@@ -10,24 +10,26 @@ class Greeting extends React.Component {
     constructor(props) {
         super(props)
 
-        this.dropDownMenuOne = false
-        this.dropDownMenuTwo = false 
+        this.state = {
+        dropDownMenuOne: false,
+        dropDownMenuTwo: false
+        } 
 
         this.goHome=this.goHome.bind(this);
         this.togglemenutwo=this.togglemenutwo.bind(this);
         this.closeMenu=this.closeMenu.bind(this);
     }
 
-    // componentDidMount() {
-    //     document.addEventListener("click", this.closeMenu)
-    // }
+    componentDidMount() {
+        document.body.addEventListener("click", this.closeMenu);
+    }
 
     componentWillUnmount() {
         document.removeEventListener("click", this.closeMenu)
     }
 
     closeMenu(e) {
-        if (this.dropDownMenuTwo === true) {
+        if (this.state.dropDownMenuTwo === true) {
             this.togglemenutwo(e)
         }
     }
@@ -50,7 +52,7 @@ class Greeting extends React.Component {
             dropdownmenuTwodropdown.classList.add("show");
         } 
 
-        this.dropDownMenuTwo = (!this.dropDownMenuTwo)
+        this.state.dropDownMenuTwo = (!this.state.dropDownMenuTwo)
     }
 
     goHome() {
