@@ -90,7 +90,7 @@ class UploadSong extends React.Component {
             </div> );
 
         return (
-        <div>
+        <div className="full-upload">
             <GreetingContainer /> 
                 <div className="container-main-upload">
                         <div className="upload-form-box">

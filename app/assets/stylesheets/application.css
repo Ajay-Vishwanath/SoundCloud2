@@ -23,6 +23,14 @@ html {
      /* height: 100%; */
  }
 
+ #root{
+     /* height: 100%;  */
+ }
+
+ .main{
+     /* height: 100%;  */
+ }
+
  img {
      display: inline-block;
  }

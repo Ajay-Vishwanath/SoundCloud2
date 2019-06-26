@@ -27,7 +27,7 @@ const App = () => (
         <Modal />
         <UpdateModal />
         <DeleteModal />
-    <main>
+    <main className="main">
         <Switch> 
             <ProtectedRoute exact path='/upload' component={UploadSongContainer} />
             <ProtectedRoute exact path='/discover' component={SongIndexContainer} />

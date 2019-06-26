@@ -20,7 +20,6 @@ class Playbar extends React.Component {
 
     componentDidMount() {
         this.audio = document.getElementById("playbar-audio-player")
-        debugger 
         this.playbarAudio.addEventListener("timeupdate", e => {
              this.setState({
                  currentTime: e.target.currentTime,
