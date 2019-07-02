@@ -28,10 +28,16 @@
     padding-left: 25px;  
 }
 
-.profile-photo{
+.profile-photo-container{
     height: 200px;
     width: 200px; 
+}
+
+.profile-photo{
+    height: 100%;
+    width: 100%; 
     border-radius: 50%; 
+    position: relative; 
 }
 
 .user-info{
@@ -49,4 +55,28 @@
     padding: 2px 7px 3px;
     margin-top: 25px;
     width: max-content;
+}
+
+.update-image-button{
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    display: inline-block;
+    position: relative;
+    height: 26px;
+    padding: 2px 11px 2px 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    text-align: center;
+    
+}
+
+.update-prof-pic-input{
+    display: none; 
 }

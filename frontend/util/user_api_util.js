@@ -16,6 +16,6 @@ export const updateUser = (user) => (
     $.ajax({
         method: 'patch',
         url: `/api/users/${user.id}`,
-        data: { song }
+        data: { user }
     })
 );

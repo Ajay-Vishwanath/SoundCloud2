@@ -15,6 +15,24 @@ class UserShow extends React.Component {
         window.scrollTo(0, 0)
     }
 
+    handleUpdate(e) {
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+
+        debugger 
+
+        if (file) {
+            reader.readAsDataURL(file)
+            reader.onloadend = () => {
+            const updatedUser={
+                id: this.props.user.id,
+                photoUrl: reader.result 
+            }
+            debugger 
+            this.props.updateUser(updatedUser).then(this.props.history.push(`/users/${this.props.user.id}`));
+        } 
+    }}
+
     render() {
 
     if (!this.props.user) {
@@ -28,8 +46,10 @@ class UserShow extends React.Component {
         (null) : this.props.user.location 
 
     const updateImageButton = (this.props.currentUser === this.props.user) ? 
-        (<button onClick={this.handleUpdate}>
-        </button>) : (null)
+        (<label className="update-image-button"><FontAwesomeIcon icon="camera" />
+        Update Image
+        <input type="file" onChange={this.handleUpdate} className="update-prof-pic-input"></input>
+        </label>) : (null)
     
     return(
         <div className="full-user-show-page">
@@ -39,7 +59,10 @@ class UserShow extends React.Component {
                     <div className="user-banner">
                         <div className="user-banner-contents">
                             <div className="user-banner-left">
-                                <img src={photoUrl} className="profile-photo"/>
+                                <div className="profile-photo-container">
+                                    <img src={photoUrl} className="profile-photo"/>
+                                    {updateImageButton}
+                                </div>
                                 <div className="user-info">
                                     <span className="username">{this.props.user.username}</span>
                                     <span className="location">{location}</span>
