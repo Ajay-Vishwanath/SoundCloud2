@@ -143,6 +143,12 @@ progress::-webkit-progress-value {
     font-size: 11px;
     font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     line-height: 16px; 
+    width: 100%; 
+    cursor: pointer; 
+}
+
+.player-artist-name:hover{
+    color: #333; 
 }
 
 .player-song-name{
@@ -152,6 +158,12 @@ progress::-webkit-progress-value {
     font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     line-height: 16px; 
     overflow: hidden; 
+    width: 100%; 
+    cursor: pointer; 
+}
+
+.player-song-name:hover{
+    color: #333; 
 }
 
 

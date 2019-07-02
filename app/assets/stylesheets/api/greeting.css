@@ -48,6 +48,10 @@
 
 }
 
+.home-button:hover {
+  color: #ffffff
+}
+
 .upload-button-div{
   width: 64px;
   text-align: center;
@@ -61,7 +65,10 @@
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;
   color: #ccc;
   width: 100%;
+}
 
+.upload-button:hover{
+  color: #ffffff; 
 }
 
 .newsoundcloud2logo {
@@ -116,6 +123,10 @@ button{
   background: transparent;
 }
 
+.dropDownTwoContent:hover{
+  color: #ffffff
+}
+
 .dropdown-container-two > .dropDownTwoContent.clicked{
   /* background-color: #111; */
 } 
@@ -149,6 +160,10 @@ button{
   background-color: #111;
   border: none;
   color: #ccc;
+}
+
+.logout-button:hover{
+  color: #ffffff; 
 }
 
 

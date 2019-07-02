@@ -19,7 +19,13 @@ class UserShow extends React.Component {
         <div className="full-user-show-page">
             <GreetingContainer />
             <div className="full-user-show-container">
-                <span>User Show</span>
+                <div className="full-user-show-container-2">
+                    <div className="user-banner">
+                        <div className="user-banner-contents">
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )}; 

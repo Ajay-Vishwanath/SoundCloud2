@@ -8,7 +8,9 @@ const PlayerRight = props => {
     return (
         <div className="player-right">
             <div className="player-photo-container">
-                <img src={song.photoUrl} className="song-player-photo"/>
+                <Link to={`songs/${song.id}`}>
+                    <img src={song.photoUrl} className="song-player-photo"/>
+                </Link>
             </div>
             <div className="song-player-right-right">
                 <Link to={`users/${artist.id}`} className="player-artist-name">
