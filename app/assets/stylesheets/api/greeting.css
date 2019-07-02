@@ -160,6 +160,7 @@ button{
   background-color: #111;
   border: none;
   color: #ccc;
+  cursor: pointer; 
 }
 
 .logout-button:hover{
@@ -167,21 +168,28 @@ button{
 }
 
 
-.logout-button:hover {
+.profile{
+  width: auto;
+  display: flex; 
+  align-items: center; 
+  text-decoration: none; 
+  padding: 0px 5px 0px 5px; 
 
 }
 
-/* 
-#dropdowncontent {
-  display: block;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-} */
+.profile:hover .greeting-profile-name{
+  color: #fff; 
+}
 
+.greeting-profile-photo{
+  height: 26px;
+  width: 26px; 
+  border-radius: 50%;
+  padding: 12px 12px 12px 10px;
+}
 
-
-
-
+.greeting-profile-name{
+  text-decoration: none; 
+  font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;
+  color: #ccc;
+}
