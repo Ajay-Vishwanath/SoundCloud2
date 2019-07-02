@@ -129,7 +129,7 @@ progress::-webkit-progress-value {
 }
 
 .player-photo-container{
-    margin-right: 16px; 
+    margin-right: 15px; 
 }
 
 .song-player-photo{
@@ -150,6 +150,7 @@ progress::-webkit-progress-value {
     color: #666;
     font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     line-height: 16px; 
+    overflow: hidden; 
 }
 
 
