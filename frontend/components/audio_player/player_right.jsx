@@ -11,9 +11,9 @@ const PlayerRight = props => {
                 <img src={song.photoUrl} className="song-player-photo"/>
             </div>
             <div className="song-player-right-right">
-                <span className="player-artist-name">
+                <Link to={`users/${artist.id}`} className="player-artist-name">
                     {artist.username}
-                </span>
+                </Link>
                 <Link to={`songs/${song.id}`} className="player-song-name">
                     {song.title}
                 </Link>

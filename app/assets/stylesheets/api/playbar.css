@@ -62,7 +62,7 @@
 }
 
 .playbar-middle{
-    min-width: 70%;
+    min-width: 69.4%;
     font-size: 11px;
     font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     /* text-align: right;  */
@@ -118,7 +118,7 @@ progress::-webkit-progress-value {
 }
 
 .player-right{
-    min-width: 23%;
+    min-width: 23.6%;
     display: flex; 
     align-items: center; 
 }
@@ -138,6 +138,7 @@ progress::-webkit-progress-value {
 }
 
 .player-artist-name{
+    text-decoration: none;
     color: #999;
     font-size: 11px;
     font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;

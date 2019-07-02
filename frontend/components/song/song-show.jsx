@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from '../greeting/greeting_container'
 import withRouter from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {Link} from 'react-router-dom'; 
 
 class SongShow extends React.Component {
     constructor(props){
@@ -71,7 +72,7 @@ handlePlayPause(e) {
                                             {button}
                                             </div>
                                             <div className="showsonginfo">
-                                            <a href="/#/upload" className="show-artist-link">{artist.username}</a>
+                                            <a href={`/#/users/${artist.id}`} className="show-artist-link">{artist.username}</a>
                                             <div className="song-name-container"><span id="show-song-name">{song.title}</span></div>
                                             </div>
                                         </div>

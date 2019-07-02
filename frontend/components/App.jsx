@@ -18,6 +18,7 @@ import { faEllipsisH, faCircleNotch, faPlay, faPause, faPencilAlt, faTrash, faSt
 import UploadSongContainer from './song/upload_song_container'
 import SongIndexContainer from './song/index_song_container';
 import SongShowContainer from './song/song_show_container';
+import UserShowContainer from './user/user_show_container'; 
 import Playbar from './audio_player/player_container';
 
 library.add(faEllipsisH, faCircleNotch, faPlay, faPencilAlt, faTrash, faPause, faStepBackward, faStepForward, faVolumeUp)
@@ -32,6 +33,7 @@ const App = () => (
             <ProtectedRoute exact path='/upload' component={UploadSongContainer} />
             <ProtectedRoute exact path='/discover' component={SongIndexContainer} />
             <Route exact path="/songs/:songId" component={SongShowContainer} />
+            <Route exact path="/users/:userId" component={UserShowContainer} /> 
             <AuthRoute exact path='/' component={SplashContainer} />
             <Redirect to="/"/> 
         </Switch>
