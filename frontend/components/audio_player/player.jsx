@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PlayerRight from './player_right'; 
 
 class Playbar extends React.Component {
 
@@ -19,6 +20,7 @@ class Playbar extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchUsers(); 
         this.audio = document.getElementById("playbar-audio-player")
         this.playbarAudio.addEventListener("timeupdate", e => {
              this.setState({
@@ -98,6 +100,9 @@ class Playbar extends React.Component {
         const volumeIcon =(this.props.currentSong) ? 
                 (<button className="volume-icon"><FontAwesomeIcon icon="volume-up" color="black" /></button>) : null 
 
+        const playerRight =(this.props.currentSong)? 
+                (<PlayerRight song={this.props.currentSong} artist={this.props.artist}/>) : null 
+
         return(
             <div className="playbar-full">
                 <div className='playbar-contents'>
@@ -121,8 +126,7 @@ class Playbar extends React.Component {
                         <p className="playbar-song-duration">{duration}</p>
                         {volumeIcon}
                     </div>
-                    <div className="playbar-right">
-                    </div>
+                        {playerRight}
                 </div>
 
             </div>
