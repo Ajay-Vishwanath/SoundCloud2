@@ -82,6 +82,10 @@ class Greeting extends React.Component {
         };
 
         const loggedIn = () => {
+
+            const photoUrl = (this.props.currentUser.photoUrl === '') ?
+                ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (this.props.currentUser.photoUrl)
+
             return (
                 <header className='full-header'>
                     <div className='functional-header'>
@@ -100,7 +104,10 @@ class Greeting extends React.Component {
                             <div className="upload-button-div">
                                 <a href="/#/upload" className="upload-button">Upload</a>
                             </div>
-
+                            <Link to={`users/${this.props.currentUser.id}`} className="profile">
+                                <img src={photoUrl} className="greeting-profile-photo"/>
+                                <span className="greeting-profile-name">{this.props.currentUser.username}</span>
+                            </Link>
                             <div className="dropdown-container-two" id="dropdown-container-two">
                                 <button id="DropDownTwo" className="dropDownTwoContent" onClick={this.togglemenutwo}>
                                 <FontAwesomeIcon icon="ellipsis-h" size="lg" className="fontawesomemenuicon"/></button> 
