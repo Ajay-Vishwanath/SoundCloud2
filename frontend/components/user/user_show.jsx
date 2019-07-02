@@ -7,6 +7,7 @@ class UserShow extends React.Component {
     constructor(props) {
         super(props);
 
+        this.handleUpdate = this.handleUpdate.bind(this); 
     }
 
     componentDidMount() {
@@ -25,6 +26,10 @@ class UserShow extends React.Component {
 
     const location = (this.props.user.location === '') ?
         (null) : this.props.user.location 
+
+    const updateImageButton = (this.props.currentUser === this.props.user) ? 
+        (<button onClick={this.handleUpdate}>
+        </button>) : (null)
     
     return(
         <div className="full-user-show-page">
