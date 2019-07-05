@@ -22,13 +22,18 @@ export const createSong = song => (
     })
 );
 
-export const updateSong = (song) => (
+export const updateSong = (song, id) => {
+    debugger 
+    return(
     $.ajax({
         method: 'patch',
-        url: `/api/songs/${song.id}`,
-        data: { song }
+        url: `/api/songs/${id}`,
+        data: song,
+        contentType: false,
+        processData: false
     })
-);
+    )
+};
 
 export const deleteSong = id => (
     $.ajax({

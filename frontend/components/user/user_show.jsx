@@ -16,21 +16,19 @@ class UserShow extends React.Component {
     }
 
     handleUpdate(e) {
-        const reader = new FileReader();
         const file = e.currentTarget.files[0];
-
-        debugger 
+        const reader = new FileReader();
 
         if (file) {
-            reader.readAsDataURL(file)
             reader.onloadend = () => {
             const updatedUser={
                 id: this.props.user.id,
-                photoUrl: reader.result 
+                photoUrl: reader.result
             }
-            debugger 
+            const formData = new FormData();
+            formData.append('user[profile_photo]', )
             this.props.updateUser(updatedUser).then(this.props.history.push(`/users/${this.props.user.id}`));
-        } 
+        }
     }}
 
     render() {

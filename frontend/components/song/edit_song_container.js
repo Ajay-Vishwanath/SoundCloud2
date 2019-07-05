@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EditSong from './edit_song';
-import {fetchSong, updateSong } from '../../actions/song_actions';
+import {fetchSong, editSong } from '../../actions/song_actions';
 import { clearSongErrors} from '../../actions/song_actions'
 import { closeModal } from '../../actions/modal_actions';
 import {withRouter} from 'react-router-dom';
@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     fetchSong: (id) => dispatch(fetchSong(id)),
     clearSongErrors: () => dispatch(clearSongErrors()),
-    updateSong: (formData) => dispatch(updateSong(formData)),
+    updateSong: (formData) => dispatch(editSong(formData)),
     closeModal: () => dispatch(closeModal())
 });
 

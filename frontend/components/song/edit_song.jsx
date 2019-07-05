@@ -7,12 +7,12 @@ class EditSong extends React.Component {
     constructor(props) {
         super(props); 
         this.state = {
-            id: this.props.song.id,
+            id: this.props.song.id || this.props.match.params.id,
             title: this.props.song.title,
             genre: this.props.song.genre,
             description: this.props.song.description || "",
-            photoFile: this.props.song.photoFile,
             photoUrl: this.props.song.photoUrl,
+            photoFile: null, 
             loading: false
         }
 
@@ -32,26 +32,24 @@ class EditSong extends React.Component {
     }
 
     handleSubmit(e) {
-        // const formData = new FormData();
-        // formData.append('song[title]', this.state.title);
-        // formData.append('song[genre]', this.state.genre);
-        // formData.append('song[description]', this.state.description);
-        // if (this.state.photoFile) {
-        //     formData.append('song[photo]', this.state.photoFile);
-        // }
-        this.setState({
-            loading: true
-        });
-        this.props.updateSong(this.state).then(this.props.history.push(`/songs/${this.props.song.id}`)).then(this.setState({
-            loading: false
-        })).then(this.props.closeModal());
+        const formData = new FormData();
+        formData.append('song[title]', this.state.title);
+        formData.append('song[genre]', this.state.genre);
+        formData.append('song[description]', this.state.description);
+        if (this.state.photoFile) {
+            formData.append('song[photo]', this.state.photoFile);
+        }
+
+        this.setState({loading: true})
+        this.props.updateSong({song: formData, id: this.state.id}).then(result => this.props.closeModal(), err => this.setState({loading: false}));
     }
 
     handlePhotoFile(e) {
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        reader.onloadend = () =>
-            this.setState({ photoUrl: reader.result, photoFile: file });
+        reader.onloadend = () => {
+            this.setState({ photoUrl: reader.result, photoFile: file});
+        } 
 
         if (file) {
             reader.readAsDataURL(file);

@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'; 
 import UploadSong from './upload_song'
 import {createSong, clearSongErrors} from '../../actions/song_actions'
+import { withRouter } from 'react-router-dom';
+
 
 const mapStateToProps = (state) => ({
     currentUser: state.entities.users[state.session.id],
@@ -13,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
     createSong: (song) => dispatch(createSong(song))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(UploadSong);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UploadSong));

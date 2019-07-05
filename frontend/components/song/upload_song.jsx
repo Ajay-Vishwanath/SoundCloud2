@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {withRouter} from 'react-router-dom'
 
 class UploadSong extends React.Component {
     constructor(props) {
@@ -42,7 +43,9 @@ class UploadSong extends React.Component {
         this.setState({
             loading: true
         }); 
-        this.props.createSong(formData, this.state.id).then(res => this.props.history.push(`/discover`), err => (this.setState({
+
+        debugger 
+        this.props.createSong(formData, this.state.id).then(result => this.goHome(), err => (this.setState({
             loading: false
         }) ));
     }
@@ -63,6 +66,7 @@ class UploadSong extends React.Component {
     }
 
     goHome() {
+        debugger 
         this.props.history.push("/discover"); 
     }
 
@@ -145,4 +149,4 @@ class UploadSong extends React.Component {
     }
 }
 
-export default UploadSong;
+export default withRouter(UploadSong);
