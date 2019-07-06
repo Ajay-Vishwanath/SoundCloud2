@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import SongIndexItem from './index_song_item';
 import { withRouter } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class SongIndex extends React.Component {
 
@@ -39,10 +40,22 @@ class SongIndex extends React.Component {
                                         {songs}
                                     </ul>
                                 </div>
-                                <div className="idx-right-sidebar">
-                                </div>
                             </div>
                             </div>
+                    </div>
+
+                    <div className="right-song-index">
+                        <div className="profile-links">
+                            <a href="https://github.com/Ajay-Vishwanath/SoundCloud2">
+                            <img src={window.githubicon} className="github-logo"/>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/ajay-vishwanath/">
+                            <img src={window.linkedinicon} className="github-logo" />
+                            </a>
+
+                            <img src={window.portfolioicon} className="github-logo" />
+                        </div>
                     </div>
                 </div>
             </div>

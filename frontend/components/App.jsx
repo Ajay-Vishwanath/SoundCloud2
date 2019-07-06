@@ -35,7 +35,7 @@ const App = () => (
             <Route exact path="/songs/:songId" component={SongShowContainer} />
             <Route exact path="/users/:userId" component={UserShowContainer} /> 
             <AuthRoute exact path='/' component={SplashContainer} />
-            <Redirect to="/"/> 
+            {/* <Redirect to="/"/>  */}
         </Switch>
     </main>
     <Playbar /> 

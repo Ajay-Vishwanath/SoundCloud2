@@ -31,7 +31,7 @@
 
 .rewindButton{
     width: 24px;
-    margin: 0 0 0 12px;
+    margin: 0 0 0 19px;
 }
 
 .rewind-button{
@@ -90,7 +90,7 @@ progress[value]{
   background-color: lightgray;
   color: #FF5500;
   height: 3px;
-  min-width: 67.5%;
+  min-width: 68.2%;
   cursor: pointer;
 }
 
@@ -118,7 +118,7 @@ progress::-webkit-progress-value {
 }
 
 .player-right{
-    min-width: 23.6%;
+    min-width: 20%;
     display: flex; 
     align-items: center; 
 }
