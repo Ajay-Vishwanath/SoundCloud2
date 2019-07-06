@@ -27,7 +27,7 @@
 }
 .container-main-upload{
     background: white;
-    height: 900px;  
+    height: 1200px;  
     display: flex;
     width: 85%;
     max-width: 1280px;
@@ -37,11 +37,11 @@
 
 .upload-form-box {
     width: 60%;
-    height: 55%;
+    height: 42%;
     padding: 20px;
     box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
     border: 3px solid #f2f2f2;
-    margin-top: 100px;
+    margin-top: 200px;
     justify-content: space-between;
 
 }
