@@ -52,7 +52,7 @@ class UserShow extends React.Component {
 
     const updateImageButton = (this.props.currentUser === this.props.user) ? 
         (<label className="update-image-button"><FontAwesomeIcon icon="camera" />
-         Update Image
+        &nbsp; Update Image
         <input type="file" onChange={this.handleUpdate} className="update-prof-pic-input"></input>
         </label>) : (null)
     
