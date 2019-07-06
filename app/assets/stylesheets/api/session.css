@@ -52,6 +52,7 @@
     background-color: #FF5500 ;
     padding: 8px;
     border-radius:4px;
+    border: none; 
 }
 
 .loginform input{
@@ -83,6 +84,7 @@
     padding: 10px 15px;
     border-radius:4px;
     width: 100%;   
+    border: none; 
 }
 
 .formerrors { 

@@ -90,7 +90,7 @@ progress[value]{
   background-color: lightgray;
   color: #FF5500;
   height: 3px;
-  min-width: 70%;
+  min-width: 67.5%;
   cursor: pointer;
 }
 

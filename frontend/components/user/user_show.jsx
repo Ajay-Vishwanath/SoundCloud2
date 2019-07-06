@@ -1,35 +1,42 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container'
-import withRouter from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class UserShow extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state={
+            photoChanged: false,
+            photoUrl: this.props.user.photoUrl
+        }
+
         this.handleUpdate = this.handleUpdate.bind(this); 
     }
 
     componentDidMount() {
+        debugger 
         this.props.fetchUser(this.props.match.params.userId);
         window.scrollTo(0, 0)
     }
 
     handleUpdate(e) {
+        const reader = new FileReader(); 
         const file = e.currentTarget.files[0];
-        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            this.setState({ photoUrl: reader.result});
+        } 
 
         if (file) {
-            reader.onloadend = () => {
-            const updatedUser={
-                id: this.props.user.id,
-                photoUrl: reader.result
-            }
-            const formData = new FormData();
-            formData.append('user[profile_photo]', )
-            this.props.updateUser(updatedUser).then(this.props.history.push(`/users/${this.props.user.id}`));
+        reader.readAsDataURL(file)
+        const formData = new FormData();
+        const userId = this.props.user.id || this.props.match.params.id 
+        formData.append('user[profile_photo]', file)
+        this.props.updateUser({user: formData, id: userId}).then(result => this.setState({photoChanged: !this.state.photoChanged}));
         }
-    }}
+    }
 
     render() {
 
@@ -38,14 +45,14 @@ class UserShow extends React.Component {
     }
 
     const photoUrl = (this.props.user.photoUrl === '') ? 
-        ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (this.props.user.photoUrl)
+        ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (this.state.photoUrl)
 
     const location = (this.props.user.location === '') ?
         (null) : this.props.user.location 
 
     const updateImageButton = (this.props.currentUser === this.props.user) ? 
         (<label className="update-image-button"><FontAwesomeIcon icon="camera" />
-        Update Image
+         Update Image
         <input type="file" onChange={this.handleUpdate} className="update-prof-pic-input"></input>
         </label>) : (null)
     
@@ -75,4 +82,4 @@ class UserShow extends React.Component {
     )}; 
 }
 
-export default UserShow 
+export default withRouter(UserShow) 
