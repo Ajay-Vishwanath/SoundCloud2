@@ -41,12 +41,9 @@
     padding: 20px;
     box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
     border: 3px solid #f2f2f2;
-    margin-top: 200px;
+    margin-top: 140px;
     justify-content: space-between;
 
-}
-
-.formuploadbox{
 }
 
 #preview-photo-container {

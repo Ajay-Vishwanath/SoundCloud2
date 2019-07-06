@@ -104,7 +104,7 @@ class Greeting extends React.Component {
                             <div className="upload-button-div">
                                 <a href="/#/upload" className="upload-button">Upload</a>
                             </div>
-                            <Link to={`users/${this.props.currentUser.id}`} className="profile">
+                            <Link to={`/users/${this.props.currentUser.id}`} className="profile">
                                 <img src={photoUrl} className="greeting-profile-photo"/>
                                 <span className="greeting-profile-name">{this.props.currentUser.username}</span>
                             </Link>

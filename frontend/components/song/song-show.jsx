@@ -58,12 +58,13 @@ handlePlayPause(e) {
             : (<button onClick={this.handlePlayPause} className="play-button-show">  <img src={window.playbuttonurl} className="play-button-show-image" /> </button>
         )
 
+        const artistphotoUrl = (artist.photoUrl === '') ?
+            ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (artist.photoUrl)
 
         return(
         <div className="full-show-page">
             <GreetingContainer/>
                 <div className="song-show-container">
-                    <div className="song-show-container-2">
                         <div className="song-banner">
                             <div className="song-banner-contents">
                                     <div className="song-banner-left">
@@ -87,12 +88,26 @@ handlePlayPause(e) {
                             <img src={window.skyurl} id="banner-show-image" /> 
                         </div>
                         <div className="song-show-body">
-                            <div className="userSongButtons">
-                                {this.userActions()}
+                            <div className="song-show-body-main">
+                                <div className="about-row">
+                                    {this.userActions()}
+                                </div>
+                                <div className="prof-and-comments">
+                                    <div className="song-show-user-info">
+                                        <Link to={`/users/${artist.id}`}>
+                                            <img src={artistphotoUrl} className="profile-pic-song-show"/>
+                                        </Link>
+                                        <Link to={`/users/${artist.id}`} className="username-link">
+                                            <span className="username-song-show-info">{artist.username}</span>
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
-                            <p>{song.description}</p>
+
+                            <div className="song-show-body-right">
+
+                            </div>
                         </div>
-                    </div>
                 </div>
         </div>
     )};
