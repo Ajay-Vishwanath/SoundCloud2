@@ -67,7 +67,7 @@ class LoginForm extends React.Component {
                                 <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
-                                className="login-input" placeholder="Your Password"
+                                className="password-input" placeholder="Your Password"
                             />
                         <br />
                         <div className="formerrors">
