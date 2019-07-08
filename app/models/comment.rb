@@ -12,4 +12,14 @@
 #
 
 class Comment < ApplicationRecord
+    validates :body, :user_id, :song_id, presence: true 
+
+    belongs_to :artist,
+        foreign_key: :artist_id,
+        class_name: :User
+    
+    belongs_to :song,
+        foreign_key: :song_id,
+        class_name: :Song 
+
 end
