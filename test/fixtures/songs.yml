@@ -4,7 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  title       :string           not null
-#  length      :integer          not null
+#  length      :integer
 #  artist_id   :integer          not null
 #  genre       :string           not null
 #  description :string
