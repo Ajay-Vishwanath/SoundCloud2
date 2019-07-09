@@ -13,7 +13,8 @@ export const receiveComments = comments => ({
 
 export const receiveComment = comment => ({
     type: RECEIVE_COMMENT,
-    comment: comment})
+    comment: comment
+})
 
 export const deleteComment = id => ({
     type: DELETE_COMMENT,
@@ -30,7 +31,8 @@ export const clearCommentErrors = () => ({
 })
 
 export const createComment = comment => dispatch => (
-    CommentAPIUtil.createComment(comment).then((comment) => dispatch(receiveComment(comment)),
+    CommentAPIUtil.createComment(comment).then(
+        comment => dispatch(receiveComment(comment)),
         err => (dispatch(receiveErrors(err.responseJSON)))
     )
 )

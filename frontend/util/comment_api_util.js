@@ -12,13 +12,15 @@ export const fetchComment = id => (
     })
 );
 
-export const createComment = comment => {
+export const createComment = comment => (
     $.ajax({
         method: 'post',
         url: '/api/comments',
-        data: comment
+        data: comment,
+        contentType: false,
+        processData: false
     })
-}
+)
 
 export const deleteComment = id => {
     $.ajax({

@@ -5,7 +5,7 @@ class CreateComment extends React.Component {
         super(props);
 
         this.state = {
-            body: null 
+            body: ""
         }
 
         this.handleSubmit = this.handleSubmit.bind(this); 
@@ -25,7 +25,9 @@ class CreateComment extends React.Component {
 
         if (this.state.body) {
             debugger 
-            this.props.createComment(formData)
+            this.props.createComment(formData).then(() => this.setState({
+                body: ""
+            }))
         } 
     }
 
@@ -37,13 +39,12 @@ class CreateComment extends React.Component {
             return (
             <form className="comment-form-container" onSubmit={this.handleSubmit}>
                 <img src={artistphotoUrl} className="comment-profile-pic" />
-                <input type="text" onChange={this.update()} placeholder="Write a Comment" className="comment-input" />
+                <input type="text" onChange={this.update()} value={this.state.body} placeholder="Write a Comment" className="comment-input" />
             </form>
             )
         } 
 
         const loggedOut = () => {
-            debugger 
             return null 
         }
 
