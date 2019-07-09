@@ -6,9 +6,9 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        # @comment.artist_id = current_user.id 
+        @comment.artist_id = current_user.id 
         if @comment.save 
-            render '/api/comments/show'
+            render :show 
         else 
             render json: @comment.errors.full_messages, status: 401
         end 

@@ -32,13 +32,22 @@ class CreateComment extends React.Component {
     render() {
         const artistphotoUrl = (this.props.profilePic === '') ?
             ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (this.props.profilePic)
-
-        return(
+        
+        const loggedIn= () => {
+            return (
             <form className="comment-form-container" onSubmit={this.handleSubmit}>
-                <img src={artistphotoUrl} className="comment-profile-pic"/>
-                <input type="text" onChange={this.update()} placeholder="Write a Comment" className="comment-input"/>
+                <img src={artistphotoUrl} className="comment-profile-pic" />
+                <input type="text" onChange={this.update()} placeholder="Write a Comment" className="comment-input" />
             </form>
-        )
+            )
+        } 
+
+        const loggedOut = () => {
+            debugger 
+            return null 
+        }
+
+        return this.props.currentUser? loggedIn() : loggedOut(); 
     }
 
 }

@@ -12,7 +12,7 @@
 #
 
 class Comment < ApplicationRecord
-    validates :body, :user_id, :song_id, presence: true 
+    validates :body, :artist_id, :song_id, presence: true 
 
     belongs_to :artist,
         foreign_key: :artist_id,

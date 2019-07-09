@@ -16,9 +16,7 @@ export const createComment = comment => {
     $.ajax({
         method: 'post',
         url: '/api/comments',
-        data: comment,
-        contentType: false,
-        processData: false
+        data: comment
     })
 }
 
