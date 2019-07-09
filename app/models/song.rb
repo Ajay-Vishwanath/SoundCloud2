@@ -17,10 +17,13 @@ class Song < ApplicationRecord
     belongs_to :artist, 
         foreign_key: :artist_id,
         class_name: :User
-    
+
+    has_many :comments,  
+        primary_key: :id,
+        foreign_key: :song_id,
+        class_name: :Comment 
 
     has_one_attached :photo
     has_one_attached :audio_file
-
 
 end

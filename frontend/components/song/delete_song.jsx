@@ -61,7 +61,7 @@ class DeleteSong extends React.Component {
                         <div className="lower-delete-box">
                             <p id="delete-song"> Permanently Delete This Track?</p>
                             <p id="delete-song-text"> 
-                                Removing this track is irreversible. You will lose all data associated with this track and no way to get it back.
+                                Removing this track is irreversible. You will lose all data associated with this track with no way to get it back.
                             </p>
                             <div id="delete-buttons">
                                 {loading}

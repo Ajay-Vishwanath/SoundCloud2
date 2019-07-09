@@ -7,7 +7,7 @@ import {
 import merge from 'lodash/merge'
 
 
-const songsReducer = (state = {}, action) => {
+const commentsReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
     switch (action.type) {

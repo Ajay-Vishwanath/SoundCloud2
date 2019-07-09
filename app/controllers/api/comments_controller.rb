@@ -6,11 +6,11 @@ class Api::CommentsController < ApplicationController
 
     def create
         @comment = Comment.new(comment_params)
-        @comment.user_id = current_user.id 
+        # @comment.artist_id = current_user.id 
         if @comment.save 
-            render 'api/comments/show'
+            render '/api/comments/show'
         else 
-            render json @comment.errors.full_messages, status: 401
+            render json: @comment.errors.full_messages, status: 401
         end 
     end 
 
@@ -27,7 +27,7 @@ class Api::CommentsController < ApplicationController
     private
     def comment_params
         params.require(:comment).permit(
-            :body, :user_id, :song_id
+            :body, :artist_id, :song_id
             )
     end 
 end

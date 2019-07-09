@@ -3,6 +3,7 @@ import GreetingContainer from '../greeting/greeting_container'
 import withRouter from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Link} from 'react-router-dom'; 
+import CreateCommentContainer from '../comment/create_comment_container';
 
 class SongShow extends React.Component {
     constructor(props){
@@ -90,6 +91,7 @@ handlePlayPause(e) {
                         <div className="song-show-body">
                             <div className="song-show-body-main">
                                 <div className="about-row">
+                                    <CreateCommentContainer songId={song.id} /> 
                                     {this.userActions()}
                                 </div>
                                 <div className="prof-and-comments">

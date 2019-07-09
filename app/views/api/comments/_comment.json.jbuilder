@@ -1,2 +1,2 @@
-json.extract! comment, :id, :user_id, :song_id, :body
+json.extract! comment, :id, :artist_id, :song_id, :body
 

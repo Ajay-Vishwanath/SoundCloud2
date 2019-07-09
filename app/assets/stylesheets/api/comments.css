@@ -1,0 +1,26 @@
+.comment-form-container{
+    display: flex; 
+    height: 40px; 
+    padding: 0px 5px; 
+    background: #f2f2f2;
+    border: 1px solid #e5e5e5;
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.comment-profile-pic{
+    height: 40px; 
+    width: 40px; 
+    z-index: 20; 
+}
+
+.comment-input{
+    width: 100%; 
+    border-radius: 4px;
+    height: 27px;
+    font-size: 14px; 
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;
+    padding: 0 9px; 
+    margin-left: 5px; 
+    color: #333; 
+}

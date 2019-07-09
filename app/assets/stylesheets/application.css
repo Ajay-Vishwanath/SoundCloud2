@@ -40,7 +40,23 @@ html {
      margin-bottom: 0; 
  }
 
+input {
+    -webkit-appearance: none; 
+    border: 1px solid #e5e5e5;
+}
 
+textarea {
+    -webkit-appearance: none; 
+    border: 1px solid #e5e5e5;
+}
+
+input:focus{
+    outline: none;  
+}
+
+textarea:focus{
+    outline: none; 
+}
 
 
 
