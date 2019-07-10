@@ -4,6 +4,7 @@ import UserShow from './user_show';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+    debugger 
     return{
     user: state.entities.users[ownProps.match.params.userId],
     currentUser: state.entities.users[state.session.id]

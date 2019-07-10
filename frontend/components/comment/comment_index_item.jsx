@@ -51,7 +51,7 @@ const CommentIndexItem = props => {
                     <span className="comment-item-body">{comment.body}</span>
             </div>
             <div className="comment-item-right">
-                {parsedDate(comment)}
+                <span className="comment-item-date">{parsedDate(comment)}</span>
                 {deleteComment()}
             </div>
         </div>

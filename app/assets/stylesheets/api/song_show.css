@@ -73,6 +73,7 @@
 
 .show-waveform{
     z-index: 101; 
+    
 }
 
 .song-banner-info{
@@ -253,4 +254,9 @@ object-position: 100% 0;
     font-weight: 100;
     color: #999;
     font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.song-show-comments-index{
+    padding-top: 10px; 
+    padding-bottom: 10px; 
 }

@@ -9,15 +9,14 @@ class UserShow extends React.Component {
 
         this.state={
             photoChanged: false,
-            photoUrl: this.props.user.photoUrl
+            photoUrl: ''
         }
 
         this.handleUpdate = this.handleUpdate.bind(this); 
     }
 
     componentDidMount() {
-        debugger 
-        this.props.fetchUser(this.props.match.params.userId);
+        this.props.fetchUser(this.props.match.params.userId).then(result => (this.setState({photoUrl: this.props.user.photoUrl})))
         window.scrollTo(0, 0)
     }
 
@@ -41,6 +40,7 @@ class UserShow extends React.Component {
     render() {
 
     if (!this.props.user) {
+        debugger 
         return null; 
     }
 

@@ -26,16 +26,44 @@
 }
 
 .comment-idx-item{
+    width: 100%; 
     display: flex; 
+    padding: 10px 10px 10px 0;
 }
 
 .comment-item-img{
     width: 40px;
     height: 40px;
     border-radius: 50%; 
+    margin-right: 10px; 
 }
 
 .comment-item-middle{
     display: flex;
     flex-direction: column;
 }
+
+.comment-item-artist-link{
+    color: #999;
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.comment-item-body{
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #333;
+}
+
+.comment-item-right{
+    right: 0; 
+    margin-left: auto; 
+    display: flex;
+    flex-direction: column;  
+}
+
+.comment-item-date{
+    color: #999;
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+
+
