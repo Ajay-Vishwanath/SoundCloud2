@@ -24,7 +24,6 @@ class CreateComment extends React.Component {
         formData.append('comment[body]', this.state.body)
 
         if (this.state.body) {
-            debugger 
             this.props.createComment(formData).then(() => this.setState({
                 body: ""
             }))

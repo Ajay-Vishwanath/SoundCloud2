@@ -4,6 +4,7 @@ import withRouter from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Link} from 'react-router-dom'; 
 import CreateCommentContainer from '../comment/create_comment_container';
+import CommentIndexItem from '../comment/comment_index_item';
 
 class SongShow extends React.Component {
     constructor(props){
@@ -15,14 +16,9 @@ class SongShow extends React.Component {
 componentDidMount() {
     this.props.fetchSong(this.props.match.params.songId);
     this.props.fetchUsers();
+    this.props.fetchComments(); 
     window.scrollTo(0, 0)
 }
-
-// componentDidUpdate() {
-//     if (!this.props.song) {
-//         this.props.fetchSong(this.props.match.params.songId);
-//     }
-// }
 
 userActions() { 
     if (!this.props.currentUser){
@@ -36,13 +32,29 @@ userActions() {
             </div>
         )
         } else {
-            return (
-                <div className="userOptions">
-                </div>
-            )
+            return null 
         }
     }
 
+commentsIndex() {
+    if (this.props.comments.length !== 0) {
+        const comments = this.props.comments.map( comment => {
+            return <CommentIndexItem key={comment.id} comment={comment} artist={this.props.users[comment.artist_id]} 
+            currentUser={this.props.currentUser} removeComment={this.props.removeComment}/>
+        });
+
+        return (
+            <div className="comments-index-container">
+                <div className="num-comments-display-container">
+                    <span className="num-comments-display"><FontAwesomeIcon icon="comment-alt" /> {this.props.comments.length} Comments</span>
+                </div>
+                <div className="song-show-comments-index">
+                    {comments}
+                </div>
+            </div>
+        )
+    }
+}
 handlePlayPause(e) {
         e.preventDefault();
         this.props.receivePlayerSong(this.props.song)
@@ -102,6 +114,9 @@ handlePlayPause(e) {
                                         <Link to={`/users/${artist.id}`} className="username-link">
                                             <span className="username-song-show-info">{artist.username}</span>
                                         </Link>
+                                    </div>
+                                    <div className="right-side">
+                                    {this.commentsIndex()}
                                     </div>
                                 </div>
                             </div>

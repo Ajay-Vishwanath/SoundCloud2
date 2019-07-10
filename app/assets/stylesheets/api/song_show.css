@@ -171,7 +171,7 @@ object-position: 100% 0;
 }
 
 .about-row{
-    margin-bottom: 20px; 
+    margin-bottom: 40px; 
     width: 100%; 
 }
 .userOptions{
@@ -204,6 +204,9 @@ object-position: 100% 0;
     vertical-align: baseline;
     margin-right: 5px;  
 }
+.prof-and-comments{
+    display: flex; 
+}
 
 .song-show-user-info{
     width: 120px; 
@@ -226,5 +229,24 @@ object-position: 100% 0;
     font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     font-size: 14px; 
     text-decoration: none; 
+}
 
+.right-side{
+    width: 100%; 
+    padding-left: 30px; 
+}
+
+.num-comments-display-container{
+
+    width: 100%;
+    padding-bottom: 7px; 
+    border-bottom: 1px solid #f2f2f2;
+    display: block; 
+
+}
+
+.num-comments-display{
+    font-weight: 100;
+    color: #999;
+    font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }

@@ -24,3 +24,18 @@
     margin-left: 5px; 
     color: #333; 
 }
+
+.comment-idx-item{
+    display: flex; 
+}
+
+.comment-item-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+}
+
+.comment-item-middle{
+    display: flex;
+    flex-direction: column;
+}

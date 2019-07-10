@@ -22,9 +22,9 @@ export const createComment = comment => (
     })
 )
 
-export const deleteComment = id => {
+export const deleteComment = id => (
     $.ajax({
         method: 'delete',
         url: `/api/comments/${id}`
     })
-}
+)

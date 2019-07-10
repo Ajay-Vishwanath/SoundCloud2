@@ -50,7 +50,7 @@ export const fetchComment= id => dispatch => (
 ) 
 
 export const removeComment = id => dispatch => (
-    CommentAPIUtil.deleteComment(id).then((id) => dispatch(removeComment(id)),
-        err => (dispatch(receiveDeleteErrors(err.responseJSON)))
+    CommentAPIUtil.deleteComment(id).then((id) => dispatch(deleteComment(id)),
+        err => (dispatch(receiveErrors(err.responseJSON)))
     )
 ) 
