@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Link} from 'react-router-dom'; 
 import CreateCommentContainer from '../comment/create_comment_container';
 import CommentIndexItem from '../comment/comment_index_item';
+import Waveform from '../Waveform/waveform'
 
 class SongShow extends React.Component {
     constructor(props){
@@ -74,6 +75,9 @@ handlePlayPause(e) {
         const artistphotoUrl = (artist.photoUrl === '') ?
             ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (artist.photoUrl)
 
+        const waveForm = (this.props.song) ?
+            (<Waveform audioFileUrl={this.props.song.audioFileUrl}/>) : null
+
         return(
         <div className="full-show-page">
             <GreetingContainer/>
@@ -83,12 +87,15 @@ handlePlayPause(e) {
                                     <div className="song-banner-left">
                                         <div className="song-banner-info">
                                             <div className="show-play-button">
-                                            {button}
+                                                {button}
                                             </div>
                                             <div className="showsonginfo">
-                                            <a href={`/#/users/${artist.id}`} className="show-artist-link">{artist.username}</a>
-                                            <div className="song-name-container"><span id="show-song-name">{song.title}</span></div>
+                                                <a href={`/#/users/${artist.id}`} className="show-artist-link">{artist.username}</a>
+                                                <div className="song-name-container"><span id="show-song-name">{song.title}</span></div>
                                             </div>
+                                        </div>
+                                        <div className="show-waveform">
+                                            {waveForm}
                                         </div>
                                     </div>
                                     <div className="songbannermiddle">

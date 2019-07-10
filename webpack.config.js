@@ -1,4 +1,5 @@
 const path = require('path');
+var webpack = require('webpack')
 
 module.exports = {
     context: __dirname,
@@ -21,8 +22,16 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            WaveSurfer: 'wavesurfer.js'
+        })
+    ],
     devtool: 'source-map',
     resolve: {
-        extensions: [".js", ".jsx", "*"]
+        extensions: [".js", ".jsx", "*"],
+        alias: {
+            wavesurfer: require.resolve('wavesurfer.js')
+        }
     }
 };

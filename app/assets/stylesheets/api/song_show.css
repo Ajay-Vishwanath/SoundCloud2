@@ -71,6 +71,10 @@
     filter: brightness(95%); 
 }
 
+.show-waveform{
+    z-index: 101; 
+}
+
 .song-banner-info{
     display: flex;
     padding-left: 30px;
