@@ -52,6 +52,9 @@ commentsIndex() {
                 <div className="song-show-comments-index">
                     {comments}
                 </div>
+                <div className="bottom-border">
+                    <img src={logourl} className="comment-logo" />
+                </div>
             </div>
         )
     }
@@ -85,21 +88,21 @@ handlePlayPause(e) {
                         <div className="song-banner">
                             <div className="song-banner-contents">
                                     <div className="song-banner-left">
-                                        <div className="song-banner-info">
-                                            <div className="show-play-button">
-                                                {button}
+                                        <div className="song-banner-top-left">
+                                            <div className="song-banner-info">
+                                                <div className="show-play-button">
+                                                    {button}
+                                                </div>
+                                                <div className="showsonginfo">
+                                                    <a href={`/#/users/${artist.id}`} className="show-artist-link">{artist.username}</a>
+                                                    <div className="song-name-container"><span id="show-song-name">{song.title}</span></div>
+                                                </div>
                                             </div>
-                                            <div className="showsonginfo">
-                                                <a href={`/#/users/${artist.id}`} className="show-artist-link">{artist.username}</a>
-                                                <div className="song-name-container"><span id="show-song-name">{song.title}</span></div>
-                                            </div>
-                                        </div>
+                                            <p className="songshowgenre"># {song.genre}</p> 
+                                        </div> 
                                         <div className="show-waveform">
-                                            {waveForm}
+                                            {waveForm} 
                                         </div>
-                                    </div>
-                                    <div className="songbannermiddle">
-                                        <p className="songshowgenre"># {song.genre}</p>
                                     </div>
                                     <div className="song-photo-container">
                                         <img src={song.photoUrl} id="song-show-image"/>

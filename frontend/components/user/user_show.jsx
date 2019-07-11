@@ -47,14 +47,18 @@ class UserShow extends React.Component {
     const photoUrl = (this.props.user.photoUrl === '') ? 
         ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (this.state.photoUrl)
 
-    const location = (this.props.user.location === '') ?
-        (null) : this.props.user.location 
+    const location = (this.props.user.location === null) ?
+        (null) : <span className="location">
+            {this.props.user.location} 
+            </span> 
 
     const updateImageButton = (this.props.currentUser === this.props.user) ? 
         (<label className="update-image-button"><FontAwesomeIcon icon="camera" />
         &nbsp; Update Image
         <input type="file" onChange={this.handleUpdate} className="update-prof-pic-input"></input>
         </label>) : (null)
+
+    debugger 
     
     return(
         <div className="full-user-show-page">
@@ -70,7 +74,7 @@ class UserShow extends React.Component {
                                 </div>
                                 <div className="user-info">
                                     <span className="username">{this.props.user.username}</span>
-                                    <span className="location">{location}</span>
+                                    {location}
                                 </div>
                             </div>
                         </div>

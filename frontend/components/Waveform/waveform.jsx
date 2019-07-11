@@ -13,7 +13,6 @@ class Waveform extends React.Component {
 
         this.state = {
             pos: 0,
-            audioFileUrl: this.props.audioFileUrl
         };
 
         this.handlePosChange = this.handlePosChange.bind(this);
@@ -27,16 +26,18 @@ class Waveform extends React.Component {
     }
     render() {
         const options = {
-            cursorColor:"#FF5500",
+            cursorWidth: 0,
             progressColor:"#FF5500",
             waveColor:"#F2F2F2",
             barWidth: 2
         }
+        
+        if (this.props.audioFileUrl) {
 
         return (
             <div>
                 <Wavesurfer
-                    audioFile={this.state.audioFileUrl}
+                    audioFile={this.props.audioFileUrl}
                     pos={this.state.pos}
                     onPosChange={this.handlePosChange}
                     playing={this.state.playing}
@@ -45,6 +46,7 @@ class Waveform extends React.Component {
                 />
             </div>
         );
+        } 
     }
 }
 

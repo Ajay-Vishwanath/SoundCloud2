@@ -26,8 +26,12 @@
 }
 .song-banner-left{
     align-self: left;
-    width: 50%;
+    width: 72%;
     overflow-wrap: normal; 
+}
+
+.song-banner-top-left{
+    display: flex; 
 }
 
 .show-play-button{
@@ -72,9 +76,17 @@
 }
 
 .show-waveform{
-    z-index: 101; 
-    
+    z-index: 100; 
+    margin-top: 100px; 
+    padding-left: 30px; 
+    height: 40%; 
 }
+
+.wave{
+    width: 100%; 
+}
+
+
 
 .song-banner-info{
     display: flex;
@@ -89,7 +101,7 @@
 
 .songshowgenre{
     margin-top: 25px;
-    align-self: right;
+    margin-left: auto; 
     width: max-content;
     padding: 0 7px;
     text-align: right;
@@ -104,13 +116,10 @@
     line-height: 20px;
     white-space: nowrap;
     border-radius: 14px;
-}
-
-.songbannermiddle{
-    width: 22%;
     text-align: right;
     align-items: right;
 }
+
 
 .song-photo-container{
     display: flex;
@@ -259,4 +268,28 @@ object-position: 100% 0;
 .song-show-comments-index{
     padding-top: 10px; 
     padding-bottom: 10px; 
+}
+
+.bottom-border{
+    clear: both;
+    position: relative;
+    top: -1px;
+    height: 14px;
+    margin: 45px 0 0 0;
+    border-top: 1px solid #f2f2f2;
+
+}
+
+.comment-logo{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: -30px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0; 
+    background: white; 
 }
