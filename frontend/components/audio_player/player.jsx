@@ -50,7 +50,7 @@ class Playbar extends React.Component {
      }
 
      handleClick(e){
-         debugger 
+
          e.preventDefault() 
          const percent = e.nativeEvent.offsetX/ e.currentTarget.offsetWidth
          this.playbarAudio.currentTime = percent * this.playbarAudio.duration;

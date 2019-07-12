@@ -13,7 +13,6 @@ class Waveform extends React.Component {
 
         this.state = {
             currentSong: this.props.currentSong,
-            isComponentMounted: false,
             pos: 0,
             currentTime: 0,
             duration: 500,
@@ -26,34 +25,62 @@ class Waveform extends React.Component {
         this.handlePosChange = this.handlePosChange.bind(this);
     }
 
-    componentDidMount() { 
+    componentDidMount() {
         if (this.props.currentSong) {
-            this.audio.addEventListener("timeupdate", e => {
-                this.setState({
-                    currentTime: e.target.currentTime,
-                    duration: e.target.duration,
-                    ended: false,
-                    pos: e.target.currentTime
+            if (this.props.currentSong.id === this.props.song.id) {
+                this.setState({eventListener: 'on'})
+                this.audio.addEventListener("timeupdate", e => {
+                    this.setState({
+                        currentTime: e.target.currentTime,
+                        duration: e.target.duration,
+                        ended: false,
+                        pos: e.target.currentTime
+                    });
                 });
-            });
-    }
-    }
+            };
+        };
+    };
+
 
     componentWillUpdate(prevProps){
-        debugger 
-        if (this.props.currentSong && this.state.eventListener === 'off'){
-            debugger 
-            this.setState({
-                eventListener: 'on',
-                currentSong: this.props.currentSong})
-            this.audio.addEventListener("timeupdate", e => {
-                this.setState({
-                    currentTime: e.target.currentTime,
-                    duration: e.target.duration,
-                    pos: e.target.currentTime
+        if (this.props.currentSong) {
+            if (this.props.currentSong.id === this.props.song.id && this.state.eventListener === 'off'){
+                    this.setState({ eventListener: 'on' })
+                    this.audio.addEventListener("timeupdate", e => {
+                        this.setState({
+                            currentTime: e.target.currentTime,
+                            duration: e.target.duration,
+                            ended: false,
+                            pos: e.target.currentTime
+                        });
+                    });
+            };
+        };
+    }
+
+    componentDidUpdate() {
+        var that = this;
+        if (this.props.currentSong) {
+            if (this.props.currentSong.id === this.props.song.id && this.state.eventListener === 'off') {
+                this.setState({ eventListener: 'on' })
+                this.audio.addEventListener("timeupdate", e => {
+                    this.setState({
+                        currentTime: e.target.currentTime,
+                        duration: e.target.duration,
+                        ended: false,
+                        pos: e.target.currentTime
+                    });
                 });
-            });
-        }
+            };
+            if (this.state.pos === this.state.duration) {
+                debugger 
+                setTimeout(function () {
+                that.setState({
+                    pos: 0,
+                    currentTime: 0
+                })
+            }, 1000)}
+        };
     }
 
     componentWillUnmount() {    
@@ -61,11 +88,16 @@ class Waveform extends React.Component {
     }
 
     handlePosChange(e) {
-        debugger 
-        this.setState({
-            pos: e.originalArgs[0] 
-        });
+        if (this.props.currentSong.id === this.props.song.id) {
+            if (Math.abs(this.state.pos - e.originalArgs[0]) > 1) {
+            this.setState({
+                pos: e.originalArgs[0]
+            });
+            this.audio.currentTime = e.originalArgs[0]
+        }
     }
+}
+
     render() {
         const options = {
             cursorWidth: 0,
@@ -83,12 +115,14 @@ class Waveform extends React.Component {
                     pos={this.state.pos}
                     onPosChange={this.handlePosChange}
                     playing={this.state.playing}
-                    className="show-waveform"
+                    id="show-waveform"
                     options={options}
                 />
             </div>
         );
-        } 
+        } else {
+            return null; 
+        }
     }
 }
 

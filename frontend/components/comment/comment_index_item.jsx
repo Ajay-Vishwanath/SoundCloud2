@@ -30,7 +30,7 @@ const CommentIndexItem = props => {
     function deleteComment() {
         if (comment.artist_id === currentUser.id) {
             return (
-                <button onClick={handleDelete}>
+                <button onClick={handleDelete} className="comment-delete">
                     <FontAwesomeIcon icon="trash" />
                 </button>
             )

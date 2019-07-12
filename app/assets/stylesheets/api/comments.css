@@ -59,9 +59,24 @@
     flex-direction: column;  
 }
 
+.comment-item-right:hover .comment-delete{
+    visibility: visible;
+}
+
 .comment-item-date{
     color: #999;
     font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.comment-delete{
+    visibility: hidden;
+    font-size: 11px;
+    height: 22px;
+    line-height: 16px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    width: 25px;    
+    margin-left: auto; 
 }
 
 
