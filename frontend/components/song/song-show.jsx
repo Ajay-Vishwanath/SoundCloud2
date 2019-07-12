@@ -79,7 +79,7 @@ handlePlayPause(e) {
             ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (artist.photoUrl)
 
         const waveForm = (this.props.song) ?
-            (<Waveform audioFileUrl={this.props.song.audioFileUrl}/>) : null
+            (<Waveform audioFileUrl={this.props.song.audioFileUrl} currentSong={this.props.currentSong}/>) : null
 
         return(
         <div className="full-show-page">

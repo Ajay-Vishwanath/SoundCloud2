@@ -32,7 +32,8 @@ const mapStateToProps = (state, ownProps) => {
     currentUser: state.entities.users[state.session.id],
     currentSong: state.ui.playbar.currentSong,
     player: state.ui.playbar.player,
-    comments: comments
+    comments: comments,
+    duration: state.ui.playbar.duration
     }
 }
 
