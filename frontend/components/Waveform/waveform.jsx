@@ -72,8 +72,8 @@ class Waveform extends React.Component {
                     });
                 });
             };
-            if (this.state.pos === this.state.duration) {
-                debugger 
+            if (this.state.pos === this.state.duration && this.state.ended === false) {
+                this.setState({ended: true})
                 setTimeout(function () {
                 that.setState({
                     pos: 0,
@@ -103,7 +103,8 @@ class Waveform extends React.Component {
             cursorWidth: 0,
             progressColor:"#FF5500",
             waveColor:"#F2F2F2",
-            barWidth: 2
+            barWidth: 2,
+            hideScrollbar: true
         }
         
         if (this.props.audioFileUrl) {
