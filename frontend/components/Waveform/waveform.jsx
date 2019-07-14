@@ -45,6 +45,7 @@ class Waveform extends React.Component {
     componentWillUpdate(prevProps){
         if (this.props.currentSong) {
             if (this.props.currentSong.id === this.props.song.id && this.state.eventListener === 'off'){
+                debugger 
                     this.setState({ eventListener: 'on' })
                     this.audio.addEventListener("timeupdate", e => {
                         this.setState({
@@ -55,13 +56,14 @@ class Waveform extends React.Component {
                         });
                     });
             };
-        };
+        }; 
     }
 
     componentDidUpdate() {
         var that = this;
         if (this.props.currentSong) {
             if (this.props.currentSong.id === this.props.song.id && this.state.eventListener === 'off') {
+                debugger 
                 this.setState({ eventListener: 'on' })
                 this.audio.addEventListener("timeupdate", e => {
                     this.setState({
@@ -73,13 +75,17 @@ class Waveform extends React.Component {
                 });
             };
             if (this.state.pos === this.state.duration && this.state.ended === false) {
-                this.setState({ended: true})
+                debugger 
+                this.setState(
+                { ended: true}
+                )
+
                 setTimeout(function () {
                 that.setState({
                     pos: 0,
                     currentTime: 0
-                })
-            }, 1000)}
+                })}, 1000)
+            }
         };
     }
 

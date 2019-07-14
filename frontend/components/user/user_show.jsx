@@ -81,6 +81,19 @@ class UserShow extends React.Component {
                         <img src={window.skyurl} id="banner-show-image" />
                     </div>
                 </div>
+                <div className="user-body">
+                    <div className="user-body-top">
+                        <span className="user-track-info">All Tracks from {this.props.user.username}</span>
+                    </div>
+                </div>
+                <div className="user-body-bottom">
+                    <div className="user-body-left">
+
+                    </div>
+                    <div className="user-body-right">
+
+                    </div>
+                </div>
             </div>
         </div>
     )}; 
