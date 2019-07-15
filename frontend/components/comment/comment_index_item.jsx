@@ -25,6 +25,7 @@ const CommentIndexItem = props => {
     
     const handleDelete = () => {
         removeComment(comment.id)
+        location.reload(); 
     }
 
     function deleteComment() {
