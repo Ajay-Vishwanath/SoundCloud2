@@ -34,11 +34,11 @@ evenings = User.create(email: "evenings@music.com", username: "Evenings", passwo
 evenings.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/profile-photos/Evenings+Profile+Photo.jpg"), filename: "Evenings Profile Photo.jpg")
 nick_drake = User.create(email: "nickdrake@music.com", username: "Nick_Drake", password: "pinkmoon123", location: "UK")
 nick_drake.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/profile-photos/Nick+Drake+Profile+Photo.jpg"), filename: "Nick Drake Profile Photo.jpg")
-lil_nas_x = User.create(email: "lilnasx@music.com", username: "Lil Nas X", password: "oldtownroad123", locaiton: "Old Town Road, USA")
+lil_nas_x = User.create(email: "lilnasx@music.com", username: "Lil Nas X", password: "oldtownroad123", location: "Old Town Road, USA")
 lil_nas_x.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/profile-photos/Lil+Nas+X+Profile+Photo.jpg"), filename: "Lil Nas X Profile Photo.jpg")
 noname = User.create(email: "noname@music.com", username: "Noname", password: "telefone123", location: "Chicago, Il")
 noname.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/profile-photos/Noname+Profile+Photo.jpeg"), filename: "Noname Profile Photo.jpeg")
-yussef_kamaal = User.create(email: "yussefkamaal@music.com", username: "Yussef Kamaal", password: "blackfocus123", locaiton: "London, UK")
+yussef_kamaal = User.create(email: "yussefkamaal@music.com", username: "Yussef Kamaal", password: "blackfocus123", location: "London, UK")
 yussef_kamaal.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/profile-photos/yussefkamaal+Profile+Photo.jpg"), filename: "yussefkamaal Profile Photo.jpg")
 frank_ocean = User.create(email: "frankocean@music.com", username: "Blonded", password: "blond23", location: "Los Angeles, LA")
 frank_ocean.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/profile-photos/Frank+Ocean+Profile+Photo.png"), filename: "Frank Ocean Profile Photo.png")
@@ -55,6 +55,9 @@ jinsang.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.ama
 
 Song.destroy_all 
 
+song_zero = Song.create(title: "RS-1", artist_id: 1, genre: "lo-fi hip hop")
+song_zero.audio_file.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/4.+RS-1+Demo.mp3"), filename: "4. RS-1 Demo.mp3") 
+song_zero.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/Whatever+Happens+Cover.jpg"), filename: "Whatever Happens Cover.jpg")
 song_one = Song.create(title: "I Don't Really Mind", artist_id: 2, genre: "alternative-rock")
 song_one.audio_file.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/11+I+Don't+Reall+Mind+-+Tame+Impala.mp3"), filename: "11 I Don't Reall Mind - Tame Impala.mp3") 
 song_one.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/innerspeaker.jpg"), filename: "innerspeaker.jpg")
@@ -92,7 +95,7 @@ song_twelve = Song.create(title: "Genesis", artist_id: 21, genre: "electroncia")
 song_twelve.audio_file.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/Grimes+Genesis.mp3"), filename: "Grimes Genesis.mp3") 
 song_twelve.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/grimes_visions.jpg"), filename: "grimes_visions.jpg")
 song_thirteen = Song.create(title: "Diddy bop (feat. Raury & Cam O'bi)", artist_id: 15, genre: "Hip Hop")
-song_thirteen.audio_file.attach(io: open("https://s3-us-west-1.am azonaws.com/soundcloud-2-dev/Noname+-+Diddy+Bop+(feat.+Raury+%26+Cam+O'bi).mp3"), filename: "Noname - Diddy Bop (feat. Raury & Cam O'bi).mp3") 
+song_thirteen.audio_file.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/Noname+-+Diddy+Bop+(feat.+Raury+%26+Cam+O'bi).mp3"), filename: "Noname - Diddy Bop (feat. Raury & Cam O'bi).mp3") 
 song_thirteen.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/noname.jpg"), filename: "noname.jpg")
 song_fourteen = Song.create(title: "So What", artist_id: 4, genre: "jazz")
 song_fourteen.audio_file.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/01+So+What.mp3"), filename: "01 So What.mp3") 
@@ -122,3 +125,117 @@ song_twenty_two = Song.create(title: "Xtal", artist_id: 3, genre: "Ambient Techn
 song_twenty_two.audio_file.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/01+-+Aphex+Twin+-+Xtal.flac"), filename: "01 - Aphex Twin - Xtal.flac") 
 song_twenty_two.photo.attach(io: open("https://s3-us-west-1.amazonaws.com/soundcloud-2-dev/selected+ambient+works+85-92.jpg"), filename: "selected ambient works 85-92.jpg")
 
+Comment.destroy_all
+
+comment_one = Comment.create(body: "Really into this song", artist_id: 1, song_id: 3)
+comment_two = Comment.create(body: "Nice, we should collaborate some time", artist_id: 1, song_id: 4)
+comment_three = Comment.create(body: "I've also got horses in the back", artist_id: 1, song_id: 9)
+comment_four = Comment.create(body: "One of my favorites", artist_id: 1, song_id: 20)
+comment_five = Comment.create(body: "Vibes", artist_id: 1, song_id: 23)
+
+comment_six = Comment.create(body: "Great one", artist_id: 2, song_id: 4)
+comment_seven = Comment.create(body: "Lovely", artist_id: 2, song_id: 5)
+comment_eight = Comment.create(body: "This is real good, let's collaborate", artist_id: 2, song_id: 6)
+comment_nine = Comment.create(body: "Wow, amazing", artist_id: 2, song_id: 7)
+comment_ten = Comment.create(body: "Vibes", artist_id: 2, song_id: 9)
+
+comment_eleven = Comment.create(body: "Eh", artist_id: 3, song_id: 10)
+comment_twelve = Comment.create(body: "Not that big of a fan", artist_id: 3, song_id: 11)
+comment_thirteen = Comment.create(body: "This is bad", artist_id: 3, song_id: 12)
+comment_fourteen = Comment.create(body: "No bueno", artist_id: 3, song_id: 13)
+comment_fifteen = Comment.create(body: "Vibes", artist_id: 3, song_id: 14)
+
+comment_sixteen = Comment.create(body: "Great song", artist_id: 4, song_id: 15)
+comment_seventeen = Comment.create(body: "Wow", artist_id: 4, song_id: 16)
+comment_eighteen = Comment.create(body: "I'm into it", artist_id: 4, song_id: 17)
+comment_nineteen = Comment.create(body: "This is insane", artist_id: 4, song_id: 18)
+comment_twenty = Comment.create(body: "Lovely song", artist_id: 4, song_id: 19)
+
+comment_twenty_one = Comment.create(body: "This is really good", artist_id: 5, song_id: 20)
+comment_twenty_two = Comment.create(body: "Love this beat", artist_id: 5, song_id: 21)
+comment_twenty_three = Comment.create(body: "This is great music to program to", artist_id: 5, song_id: 22)
+comment_twenty_four = Comment.create(body: "I like this", artist_id: 5, song_id: 1)
+comment_twenty_five = Comment.create(body: "Vibes", artist_id: 5, song_id: 2)
+
+comment_twenty_six = Comment.create(body: "This is really good", artist_id: 6, song_id: 3)
+comment_twenty_seven = Comment.create(body: "Nice song", artist_id: 6, song_id: 4)
+comment_twenty_eight = Comment.create(body: "Yuuuup", artist_id: 6, song_id: 5)
+comment_twenty_nine = Comment.create(body: "Really good", artist_id: 6, song_id: 6)
+comment_thirty = Comment.create(body: "This is one of my favorite songs", artist_id: 6, song_id: 7)
+
+comment_thirty_one = Comment.create(body: "Big fan", artist_id: 7, song_id: 8)
+comment_thirty_two = Comment.create(body: "Wow", artist_id: 7, song_id: 9)
+comment_thirty_three = Comment.create(body: "Yuuuup", artist_id: 7, song_id: 10)
+comment_thirty_four = Comment.create(body: "Amazing", artist_id: 7, song_id: 11)
+comment_thirty_five = Comment.create(body: "You are a great artist", artist_id: 7, song_id: 12)
+
+comment_thirty_six = Comment.create(body: "Great song", artist_id: 8, song_id: 13)
+comment_thirty_seven = Comment.create(body: "Wow", artist_id: 8, song_id: 14)
+comment_thirty_eight = Comment.create(body: "Into it", artist_id: 8, song_id: 15)
+comment_thirty_nine = Comment.create(body: "Ahhhh", artist_id: 8, song_id: 16)
+comment_fourty = Comment.create(body: "You are a great artist", artist_id: 8, song_id: 17)
+
+comment_fourty_one = Comment.create(body: "Amazing", artist_id: 9, song_id: 18)
+comment_fourty_two = Comment.create(body: "Feeling this", artist_id: 9, song_id: 19)
+comment_fourty_three = Comment.create(body: "Wow", artist_id: 9, song_id: 20)
+comment_fourty_four = Comment.create(body: "Love this", artist_id: 9, song_id: 21)
+comment_fourty_five = Comment.create(body: "You are a great artist", artist_id: 9, song_id: 22)
+
+comment_fourty_six = Comment.create(body: "Wow", artist_id: 10, song_id: 23)
+comment_fourty_seven = Comment.create(body: "Yup", artist_id: 10, song_id: 1)
+comment_fourty_eight = Comment.create(body: "I'm into this", artist_id: 10, song_id: 2)
+comment_fourty_nine = Comment.create(body: "This is great", artist_id: 10, song_id: 3)
+comment_fifty = Comment.create(body: "Fantastic", artist_id: 10, song_id: 4)
+
+comment_fifty_one = Comment.create(body: "Wow", artist_id: 11, song_id: 5)
+comment_fifty_two = Comment.create(body: "Yup", artist_id: 11, song_id: 6)
+comment_fifty_three = Comment.create(body: "I'm into this", artist_id: 11, song_id: 7)
+
+comment_fifty_four = Comment.create(body: "Love this", artist_id: 12, song_id: 8)
+comment_fifty_five = Comment.create(body: "Great song", artist_id: 12, song_id: 9)
+comment_fifty_six = Comment.create(body: "Joni Mitchell is the greatest of all time", artist_id: 12, song_id: 10)
+
+comment_fifty_seven = Comment.create(body: "Wow", artist_id: 13, song_id: 11)
+comment_fifty_eight = Comment.create(body: "Feels like an anime song", artist_id: 13, song_id: 12)
+comment_fifty_nine = Comment.create(body: "Love these vibes", artist_id: 13, song_id: 13)
+
+comment_sixty = Comment.create(body: "Classic", artist_id: 14, song_id: 14)
+comment_sixty_one = Comment.create(body: "Great groove to this", artist_id: 14, song_id: 15)
+comment_sixty_two = Comment.create(body: "Love these vibes", artist_id: 14, song_id: 16)
+
+comment_sixty_three = Comment.create(body: "Love these vibes", artist_id: 15, song_id: 17)
+comment_sixty_four = Comment.create(body: "Makes me feel like I'm home", artist_id: 15, song_id: 18)
+comment_sixty_five = Comment.create(body: "This is way different from MBDTF", artist_id: 15, song_id: 19)
+
+comment_sixty_six = Comment.create(body: "One of my favorite songs of all time", artist_id: 16, song_id: 20)
+comment_sixty_seven = Comment.create(body: "Jazzzzzzzzzz", artist_id: 16, song_id: 21)
+comment_sixty_eight = Comment.create(body: "Yuh", artist_id: 16, song_id: 22)
+
+comment_sixty_six = Comment.create(body: "Vibes on this one", artist_id: 17, song_id: 23)
+comment_sixty_seven = Comment.create(body: "Is this a Ryuichi Sakamoto sample?", artist_id: 17, song_id: 1)
+comment_sixty_eight = Comment.create(body: "How did you record those guitars", artist_id: 17, song_id: 2)
+
+comment_sixty_nine = Comment.create(body: "What microphone did you use here?", artist_id: 18, song_id: 3)
+comment_seventy = Comment.create(body: "We should collab", artist_id: 18, song_id: 4)
+comment_seventy_one = Comment.create(body: "Can I use this song in my wedding video?", artist_id: 18, song_id: 5)
+
+comment_seventy_two = Comment.create(body: "Beautiful", artist_id: 19, song_id: 6)
+comment_seventy_three = Comment.create(body: "Vibes", artist_id: 19, song_id: 7)
+comment_seventy_four = Comment.create(body: "You are a treasure", artist_id: 19, song_id: 8)
+
+comment_seventy_five = Comment.create(body: "Real good", artist_id: 20, song_id: 9)
+comment_seventy_six = Comment.create(body: "Yup", artist_id: 20, song_id: 10)
+comment_seventy_seven = Comment.create(body: "Thank you, Frank", artist_id: 20, song_id: 11)
+
+
+comment_seventy_eight = Comment.create(body: "Wow", artist_id: 20, song_id: 12)
+comment_seventy_nine = Comment.create(body: "This reminds me of an anime", artist_id: 20, song_id: 13)
+comment_eighty = Comment.create(body: "Sweet vibes", artist_id: 20, song_id: 14)
+
+comment_eighty_one = Comment.create(body: "Wow", artist_id: 21, song_id: 15)
+comment_eighty_two = Comment.create(body: "Love this", artist_id: 21, song_id: 16)
+comment_eighty_three = Comment.create(body: "Great vibes", artist_id: 21, song_id: 17)
+
+comment_eighty_four = Comment.create(body: "Dreamy", artist_id: 22, song_id: 18)
+comment_eighty_five = Comment.create(body: "Get em", artist_id: 22, song_id: 19)
+comment_eighty_six = Comment.create(body: "Amazing song", artist_id: 22, song_id: 20)
