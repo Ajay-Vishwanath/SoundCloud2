@@ -79,5 +79,46 @@
     margin-left: auto;  
 }
 
+.user-comment-idx-item{
+    display: flex;
+    padding: 10px 0px 10px 0px;
+    /* border-top: 1px solid #f2f2f2; */
+}
+
+.user-comment-item-left{
+    display: flex;
+    flex-direction: column; 
+}
+
+.comment-item-right{
+    margin-left: auto; 
+}
+
+.user-comment-item-body{
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #333;
+}
+
+.user-comment-song-title{
+    color: #999;
+    text-decoration: none; 
+    font: 12px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    cursor: pointer; 
+}
+
+.no-comments-container{
+    height: 100px; 
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.no-comments{
+    font-size: 14px; 
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100; 
+}
+
 
 

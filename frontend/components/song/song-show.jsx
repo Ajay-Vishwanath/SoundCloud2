@@ -58,6 +58,19 @@ commentsIndex() {
             </div>
         )
     }
+    else {
+        return (
+            <div className="comments-index-container">
+                <div className="no-comments-container">
+                    <span className="no-comments"> This song does not yet have comments. Be the first
+                    to comment on {this.props.song.title}.</span>
+                </div>
+                <div className="bottom-border">
+                    <img src={logourl} className="comment-logo" />
+                </div>
+            </div>
+        )
+    }
 }
 handlePlayPause(e) {
         e.preventDefault();
@@ -77,6 +90,11 @@ handlePlayPause(e) {
 
         const artistphotoUrl = (artist.photoUrl === '') ?
             ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (artist.photoUrl)
+
+        const description = (song.description) ?
+            (<div className="description-container">
+                <span className="song-description">{song.description}</span>
+            </div>) : null;
 
         const waveForm = (this.props.song) ?
             (<Waveform audioFileUrl={this.props.song.audioFileUrl} song={song} currentSong={this.props.currentSong}/>) : null
@@ -126,6 +144,7 @@ handlePlayPause(e) {
                                         </Link>
                                     </div>
                                     <div className="right-side">
+                                    {description}
                                     {this.commentsIndex()}
                                     </div>
                                 </div>

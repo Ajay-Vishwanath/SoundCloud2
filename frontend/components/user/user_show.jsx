@@ -2,6 +2,7 @@ import React from 'react';
 import GreetingContainer from '../greeting/greeting_container'
 import {withRouter} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import UserCommentIndexItem from '../comment/user_comments';
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -16,8 +17,11 @@ class UserShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.userId).then(result => (this.setState({photoUrl: this.props.user.photoUrl})))
-        window.scrollTo(0, 0)
+        this.props.fetchUser(this.props.match.params.userId).then(result => (this.setState({photoUrl: this.props.user.photoUrl})));
+        this.props.fetchSongs();
+        this.props.fetchComments();
+        debugger 
+        window.scrollTo(0, 0);
     }
 
     handleUpdate(e) {
@@ -34,6 +38,26 @@ class UserShow extends React.Component {
         const userId = this.props.user.id || this.props.match.params.id 
         formData.append('user[profile_photo]', file)
         this.props.updateUser({user: formData, id: userId}).then(result => this.setState({photoChanged: !this.state.photoChanged}));
+        }
+    }
+
+    commentsIndex() {
+        if (this.props.comments.length > 0 && this.props.songs.length > 0) {
+      
+            const comments = this.props.comments.map(comment => {
+                const songId = comment.song_id - 1
+                return <UserCommentIndexItem comment={comment} song={this.props.songs[songId]}
+                    currentUser={this.props.currentUser} removeComment={this.props.removeComment} 
+                    key={comment.id}/>
+            });
+
+            return (
+                <div className="comments-index-container">
+                    <div className="user-show-comments-index">
+                        {comments}
+                    </div>
+                </div>
+            )
         }
     }
 
@@ -57,8 +81,6 @@ class UserShow extends React.Component {
         &nbsp; Update Image
         <input type="file" onChange={this.handleUpdate} className="update-prof-pic-input"></input>
         </label>) : (null)
-
-    debugger 
     
     return(
         <div className="full-user-show-page">
@@ -91,7 +113,12 @@ class UserShow extends React.Component {
 
                     </div>
                     <div className="user-body-right">
-
+                        <div className="user-comments-index">
+                            <div className="num-user-comments">
+                                <span className="num-user-comments-display"><FontAwesomeIcon icon="comment-alt" /> {this.props.comments.length} Comments</span>
+                            </div>
+                            {this.commentsIndex()}
+                        </div>
                     </div>
                 </div>
             </div>

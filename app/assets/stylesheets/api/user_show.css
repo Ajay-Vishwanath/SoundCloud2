@@ -117,7 +117,7 @@
     cursor: pointer;
     color: #333;
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.8;
     font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
     font-weight: 500;
@@ -135,4 +135,24 @@
 .user-body-left{
     width: 70%;
     border-right: 1px solid #f2f2f2;
+}
+
+.user-body-right{
+    padding: 0px 20px; 
+    width: 30%; 
+}
+
+.num-user-comments{
+
+    width: 100%;
+    padding-bottom: 7px; 
+    border-bottom: 1px solid #f2f2f2;
+    display: block; 
+
+}
+
+.num-user-comments-display{
+    font-weight: 100;
+    color: #999;
+    font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }

@@ -293,3 +293,11 @@ object-position: 100% 0;
     right: 0; 
     background: white; 
 }
+
+.description-container{
+    margin: 14px 0px 28px; 
+}
+.song-description{
+    font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #333;
+}
