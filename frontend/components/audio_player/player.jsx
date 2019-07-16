@@ -11,12 +11,14 @@ class Playbar extends React.Component {
         this.state = {
             currentTime: 0,
             duration: 500,
-            ended: false 
+            ended: false,
+            volume: true 
         }
 
         this.getTime = this.getTime.bind(this);
         this.toggleplay = this.toggleplay.bind(this);
         this.handleClick = this.handleClick.bind(this); 
+        this.toggleVolume = this.toggleVolume.bind(this);
     }
 
     componentDidMount() {
@@ -76,6 +78,16 @@ class Playbar extends React.Component {
             this.props.togglePlayPause();
         }
         }
+    
+    toggleVolume(){
+        if (this.state.volume) {
+            this.audio.muted = true 
+            this.setState({volume: false})
+        } else {
+            this.audio.muted = false 
+            this.setState({volume: true })
+        }
+    }
 
     render () {
         
@@ -97,8 +109,12 @@ class Playbar extends React.Component {
             (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="play" color="black" /></button>
             );
         
-        const volumeIcon =(this.props.currentSong) ? 
-                (<button className="volume-icon"><FontAwesomeIcon icon="volume-up" color="black" /></button>) : null 
+        const volumeIconIcon = (this.state.volume) ?
+            (<button className="volume-icon"><FontAwesomeIcon icon="volume-up" color="black" onClick={this.toggleVolume}/></button>) : 
+            (<button className="volume-icon"><FontAwesomeIcon icon="volume-mute" color="black" onClick={this.toggleVolume}/></button>)
+
+        const volumeIcon = (this.props.currentSong) ? 
+                (volumeIconIcon) : null 
 
         const playerRight =(this.props.currentSong)? 
                 (<PlayerRight song={this.props.currentSong} artist={this.props.artist}/>) : null 
