@@ -8,6 +8,7 @@ const UserCommentItem = props => {
     const { comment } = props;
     const { song } = props;
     const { currentUser } = props;
+    const { removeComment } = props
     debugger 
 
     function parsedDate(comment) {

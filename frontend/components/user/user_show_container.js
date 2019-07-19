@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchUser, fetchUsers, updateUser} from '../../actions/user_actions'
-import { fetchComments } from '../../actions/comment_actions'
+import { fetchComments, removeComment } from '../../actions/comment_actions'
 import { fetchSongs } from '../../actions/song_actions'
 import UserShow from './user_show';
 import { withRouter } from 'react-router-dom';
@@ -27,7 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
     fetchUser: (id) => dispatch(fetchUser(id)),
     updateUser: (user) => dispatch(updateUser(user)),
     fetchComments: () => dispatch(fetchComments()),
-    fetchSongs: () => dispatch(fetchSongs())
+    fetchSongs: () => dispatch(fetchSongs()),
+    removeComment: (id) => dispatch(removeComment(id))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(UserShow));

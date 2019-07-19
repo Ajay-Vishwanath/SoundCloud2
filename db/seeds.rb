@@ -10,7 +10,7 @@ require 'open-uri'
 
 User.destroy_all 
 
-demo_user = User.create(email: "demouser@test.com", username: "DemoLogin", password: "musiclover59")
+demo_user = User.create(email: "demouser@test.com", username: "DemoLogin", password: "musiclover59", location: "Oakland, CA")
 tame_impala = User.create(email: "tameimpala@music.com", username: "Tame Impala", password: "lonerism123", location: "Perth, Australia")
 tame_impala.profile_photo.attach(io: open("https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/profile-photos/Tame+Impala+Profile+Photo.jpg"), filename: "Tame Impala Profile Photo.jpg")
 aphex_twin = User.create(email: "aphextwin@music.com", username: "Aphex Twin", password: "rdj123", location: "Cyberspace, UK")
