@@ -14,11 +14,23 @@ const mapStateToProps = (state, ownProps) => {
                 comments.push(comment);
             }
         });
-    }  
+    }
+    
+    const songs = Object.keys(state.entities.songs).map(id => state.entities.songs[id])
+    let userSongs = []
+    if (songs && user) {
+        songs.forEach(song => {
+            if (song.artist_id === user.Id) {
+                userSongs.push(song);
+            }
+        })
+    }
+
     return{
     user: user,
     comments: comments,
-    songs: Object.keys(state.entities.songs).map(id => state.entities.songs[id]),
+    songs: songs,
+    userSongs: userSongs,
     currentUser: state.entities.users[state.session.id]
 }}
 
