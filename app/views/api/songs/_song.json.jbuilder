@@ -1,4 +1,4 @@
-json.extract! song, :id, :artist_id, :title, :genre, :length, :description
+json.extract! song, :id, :artist_id, :title, :genre, :length, :description, :created_at
 
 if song.photo.attached?
     json.photoUrl url_for(song.photo)

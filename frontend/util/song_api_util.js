@@ -23,7 +23,6 @@ export const createSong = song => (
 );
 
 export const updateSong = (song, id) => {
-    debugger 
     return(
     $.ajax({
         method: 'patch',

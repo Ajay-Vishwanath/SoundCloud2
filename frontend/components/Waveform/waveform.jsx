@@ -45,7 +45,6 @@ class Waveform extends React.Component {
     componentWillUpdate(prevProps){
         if (this.props.currentSong) {
             if (this.props.currentSong.id === this.props.song.id && this.state.eventListener === 'off'){
-                debugger 
                     this.setState({ eventListener: 'on' })
                     this.audio.addEventListener("timeupdate", e => {
                         this.setState({
@@ -63,7 +62,6 @@ class Waveform extends React.Component {
         var that = this;
         if (this.props.currentSong) {
             if (this.props.currentSong.id === this.props.song.id && this.state.eventListener === 'off') {
-                debugger 
                 this.setState({ eventListener: 'on' })
                 this.audio.addEventListener("timeupdate", e => {
                     this.setState({
@@ -75,7 +73,6 @@ class Waveform extends React.Component {
                 });
             };
             if (this.state.pos === this.state.duration && this.state.ended === false) {
-                debugger 
                 this.setState(
                 { ended: true}
                 )

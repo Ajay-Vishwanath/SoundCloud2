@@ -9,7 +9,6 @@ const UserCommentItem = props => {
     const { song } = props;
     const { currentUser } = props;
     const { removeComment } = props
-    debugger 
 
     function parsedDate(comment) {
         let createdDate = comment.created_at.toString().split('')

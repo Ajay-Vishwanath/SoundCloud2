@@ -155,3 +155,7 @@
     color: #999;
     font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
+
+.user-song-item-container{
+    display: flex; 
+}

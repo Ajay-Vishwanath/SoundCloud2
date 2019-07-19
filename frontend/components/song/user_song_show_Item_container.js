@@ -1,3 +1,4 @@
+import { connect } from 'react-redux'; 
 import { deleteSong, updateSong } from '../../actions/song_actions';
 import { openModal } from '../../actions/modal_actions';
 import UserSongShowItem from './user-song-show-item';
@@ -22,4 +23,4 @@ const mapDispatchToProps = dispatch => ({
     receivePlayerSong: (song) => dispatch(receivePlayerSong(song))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateComment); 
+export default connect(mapStateToProps, mapDispatchToProps)(UserSongShowItem); 

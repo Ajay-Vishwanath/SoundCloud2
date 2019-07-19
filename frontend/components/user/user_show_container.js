@@ -20,12 +20,11 @@ const mapStateToProps = (state, ownProps) => {
     let userSongs = []
     if (songs && user) {
         songs.forEach(song => {
-            if (song.artist_id === user.Id) {
+            if (song.artist_id === user.id) {
                 userSongs.push(song);
             }
         })
-    }
-
+    } 
     return{
     user: user,
     comments: comments,

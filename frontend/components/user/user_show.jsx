@@ -3,6 +3,7 @@ import GreetingContainer from '../greeting/greeting_container'
 import {withRouter} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import UserCommentIndexItem from '../comment/user_comments';
+import UserSongShowItemContainer from '../song/user_song_show_Item_container';
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -20,7 +21,6 @@ class UserShow extends React.Component {
         this.props.fetchUser(this.props.match.params.userId).then(result => (this.setState({photoUrl: this.props.user.photoUrl})));
         this.props.fetchSongs();
         this.props.fetchComments();
-        debugger 
         window.scrollTo(0, 0);
     }
 
@@ -61,10 +61,26 @@ class UserShow extends React.Component {
         }
     }
 
+    songsIndex() {
+
+        if (this.props.userSongs.length > 0 && this.props.songs.length > 0) {
+            const userSongs = this.props.userSongs.map(song => {
+                debugger 
+                return <UserSongShowItemContainer song={song} artist={this.props.user}
+                key={song.id}/> 
+            })
+
+            return (
+                <div className="user-songs-index-container">
+                    {userSongs}
+                </div>
+            )
+        }
+    }
+
     render() {
 
     if (!this.props.user) {
-        debugger 
         return null; 
     }
 
@@ -110,7 +126,7 @@ class UserShow extends React.Component {
                 </div>
                 <div className="user-body-bottom">
                     <div className="user-body-left">
-
+                        {this.songsIndex()}
                     </div>
                     <div className="user-body-right">
                         <div className="user-comments-index">

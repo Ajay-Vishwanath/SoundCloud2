@@ -8,7 +8,6 @@ const usersReducer = (state={}, action) => {
         case RECEIVE_CURRENT_USER:
             return(merge({}, state, {[action.currentUser.id]: action.currentUser}))
         case RECEIVE_USER:
-            debugger 
             return Object.assign({}, state, { [action.user.id]: action.user });
         case RECEIVE_USERS:
             return action.users 

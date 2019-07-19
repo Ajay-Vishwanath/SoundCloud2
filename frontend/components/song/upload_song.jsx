@@ -44,7 +44,6 @@ class UploadSong extends React.Component {
             loading: true
         }); 
 
-        debugger 
         this.props.createSong(formData, this.state.id).then(result => this.goHome(), err => (this.setState({
             loading: false
         }) ));
@@ -66,7 +65,6 @@ class UploadSong extends React.Component {
     }
 
     goHome() {
-        debugger 
         this.props.history.push("/discover"); 
     }
 
