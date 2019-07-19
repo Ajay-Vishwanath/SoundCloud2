@@ -26,7 +26,7 @@ const UserCommentItem = props => {
     }
 
     function deleteComment() {
-        if (comment.artist_id === currentUser.id) {
+        if (currentUser && comment.artist_id === currentUser.id) {
             return (
                 <button onClick={handleDelete} className="comment-delete">
                     <FontAwesomeIcon icon="trash" />
