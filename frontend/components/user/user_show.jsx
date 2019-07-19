@@ -73,6 +73,20 @@ class UserShow extends React.Component {
             return (
                 <div className="user-songs-index-container">
                     {userSongs}
+                    <div className="bottom-border">
+                        <img src={logourl} className="comment-logo" />
+                    </div>
+                </div>
+            )
+        } else {
+            return (
+                <div className="comments-index-container">
+                    <div className="no-comments-container">
+                        <span className="no-comments"> {this.props.user.username} has not uploaded any tracks yet.</span>
+                    </div>
+                    <div className="bottom-border">
+                        <img src={logourl} className="comment-logo" />
+                    </div>
                 </div>
             )
         }

@@ -102,15 +102,17 @@ class Waveform extends React.Component {
 }
 
     render() {
-        const options = {
-            cursorWidth: 0,
-            progressColor:"#FF5500",
-            waveColor:"#F2F2F2",
-            barWidth: 2,
-            hideScrollbar: true
-        }
         
-        if (this.props.audioFileUrl) {
+        if (this.props.audioFileUrl && this.props.yup) {
+
+            const options = {
+                cursorWidth: 0,
+                progressColor: "#FF5500",
+                waveColor: "#F2F2F2",
+                barWidth: 2,
+                hideScrollbar: true,
+                height: 60
+            }
 
         return (
             <div>
@@ -124,8 +126,29 @@ class Waveform extends React.Component {
                 />
             </div>
         );
-        } else {
-            return null; 
+        } else if (this.props.audioFileUrl) {
+            const options = {
+                cursorWidth: 0,
+                progressColor: "#FF5500",
+                waveColor: "#F2F2F2",
+                barWidth: 2,
+                hideScrollbar: true,
+            }
+
+            return (
+                <div>
+                    <Wavesurfer
+                        audioFile={this.props.audioFileUrl}
+                        pos={this.state.pos}
+                        onPosChange={this.handlePosChange}
+                        playing={this.state.playing}
+                        id="show-waveform"
+                        options={options}
+                    />
+                </div>
+        )} 
+            else {
+                return null; 
         }
     }
 }

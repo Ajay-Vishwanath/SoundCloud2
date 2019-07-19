@@ -1,6 +1,8 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Waveform from '../Waveform/waveform';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { withRouter } from 'react-router-dom';
 
 class UserSongShowItem extends React.Component {
     constructor(props) {
@@ -32,7 +34,7 @@ class UserSongShowItem extends React.Component {
         }
         else if (this.props.song.artist_id === this.props.currentUser.id) {
             return (
-                <div className="userOptions">
+                <div className="userShowOptions">
                     <button onClick={() => this.props.openModal('editpost')}><FontAwesomeIcon icon="pencil-alt" /> Edit</button>
                     <button onClick={() => this.props.openModal('deletepost')}><FontAwesomeIcon icon="trash" /> Delete track</button>
                 </div>
@@ -49,7 +51,8 @@ class UserSongShowItem extends React.Component {
             )
         
         const waveForm = (this.props.song) ?
-            (<Waveform audioFileUrl={this.props.song.audioFileUrl} song={this.props.song} currentSong={this.props.currentSong} />) 
+            (<Waveform audioFileUrl={this.props.song.audioFileUrl} song={this.props.song} currentSong={this.props.currentSong} 
+            yup="user-song-index"/>) 
             : null
         
         
@@ -61,8 +64,8 @@ class UserSongShowItem extends React.Component {
 
                 <div className="user-song-item-right">
                     
-                    <div className="user-song-item-top-right">
-                        <div className="user-song-item-info-left">
+                    <div className="user-song-item-top">
+                        <div className="user-song-info-left">
                             <div className="user-play-button">
                                 {button}
                             </div>
@@ -95,7 +98,7 @@ class UserSongShowItem extends React.Component {
 
                     <div className="user-song-item-bottom-right">
                         <div className="user-show-user-actions">
-                            {this.userActions()}
+                            {/* {this.userActions()} */}
                         </div>
                     </div>
                 </div>
@@ -106,4 +109,4 @@ class UserSongShowItem extends React.Component {
     
 } 
 
-export default UserSongShowItem; 
+export default withRouter(UserSongShowItem); 

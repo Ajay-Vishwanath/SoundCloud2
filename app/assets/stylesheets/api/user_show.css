@@ -133,6 +133,7 @@
 
 .user-body-left{
     width: 70%;
+    padding: 0px 30px; 
     border-right: 1px solid #f2f2f2;
 }
 
@@ -156,6 +157,130 @@
     font: 14px/1.4 "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
 }
 
+.user-songs-index-container{
+    width: 100%; 
+}
+
 .user-song-item-container{
     display: flex; 
+    width: 100%; 
+    height: 160px; 
+    margin-bottom: 36px; 
+}
+
+.user-song-item-right{
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    position: relative; 
+    justify-content: space-around; 
+}
+
+.user-song-item-top{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+}
+
+.user-song-item-left{
+    position: relative; 
+    margin-right: 15px; 
+}
+.user-song-item-image{
+    cursor: pointer; 
+    height: 160px;
+    width: 160px;
+    overflow: hidden;
+}
+
+.user-play-button{
+    height: 36px;
+    width: 36px; 
+    margin-right: 5px; 
+}
+
+.user-song-info-left{
+    display: flex;
+    flex-direction: row; 
+}
+
+.user-and-song-names{
+    display: flex;
+    flex-direction: column;
+}
+
+.user-artist-name{
+    color: #999;
+    font-size: 12px;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+#user-song-name{
+    cursor: pointer; 
+    font-size: 15px; 
+    line-height: 1.2;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    color: #333; 
+}
+
+.user-song-item-info-right{
+    display: flex;
+    flex-direction: column; 
+}
+
+.user-song-created-date{
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 16px;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+}
+
+.user-song-genre{
+    max-width: 120px;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    background: #999;
+    border: 1px solid #999;
+    border-left-width: 0;
+    color: #fff;
+    border-radius: 20px; 
+    font-weight: 100; 
+    padding: 0 6px;
+    font-size: 12px; 
+    margin-left: auto; 
+
+}
+
+.user-song-waveform{
+    width: 100%;
+    height: 60px;
+    position: relative;  
+}
+
+.user-song-waveform * {
+    height: 60px; 
+}
+
+
+.userShowOptions{
+    margin-top: 10px; 
+}
+
+.userShowOptions button{
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    display: inline-block;
+    position: relative;
+    font-size: 11px; 
+    padding: 2px 9px 2px 8px;
+    height: 22px; 
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background-color: #fff;
+    cursor: pointer;
+    color: #333;
+    white-space: nowrap;
+    font-weight: 100;
+    text-align: center;
+    vertical-align: center;
+    margin-right: 5px;  
 }
