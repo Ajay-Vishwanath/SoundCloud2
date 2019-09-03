@@ -54,7 +54,7 @@ class SongIndex extends React.Component {
                             <img src={window.linkedinicon} className="github-logo" />
                             </a>
 
-                            <a href="ajayvishwanath.com">
+                            <a href="www.ajayvishwanath.com">
                             <img src={window.portfolioicon} className="github-logo" />
                             </a>
                         </div>
