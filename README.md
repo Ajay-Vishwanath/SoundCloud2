@@ -11,3 +11,42 @@ Below are images of the splash page a user encounters before signing in, and the
 
 ###
 ![alt text](https://github.com/Ajay-Vishwanath/SoundCloud2/blob/master/app/assets/images/discover_page_screenshot.png)
+
+## Features 
+
+* Secure frontend to backend user authentication using BCrypt
+* Users can upload, edit, and delete songs, and comment on songs from other users
+* User show pages with user information and an index of user songs
+* Audio Player that persists across navigation with play/pause and volume controls
+* Clickable progress bar and waveform visualization to skip around within the song
+* Dynamic page rendering depending on whether user is signed in or out
+
+#### Custom-Built Audio Player
+
+SoundCloud-2 uses a custom-built audio-player utilizing React.js state management and the HTML5 audio API. When the audio-player component is mounted, a timeupdate event listener is placed on the HTML audio element which updates state in real-time, keeping track of the songs current time, its duration, and whether or not it has finished playing. The current time, progress bar, and song duration elements which appear on the page all make use of this information and update accordingly. 
+
+```javascript
+componentDidMount() {
+        this.props.fetchUsers(); 
+        this.audio = document.getElementById("playbar-audio-player")
+        this.playbarAudio.addEventListener("timeupdate", e => {
+             this.setState({
+                 currentTime: e.target.currentTime,
+                 duration: e.target.duration,
+                 ended: false 
+             });
+         });
+    }
+```
+
+The progress bar also has a click-handler applied which allows the user to adjust the song's playback time. A percent variable is initialized which keeps track of where relative to the full-width of the progress bar the user has clicked, and then uses that number to adjust the song's current time and progress bar value.
+
+```javascript
+handleClick(e){
+
+    e.preventDefault() 
+    const percent = e.nativeEvent.offsetX/ e.currentTarget.offsetWidth
+    this.playbarAudio.currentTime = percent * this.playbarAudio.duration;
+    this.progressBar.value = percent / 100 
+}
+```
