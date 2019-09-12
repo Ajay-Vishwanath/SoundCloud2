@@ -50,3 +50,6 @@ handleClick(e){
     this.progressBar.value = percent / 100 
 }
 ```
+Below is a demonstration of the progress bar updating as the song progresses and updating when I click on a different section of the waveform and progress bar elements.
+
+![alt text](https://github.com/Ajay-Vishwanath/SoundCloud2/blob/master/app/assets/images/audio_player_gif.gif)
