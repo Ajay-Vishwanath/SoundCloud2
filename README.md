@@ -8,3 +8,6 @@ Below are images of the splash page a user encounters before signing in, and the
      
 ###        
 ![alt text](https://github.com/Ajay-Vishwanath/SoundCloud2/blob/master/app/assets/images/splash_page_screenshot.png)
+
+###
+![alt text](https://github.com/Ajay-Vishwanath/SoundCloud2/blob/master/app/assets/images/discover_page_screenshot.png)
