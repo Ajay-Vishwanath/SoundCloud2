@@ -43,7 +43,6 @@ The progress bar also has a click-handler applied which allows the user to adjus
 
 ```javascript
 handleClick(e){
-
     e.preventDefault() 
     const percent = e.nativeEvent.offsetX/ e.currentTarget.offsetWidth
     this.playbarAudio.currentTime = percent * this.playbarAudio.duration;
