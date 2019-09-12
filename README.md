@@ -17,6 +17,7 @@ Below are images of the splash page a user encounters before signing in, and the
 * Secure frontend to backend user authentication using BCrypt
 * Users can upload, edit, and delete songs, and comment on songs from other users
 * User show pages with user information and an index of user songs
+* Modal integration for sign-up, sign-in, song-edit, and song-delete components
 * Audio Player that persists across navigation with play/pause and volume controls
 * Clickable progress bar and waveform visualization to skip around within the song
 * Dynamic page rendering depending on whether user is signed in or out
