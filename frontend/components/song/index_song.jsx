@@ -47,7 +47,7 @@ class SongIndex extends React.Component {
                     <div className="right-song-index">
                         <div className="profile-links">
                             <a href="https://github.com/Ajay-Vishwanath/SoundCloud2">
-                            <img src={window.githubicon} className="github-logo"/>
+                            a <img src={window.githubicon} className="github-logo"/>
                             </a>
 
                             <a href="https://www.linkedin.com/in/ajay-vishwanath/">
