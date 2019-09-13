@@ -22,7 +22,7 @@ Below are images of the splash page users encounter before signing in, and then 
 * Clickable progress bar and waveform visualization to skip around within the song
 * Dynamic page rendering depending on whether user is signed in or out
 
-#### Custom-Built Audio Player
+#### Custom Built Audio Player
 
 SoundCloud-2 uses a custom-built audio-player utilizing React.js state management and the HTML5 audio API. When the audio-player component is mounted, a timeupdate event listener is placed on the HTML audio element which updates state in real-time, keeping track of the songs current time, its duration, and whether or not it has finished playing. The current time, progress bar, and song duration elements which appear on the page all make use of this information and update accordingly. 
 
