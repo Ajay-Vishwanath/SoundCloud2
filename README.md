@@ -60,6 +60,8 @@ Rails was chosen due to its built-in support for relational databases and its RE
 
 React was chosen for the frontend due to its dynamic capability and efficiency. The React design allowed for a single-page web application experience, where every component does not need to be re-rendered and updated when a piece of information changes. Redux allowed for a normalized application state which made communication across components easier and more organized.
 
+Wavesurfer.js was a library I found that allowed me to pass in an audio file and get back an interactive visualization of the waveform. I was able to write my own functions for play/pause and handle position change which I passed into the wavesurfer object as well. 
+
 ## Future Releases 
 
 In the future, I would like to add
