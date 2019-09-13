@@ -53,3 +53,19 @@ handleClick(e){
 Below is a demonstration of the progress bar updating as the song progresses and updating when I click on a different section of the waveform and progress bar elements.
 
 ![alt text](https://github.com/Ajay-Vishwanath/SoundCloud2/blob/master/app/assets/images/audio_player_gif.gif)
+
+## Technologies
+
+Rails was chosen due to its built-in support for relational databases and its RESTful architecture with PostgreSQL handling the database management. 
+
+React was chosen for the frontend due to its dynamic capability and efficiency. The React design allowed for a single-page web application experience, where every component does not need to be re-rendered and updated when a piece of information changes. Redux allowed for a normalized application state which made communication across components easier and more organized.
+
+## Future Releases 
+
+In the future, I would like to add
+
+* A search bar component
+* A likes feature
+* A playlist feature
+* A way to optimize the waveform visualization component (currently, it draws the waveform in real-time using canvas, which takes some time for the browser to perform)
+
