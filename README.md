@@ -1,6 +1,6 @@
 # SoundCloud-2
 
-[Live Link](http://soundcloud-2.herokuapp.com/)
+[Live Demo](http://soundcloud-2.herokuapp.com/)
 
 SoundCloud-2 is a full-stack clone of the music and audio-sharing app SoundCloud, where users can upload, edit, and stream music, and comment on other users' songs. 
 
