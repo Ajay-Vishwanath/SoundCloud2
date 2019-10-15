@@ -1,5 +1,7 @@
 # SoundCloud-2
 
+[Live Demo](http://soundcloud-2.herokuapp.com/)
+
 SoundCloud-2 is a full-stack clone of the music and audio-sharing app SoundCloud, where users can upload, edit, and stream music, and comment on other users' songs. 
 
 A large portion of the project was completed over a 10-day timeframe, with new features and improvements added over time. SoundCloud-2 makes use of a Ruby on Rails/PostgreSQL backend, with React.js and Redux on the frontend. 
@@ -22,7 +24,7 @@ Below are images of the splash page users encounter before signing in, and then 
 * Clickable progress bar and waveform visualization to skip around within the song
 * Dynamic page rendering depending on whether user is signed in or out
 
-#### Custom-Built Audio Player
+#### Custom Built Audio Player
 
 SoundCloud-2 uses a custom-built audio-player utilizing React.js state management and the HTML5 audio API. When the audio-player component is mounted, a timeupdate event listener is placed on the HTML audio element which updates state in real-time, keeping track of the songs current time, its duration, and whether or not it has finished playing. The current time, progress bar, and song duration elements which appear on the page all make use of this information and update accordingly. 
 
