@@ -22,6 +22,7 @@ class UserShow extends React.Component {
         this.props.fetchSongs();
         this.props.fetchComments();
         window.scrollTo(0, 0);
+        debugger 
     }
 
     handleUpdate(e) {
@@ -65,7 +66,6 @@ class UserShow extends React.Component {
 
         if (this.props.userSongs.length > 0 && this.props.songs.length > 0) {
             const userSongs = this.props.userSongs.map(song => {
-                debugger 
                 return <UserSongShowItemContainer song={song} artist={this.props.user}
                 key={song.id}/> 
             })

@@ -98,7 +98,6 @@ class Greeting extends React.Component {
                                 <a href="/#/discover" className="home-button">Home</a>
                             </div>
                         </div>
-                        
 
                         <div className='rightnavbar'>
                             <div className="upload-button-div">

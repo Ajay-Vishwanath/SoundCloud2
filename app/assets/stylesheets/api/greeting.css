@@ -193,3 +193,7 @@ button{
   font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Verdana,Tahoma,sans-serif;
   color: #ccc;
 }
+
+.profile-type p{
+  color:  #ccc;
+}
