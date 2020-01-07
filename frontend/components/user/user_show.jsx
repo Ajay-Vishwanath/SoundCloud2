@@ -22,7 +22,6 @@ class UserShow extends React.Component {
         this.props.fetchSongs();
         this.props.fetchComments();
         window.scrollTo(0, 0);
-        debugger 
     }
 
     handleUpdate(e) {

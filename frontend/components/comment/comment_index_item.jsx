@@ -29,7 +29,6 @@ const CommentIndexItem = props => {
     }
 
     function deleteComment() {
-        debugger 
         if (currentUser && comment.artist_id === currentUser.id) {
             return (
                 <button onClick={handleDelete} className="comment-delete">
