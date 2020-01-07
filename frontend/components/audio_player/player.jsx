@@ -45,6 +45,7 @@ class Playbar extends React.Component {
                     currentTime: 0,
                 })}, 1000)
         }
+        debugger 
     }
 
      componentWillUnmount() {
