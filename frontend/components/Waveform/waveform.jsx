@@ -41,7 +41,7 @@ class Waveform extends React.Component {
         };
     };
 
-
+    //Failsafe to make sure that the event listener is on for the waveform. 
     componentWillUpdate(prevProps){
         if (this.props.currentSong) {
             if (this.props.currentSong.id === this.props.song.id && this.state.eventListener === 'off'){
@@ -72,6 +72,8 @@ class Waveform extends React.Component {
                     });
                 });
             };
+            //When the song is ended - wait dor 1 second and then set the waveform position back to the 
+            //beginning. 
             if (this.state.pos === this.state.duration && this.state.ended === false) {
                 this.setState(
                 { ended: true}
