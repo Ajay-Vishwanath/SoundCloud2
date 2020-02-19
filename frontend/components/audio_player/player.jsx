@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import PlayerRight from './player_right'; 
+import PlayerRight from './player_right';
 
 class Playbar extends React.Component {
 
@@ -12,40 +12,39 @@ class Playbar extends React.Component {
             currentTime: 0,
             duration: 500,
             ended: false,
-            volume: true 
+            volume: true
         }
 
         this.getTime = this.getTime.bind(this);
         this.toggleplay = this.toggleplay.bind(this);
-        this.handleClick = this.handleClick.bind(this); 
+        this.handleClick = this.handleClick.bind(this);
         this.toggleVolume = this.toggleVolume.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchUsers(); 
+        this.props.fetchUsers();
         this.audio = document.getElementById("playbar-audio-player")
         this.playbarAudio.addEventListener("timeupdate", e => {
              this.setState({
                  currentTime: e.target.currentTime,
                  duration: e.target.duration,
-                 ended: false 
+                 ended: false
              });
          });
     }
 
     componentDidUpdate() {
-        var that = this 
+        var that = this
         if ((this.props.currentSong) && this.state.currentTime === this.state.duration && this.state.ended === false) {
             this.setState({
-                ended: true 
+                ended: true
             })
             setTimeout(function(){
-                that.props.togglePlayPause() 
+                that.props.togglePlayPause()
                 that.setState({
                     currentTime: 0,
                 })}, 1000)
         }
-        debugger 
     }
 
      componentWillUnmount() {
@@ -53,13 +52,11 @@ class Playbar extends React.Component {
      }
 
      handleClick(e){
-         e.preventDefault() 
+         e.preventDefault()
          const percent = e.nativeEvent.offsetX/ e.currentTarget.offsetWidth
          this.playbarAudio.currentTime = percent * this.playbarAudio.duration;
-         this.progressBar.value = percent / 100 
+         this.progressBar.value = percent / 100
      }
-
-     
 
     getTime(time) {
     if (!isNaN(time)) {
@@ -78,45 +75,42 @@ class Playbar extends React.Component {
             this.props.togglePlayPause();
         }
         }
-    
     toggleVolume(){
         if (this.state.volume) {
-            this.audio.muted = true 
+            this.audio.muted = true
             this.setState({volume: false})
         } else {
-            this.audio.muted = false 
+            this.audio.muted = false
             this.setState({volume: true })
         }
     }
 
     render () {
-        
         const currentTime = (this.props.currentSong) ?
-            (this.getTime(this.state.currentTime)) : null 
+            (this.getTime(this.state.currentTime)) : null
 
         const duration = (this.props.currentSong) ?
-            (this.getTime(this.state.duration)) : null  
-        
+            (this.getTime(this.state.duration)) : null
         const progressBar = (this.props.currentSong) ?
-            (   
+            (
                 <progress id="progress-bar" value={this.state.currentTime/this.state.duration}
                 ref={ref => (this.progressBar = ref)} onClick={this.handleClick} />
 
             ) : null
 
-       const playPause = (this.props.player === "playing") ? 
+       const playPause = (this.props.player === "playing") ?
             (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="pause" color="black"/></button>) :
             (<button onClick={this.toggleplay} className="play-button"><FontAwesomeIcon icon="play" color="black" /></button>
             );
-        
+
         const volumeIconIcon = (this.state.volume) ?
             (<button className="volume-icon"><FontAwesomeIcon icon="volume-up" color="black" onClick={this.toggleVolume}/></button>) : 
             (<button className="volume-icon"><FontAwesomeIcon icon="volume-mute" color="black" onClick={this.toggleVolume}/></button>)
 
-        const volumeIcon = (this.props.currentSong) ? 
-                (volumeIconIcon) : null 
+        const volumeIcon = (this.props.currentSong) ?
+                (volumeIconIcon) : null
 
-        const playerRight =(this.props.currentSong)? 
+        const playerRight =(this.props.currentSong)?
                 (<PlayerRight song={this.props.currentSong} artist={this.props.artist}/>) : null 
 
         return(

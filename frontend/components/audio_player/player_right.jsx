@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const PlayerRight = props => {
     const {song} = props;
-    const {artist} = props; 
+    const {artist} = props;
 
     return (
         <div className="player-right">
@@ -24,4 +24,4 @@ const PlayerRight = props => {
     )
 }
 
-export default PlayerRight; 
+export default PlayerRight;

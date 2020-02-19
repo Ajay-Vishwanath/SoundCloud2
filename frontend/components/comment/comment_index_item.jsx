@@ -6,9 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const CommentIndexItem = props => {
     const { comment } = props;
-    const { artist } = props; 
+    const { artist } = props;
     const { removeComment } = props;
-    const { currentUser } = props; 
+    const { currentUser } = props;
 
     function parsedDate(comment) {
         let createdDate = comment.created_at.toString().split('')
@@ -22,10 +22,10 @@ const CommentIndexItem = props => {
 
     const artistphotoUrl = (artist.photoUrl === '') ?
         ('https://soundcloud-2-dev.s3-us-west-1.amazonaws.com/moonassii.jpg') : (artist.photoUrl)
-    
+
     const handleDelete = () => {
         removeComment(comment.id)
-        location.reload(); 
+        location.reload();
     }
 
     function deleteComment() {
@@ -36,7 +36,7 @@ const CommentIndexItem = props => {
                 </button>
             )
         } else {
-            return null 
+            return null
         }
     }
 

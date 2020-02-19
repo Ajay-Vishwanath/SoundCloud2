@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {togglePlayPause} from '../../actions/player_action';
-import Playbar from './player'; 
+import Playbar from './player';
 import {fetchUsers } from '../../actions/user_actions'
 
 const mapStateToProps = (state) => {
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 
     return (
     {currentSong: currentSong,
-    artist: artist, 
+    artist: artist,
     player: state.ui.playbar.player,
     currentTime: state.ui.playbar.currentTime,
     duration: state.ui.playbar.duration

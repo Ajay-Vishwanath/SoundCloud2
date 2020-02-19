@@ -29,7 +29,7 @@ const App = () => (
         <UpdateModal />
         <DeleteModal />
     <main className="main">
-        <Switch> 
+        <Switch>
             <ProtectedRoute exact path='/upload' component={UploadSongContainer} />
             <ProtectedRoute exact path='/discover' component={SongIndexContainer} />
             <Route exact path="/songs/:songId" component={SongShowContainer} />
@@ -38,7 +38,7 @@ const App = () => (
             {/* <Redirect to="/"/>  */}
         </Switch>
     </main>
-    <Playbar /> 
+    <Playbar />
     </div>
 );
 
