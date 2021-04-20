@@ -166,6 +166,7 @@
 }
 
 #banner-show-image {
+width: 100%;
 object-fit: none; 
 object-position: 100% 0;
   /* width: 100%; */
